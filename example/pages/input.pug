@@ -1,0 +1,112 @@
+section#input
+    .section-title
+        h1 Inputs
+        .section-desc - Input System.
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-input
+                input(type="text", placeholder="입력하세요")
+            .ga-button.primary 테스트
+        h4.contents-title Disabled
+        .contents-wrapper
+            .ga-input.disabled
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Read only
+        .contents-wrapper
+            .ga-input.readonly
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Underline
+        .contents-wrapper
+            .ga-input.underline
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Transparent
+        .contents-wrapper
+            .ga-input.transparent
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Compact
+        .contents-wrapper
+            .ga-input.compact
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Edit
+            .contents-wrapper
+                .ga-input.edit
+                    input(type="text", placeholder="입력하세요", value="원래 값")
+                .ga-button.icon.circle.edit-btn
+                    i.fa.fa-pen
+        h4.contents-title Status
+        .contents-wrapper
+            .ga-grid.divide-5
+                .column
+                    .ga-input.success
+                        input(type="text", placeholder="성공")
+                .column
+                    .ga-input.danger
+                        input(type="text", placeholder="에러발생")
+                .column
+                    .ga-input.info
+                        input(type="text", placeholder="정보")
+                .column
+                    .ga-input.attention
+                        input(type="text", placeholder="경고")
+                .column
+                    .ga-input.importance
+                        input(type="text", placeholder="중요")
+        h4.contents-title Fluid
+        .contents-wrapper
+            .ga-input.fluid
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Unit
+        .contents-wrapper
+            .ga-input.unit(data-unit='대')
+                input.align-right(type="text", placeholder="0")
+        h4.contents-title Icon
+        .contents-wrapper
+            .ga-grid.divide-4
+                .column
+                    | Left
+                    .ga-input.icon.left
+                        input(type="text", placeholder="입력하세요")
+                        i.icon.fa.fa-magnifying-glass
+                .column
+                    | Right
+                    .ga-input.icon.right.link
+                        input(type="text", placeholder="입력하세요")
+                        i.icon.fa.fa-magnifying-glass.circle
+                .column
+                    | Both
+                    .ga-input.icon.both
+                        i.icon.fa.fa-magnifying-glass
+                        input(type="text", placeholder="입력하세요")
+                        i.icon.fa.fa-chevron-up
+        h4.contents-title Badge
+        .contents-wrapper
+            .ga-input.badge
+                input(type="text", placeholder="입력하세요")
+                .ga-badge.secondary 30
+        h4.contents-title Label
+        .contents-wrapper
+            .ga-input.labeled.right.inline
+                input(type="text", placeholder="입력하세요")
+                label 원
+            .ga-input.labeled.right.inline
+                input(type="text", placeholder="입력하세요")
+                label.outline 0/30
+            .ga-input.labeled.left.inline
+                label Name
+                input(type="text", placeholder="입력하세요")
+        h4.contents-title Button
+        .contents-wrapper
+            .ga-input.button.left
+                input(type="text", placeholder="입력하세요")
+                .ga-button 저장
+            .ga-input.button.right
+                input(type="text", placeholder="입력하세요")
+                .ga-button.icon
+                    i.fal.fa-copy
+        h4.contents-title Textarea
+        .contents-wrapper
+            .ga-input.fluid
+                textarea(placeholder="입력하세요")
+            .ga-input.short.fluid
+                textarea(placeholder="입력하세요")

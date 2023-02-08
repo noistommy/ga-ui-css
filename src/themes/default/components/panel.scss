@@ -1,0 +1,13 @@
+$verticalMargin: 1em;
+$horizontalMargin: 0;
+$margin: $verticalMargin $horizontalMargin;
+
+$panelBackgroundColor: #e5e9f2;
+$panelBorderColor: #d7dae2;
+$panelFontColor: #2c3e50;
+
+$panelBorder: 1px solid $panelBorderColor;
+$panelVerticalPadding: relativePx(8);
+$panelHorizontalPadding: relativePx(8);
+$panelPadding: $panelVerticalPadding $panelHorizontalPadding;
+

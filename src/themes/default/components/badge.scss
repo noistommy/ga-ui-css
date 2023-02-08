@@ -1,0 +1,15 @@
+$baseButtonColor:var(--txt);
+$baseButtonBg: var(--suf);
+$hoverButtonBg: var(--hover-suf);
+
+$badgeFontSize: relativePx(11);
+$badgeFontWeight: 600;
+$badgeSize: relativePx(16);
+$baseBadgeColor: $baseButtonBg;
+$badgeBorderRadius: $badgeSize;
+$badgeVerticalPadding: 4px;
+$badgeHorizontalPadding: 6px;
+$badgePadding: $badgeVerticalPadding $badgeHorizontalPadding;
+$badgeShadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+$badgeOffset: ($badgeSize / 2);
+$badgeOffsetLeft: calc(100% - $badgeOffset);

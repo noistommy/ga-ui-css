@@ -1,0 +1,185 @@
+section#button.d-mode-border-color
+    .section-title
+        h1 Buttons
+        .section-desc Buttons Description.
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-button 기본
+        h4.contents-title Element Type
+        .contents-wrapper
+            button.ga-button.primary 태그
+            .ga-button 클레스
+        h4.contents-title Brand Color
+        .contents-wrapper
+            button.ga-button.primary 메인
+            button.ga-button.secondary 강조
+            button.ga-button.success 성공
+            button.ga-button.info 정보
+            button.ga-button.danger 위험
+            button.ga-button.attention 경고
+            button.ga-button.importance 중요
+        .contents-wrapper
+            button.ga-button.primary.outline.disabled 메인
+            button.ga-button.secondary.outline 강조
+            button.ga-button.success.outline 성공
+            button.ga-button.info.outline 정보
+            button.ga-button.danger.outline 위험
+            button.ga-button.attention.outline 경고
+            button.ga-button.importance.outline 중요
+        .contents-wrapper
+            button.ga-button.primary.active 메인
+            button.ga-button.secondary.active 강조
+        h4.contents-title Colors
+        - var colors1 = [{name: 'red', text: '빨강'},{name: 'orange', text: '주황'},{name: 'yellow', text: '노랑'},{name: 'lightgreen', text: '연두'},{name: 'green', text: '초록'},{name: 'lightblue', text: '하늘'},{name: 'blue', text: '파랑'}]
+        - var colors2 = [{name: 'deepblue', text: '짙은파랑'},{name: 'deeppurple', text: '짙은보라'},{name: 'purple', text: '보라'},{name: 'brown', text: '팥색'},{name: 'gray', text: '회색'}]
+        .contents-wrapper
+            each color in colors1
+                button(class=`ga-button disabled ${color.name}`)=color.text
+        .contents-wrapper
+            each color in colors2
+                button(class=`ga-button ${color.name}`)=color.text
+        .contents-wrapper
+            each color in colors1
+                button(class=`ga-button ${color.name} outline`)=color.text
+        .contents-wrapper
+            each color in colors2
+                button(class=`ga-button ${color.name} outline`)=color.text
+        h4.contents-title Disabled
+        .contents-wrapper
+            .ga-button.disabled Disabled
+            .ga-button(disabled) Disabled(attr)
+        h4.contents-title Equal
+        .contents-wrapper
+            .contents-item
+                .ga-button.equal.primary 저장
+                .ga-button.equal.secondary 취소
+                .ga-button.equal.outline 보기
+                .ga-button.equal 가바아 UI 시스템
+            .contents-item
+                .ga-button.equal.large.primary 저장
+                .ga-button.equal.large.secondary 취소
+                .ga-button.equal.large.outline 보기
+                .ga-button.equal.large 가바아 UI 시스템
+        h4.contents-title Fluid
+        .contents-wrapper
+            .contents-item
+                .ga-button.fluid.primary 꽉차게
+            .contents-item
+                .ga-button.fluid 꽉차게
+            .contents-item
+                .ga-button.fluid.outline 꽉차게
+            .contents-item
+                .ga-button.fluid.circle 꽉차게
+        h4.contents-title Compact
+        .contents-wrapper
+            .ga-button.compact.primary 조그맣게
+            .ga-button.compact 조그맣게
+            .ga-button.compact.circle 조그맣게
+            .ga-button.compact.outline 조그맣게
+            .ga-button.compact
+                i.icon.left.fa.fa-code
+                | 코드
+            .ga-button.compact.icon
+                i.fa.fa-crown
+        .contents-wrapper
+            button.ga-button.success.compact 성공
+            button.ga-button.info.compact 정보
+            button.ga-button.danger.compact 위험
+            button.ga-button.attention.compact 경고
+            button.ga-button.importance.compact 중요
+        h4.contents-title Outline
+        .contents-wrapper
+            .ga-button.outline 테두리
+        h4.contents-title Icon (*Awesome Font 6)
+        .contents-wrapper
+            .ga-button.icon
+                i.fa.fa-bird
+            .ga-button.icon.outline
+                i.fa.fa-bolt-lightning
+            .ga-button.icon.circle
+                i.fa.fa-sun-bright
+        h4.contents-title Circle
+        .contents-wrapper
+            .ga-button.icon.circle
+                i.fa.fa-computer
+            .ga-button.circle 동그랗게
+            .ga-button.circle A
+            .ga-button.circle.outline B
+        h4.contents-title Icon
+        .contents-wrapper
+            .ga-button
+                i.icon.left.fa.fa-chevron-left
+                | 왼쪽
+            .ga-button
+                | 오른쪽
+                i.icon.right.fa.fa-chevron-right
+        h4.contents-title With Badge
+        .contents-wrapper
+            .ga-button.badge
+                | Best
+                .in-badge.primary Best
+            .ga-button.badge.fluid
+                | Sale
+                .in-badge.secondary Sale
+        h4.contents-title Text
+        .contents-wrapper
+            .ga-grid.divide-6
+                .column
+                    .ga-button.text 텍스트
+                .column
+                    .ga-button.text.primary 텍스트
+                .column
+                    .ga-button.text
+                        i.icon.left.fa.fa-text
+                        | 텍스트
+                .column
+                    .ga-button.text.green
+                        | 텍스트
+                        i.icon.right.fa.fa-chevron-right
+                .column
+                    .ga-button.text.badge
+                        | 업데이트
+                        .in-badge.red  123
+        h4.contents-title Buttons
+        .contents-wrapper
+            .ga-buttons
+                .ga-button.selected 재생
+                .ga-button 정지
+                .ga-button 일시정지
+                .ga-button 재시작
+                .ga-button 종료
+        .contents-wrapper
+            .ga-buttons
+                .ga-button.icon
+                    i.fa.fa-play
+                .ga-button.icon
+                    i.fa.fa-stop
+                .ga-button.icon
+                    i.fa.fa-pause
+                .ga-button.icon
+                    i.fa.fa-arrow-rotate-right
+                .ga-button.icon
+                    i.fa.fa-power-off
+        .contents-wrapper
+            .ga-buttons.outline
+                .ga-button 위
+                .ga-button 중앙
+                .ga-button 아래
+        .contents-wrapper
+            .ga-button-groups
+                .ga-button.outline.mini.primary
+                    i.icon.left.fal.fa-play
+                    | 시작
+                .ga-button.outline.mini.primary
+                    i.icon.left.fal.fa-stop
+                    | 정지
+                .ga-button.outline.mini.primary
+                    i.icon.left.fal.fa-pause
+                    | 일시정지
+                .ga-button.outline.mini.primary
+                    i.icon.left.fal.fa-arrow-rotate-right
+                    | 재시작
+                .ga-button.outline.mini.primary
+                    i.icon.left.fal.fa-power-off
+                    | 종료

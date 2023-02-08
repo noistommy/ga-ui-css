@@ -1,0 +1,93 @@
+section#list
+    .section-title
+        h1 List
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-list
+                .item(draggable="true") Option 1
+                .item(draggable="true") Option 2
+                .item(draggable="true") Option 3
+                .item(draggable="true") Option 4
+                .item(draggable="true") Option 5
+                .item(draggable="true") Option 6
+                .item(draggable="true") Option 7
+        h4.contents-title List Style
+        .contents-wrapper
+            .ga-list.ul
+                li.item Option 1
+                li.item Option 2
+                li.item Option 3
+        h4.contents-title 선택된 아이템
+        .contents-wrapper
+            .ga-list.selection
+                .item.selected Option 1
+                .item Option 2
+                .item Option 3
+        h4.contents-title Sub Title
+        .contents-wrapper
+            .ga-list
+                .item
+                    .item-title
+                        | Option 1
+                        .sub-title sub title is under the main Title
+                .item
+                    .item-title
+                        | Option 2
+                        .sub-title sub title is under the main Title
+                .item
+                    .item-title
+                        | Option 3
+                        .sub-title sub title is under the main Title
+        h4.contents-title Icons
+        .contents-wrapper
+            .ga-list.selection
+                .item
+                    i.list-icon.icon.fa.fa-t-shirt
+                    .item-title Option 1
+                .item
+                    i.list-icon.icon.fa.fa-sun-bright
+                    .item-title Option 2
+                .item
+                    i.list-icon.icon.fa.fa-rabbit
+                    .item-title
+                        | Option 3
+                        .sub-title asdf
+        h4.contents-title Icons
+        .contents-wrapper
+            .ga-list
+                .item
+                    .item-title Option 1
+                    .btn-set
+                        .ga-button.icon.circle.outline.tiny
+                            i.fa.fa-plus
+                        .ga-button.icon.circle.outline.tiny
+                            i.fa.fa-minus
+                .item
+                    .item-title Option 2
+                    .btn-set
+                        .ga-button.icon.text
+                            i.fa.fa-plus
+                .item
+                    .item-title Option 3
+        h4.contents-title Bordered
+        .contents-wrapper
+            .ga-list.bordered
+                .item Option 1
+                .item Option 2
+                .item Option 3
+        h4.contents-title Image
+        .contents-wrapper
+            .ga-list
+                .item
+                    .item-img
+                        img(src="")
+                    .item-title Option 1
+                .item
+                    .item-img
+                        img(src="")
+                    .item-title Option 2
+                .item
+                    .item-img
+                        img(src="")
+                    .item-title Option 3

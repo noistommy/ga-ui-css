@@ -1,0 +1,135 @@
+$gridGutter: 4;
+.ga-form {
+  max-width: 100%;
+  > .field, > .fields {
+    margin-bottom: 1rem;
+  }
+  > .divider {
+    margin-bottom: 1rem;
+    width: 100%;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid #d6d6d6;
+  }
+  .header {
+    .title {
+      font-size: 1.4em;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+    }
+  }
+  .field {
+    display: block;
+    input, textarea {
+      font-family: 'Spoqa Han Sans';
+      vertical-align: baseline;
+      font-size: 1rem;
+      //padding: $verticalInputPadding $horizontalInputPadding;
+      padding: $inputPadding;
+      line-height: $inputLineHeight;
+      font-weight: 400;
+      border: 1px solid var(--brd);
+      background-color: var(--bgc);
+      color: var(--txt);
+      border-radius: $baseInputRadius;
+      transition-duration: .2s;
+      box-sizing: border-box;
+      outline: none;
+      width: 100%;
+      &:hover {
+        border-color: #c0c4cc;
+      }
+      &:focus {
+        border-color: $primary;
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+      &::placeholder {
+        line-height: 1em;
+        font-weight: 100;
+        color: #c4c4c4;
+        opacity: 0.5;
+      }
+    }
+    .ga-input,
+    .ga-select-box {
+      width: 100%;
+    }
+    label, .label {
+      font-size: 1em;
+      display: block;
+      margin: 0 0 5px !important;
+      color: #aaaaaa;
+      &.title {
+        padding: $inputPadding;
+        margin: 0 !important;
+      }
+    }
+    &[disabled], &.disabled {
+      > input, > textarea {
+        background: #EBEBEB;
+        border-color: #d6d6d6;
+        pointer-events: none;
+      }
+      > label, .label {
+        opacity: 0.5;
+      }
+    }
+    &.readonly {
+      > input, > textarea {
+        pointer-events: none;
+      }
+    }
+    &.underline > input {
+      background: transparent;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid #D6D6D6;
+      &:focus {
+        border-color: $primary
+      }
+    }
+    textarea {
+      min-height: 10em;
+    }
+    &.short textarea {
+      min-height: 4em;
+    }
+  }
+  .fields {
+    position: relative;
+    .field:not(.column) {
+      padding: $gridGutter * 1px;
+    }
+    &.equal {
+      .field {
+        flex: 1 1 auto;
+      }
+    }
+    &.listed {
+      flex-direction: column;
+      .field {
+        display: block;
+      }
+    }
+  }
+  .field {
+    &.inline {
+      display: flex;
+      align-items: center;
+      label, label {
+        flex-shrink: 0;
+        margin: 0 0.85em 0 0 !important;
+      }
+      div:not(label) {
+        flex-grow: 1;
+      }
+      .extra {
+        margin: 0 0.85em;
+      }
+      input {
+        width: auto;
+      }
+    }
+  }
+}

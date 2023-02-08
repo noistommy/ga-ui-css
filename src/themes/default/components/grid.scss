@@ -1,0 +1,9 @@
+$tableFontSize: 13px;
+$tableBorderColor: #d7dae2;
+$headerBackgroundColor: #e5e9f2;
+
+$cellVerticalPadding: relativePx(8);
+$cellHorizontalPadding: relativePx(13);
+
+$cellPadding: $cellVerticalPadding $cellHorizontalPadding;
+

@@ -1,0 +1,59 @@
+section#tabs
+    .section-title
+        h1 Tabs
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-tabs
+                .tab-menu
+                    .tab-item.tab.active Item 1
+                    .tab-item.tab Item 2
+                    .tab-item.tab Item 3
+                    .tab-item.tab Item 4
+                    .tab-item.tab Item 5
+        h4.contents-title Vertical
+        .contents-wrapper
+            .ga-tabs.vertical
+                .tab-menu
+                    .tab-item.tab.active Item 1
+                    .tab-item.tab Item 2
+                    .tab-item.tab Item 3
+        h4.contents-title Active (Line)
+        .contents-wrapper
+            .ga-tabs.line
+                .tab-menu
+                    .tab-item.tab.active Item 1
+                    .tab-item.tab Item 2
+                    .tab-item.tab Item 3
+                    .tab-item.tab Item 4
+                    .tab-item.tab Item 5
+        .contents-wrapper
+            .ga-tabs.line.vertical
+                .tab-menu
+                    .tab-item.tab.active Item 1
+                    .tab-item.tab Item 2
+                    .tab-item.tab Item 3
+        h4.contents-title Active (Button)
+        .contents-wrapper
+            .ga-tabs.button
+                .tab-menu
+                    .tab-item.tab.active Item 1
+                    .tab-item.tab Item 2
+                    .tab-item.tab Item 3
+                    .tab-item.tab Item 4
+                    .tab-item.tab Item 5
+                .tab-contents
+                    | tab contents
+        h4.contents-title Browser Tab
+        .contents-wrapper
+            .ga-tabs.browser
+                - var tabMenu = [1, 2, 3, 4, 5]
+                .tab-menu
+                    each tab in tabMenu
+                        .tab-item.tab
+                            span.tabText.ellipsis=`Item ${tab}`
+                            .btn-close.ga-button.icon.tiny.circle
+                                i.fa.fa-close
+                .tab-contents
+                    .tab-plus.ga-button.icon.primary ADD
+                        i.icon.right.fa.fa-plus

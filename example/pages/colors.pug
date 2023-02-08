@@ -1,0 +1,36 @@
+section#typography
+    .section-title
+        h1 Colors
+    .section-contents
+        h4.contents-title Brands
+        .contents-wrapper
+            .color-box.primary 메인
+            .color-box.primary.dark 어두운
+        .contents-wrapper
+            .color-box.secondary 강조
+            .color-box.secondary.dark 어두운
+    .section-contents
+        h4.contents-title Status
+        .contents-wrapper
+            .color-box.success 성공
+            .color-box.info 정보
+            .color-box.danger 위험
+            .color-box.attention 경고
+            .color-box.importance 중요
+    .section-contents
+        h4.contents-title Types
+        .contents-wrapper
+            .color-box.ga-success.bordered 기본
+            .color-box.ga-success-text 텍스트
+            .color-box.ga-success-bg 배경
+            .color-box.bordered.ga-success-border 테두리
+    .section-contents
+        h4.contents-title Palette Colors
+        .contents-wrapper
+            - var colors = [{name: 'red', text: '빨강'},{name: 'orange', text: '주황'},{name: 'yellow', text: '노랑'},{name: 'lightgreen', text: '연두'},{name: 'green', text: '초록'},{name: 'lightblue', text: '하늘'},{name: 'blue', text: '파랑'},{name: 'deepblue', text: '짙은파랑'},{name: 'deeppurple', text: '짙은보라'},{name: 'purple', text: '보라'},{name: 'brown', text: '팥색'},{name: 'gray', text: '회색'}]
+                each color in colors
+                    div(class=`color-box ga-${color.name} bordered`)=color.text
+        .contents-wrapper
+          - var colors = [{name: 'red', text: '빨강'},{name: 'sunset', text: '썬셋'},{name: 'orange', text: '주황'},{name: 'amber', text: '엠버'},{name: 'yellow', text: '노랑'},{name: 'citron', text: '시트론'},{name: 'lime', text: '라임'},{name: 'green', text: '초록'},{name: 'mint', text: '민트'},{name: 'teal', text: '틸'},{name: 'cyan', text: '시안'},{name: 'blue', text: '파랑'},{name: 'indigo', text: '인디고'},{name: 'purple', text: '보라'},{name: 'pink', text: '핑크'},{name: 'rose', text: '로즈'}]
+          each color in colors
+              div(class=`color-box ga-${color.name}-2 bordered`)=color.text

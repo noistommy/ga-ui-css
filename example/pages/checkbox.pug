@@ -1,0 +1,48 @@
+section#checkbox
+    .section-title
+        h1 Check Box
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-checkbox
+                input(type="checkbox")
+                label Label
+            .ga-checkbox.checked
+                input(type="checkbox", checked)
+                label Checked Label
+            .ga-checkbox.radio
+                input(type="radio")
+                label Radio Button
+            .ga-checkbox.radio.checked
+                input(type="radio", checked)
+                label Radio Button
+        h4.contents-title Check Box
+        .contents-wrapper
+            .item.flex
+                .ga-checkbox
+                    input(type="checkbox", name="part")
+                .icon
+                    i.fa.fa-folder
+                .text ITEM
+        h4.contents-title Check Box
+            .contents-wrapper
+                .ga-checkbox
+                    input(type="checkbox", name="part")
+                    label Front-End
+                .ga-checkbox
+                    input(type="checkbox", name="part")
+                    label Back-End
+                .ga-checkbox
+                    input(type="checkbox", name="part")
+                    label Design
+        h4.contents-title Radio
+        .contents-wrapper
+            .ga-checkbox.radio
+                input(type="radio", name="option")
+                label option 1
+            .ga-checkbox.radio
+                input(type="radio", name="option")
+                label option 2
+            .ga-checkbox.radio
+                input(type="radio", name="option")
+                label option 3

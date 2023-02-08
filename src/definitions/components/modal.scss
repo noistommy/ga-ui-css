@@ -1,0 +1,58 @@
+.ga-modal {
+  display: inline-block;
+  border: 1px solid $tableBorderColor;
+  border-radius: $modalBorderRadius;
+  overflow: hidden;
+  .modal {
+    min-width: 350px;
+    background-color: #fff;
+    .modal-header {
+      position: relative;
+      padding: 8px 12px;
+      background-color: $headerBackgroundColor;
+      border-bottom: 1px solid $tableBorderColor;
+      .title  {
+        font-weight: 900;
+      }
+      .close-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+      }
+    }
+    .modal-contents {
+      padding: 20px;
+    }
+    .modal-footer{
+      padding: 8px 13px;
+      text-align: right;
+    }
+    .align-left{ text-align: left; }
+    .align-right{ text-align: right; }
+    .align-center { text-align: center; }
+  }
+}
+.ga-modal-container {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  &.open {
+    display: block;
+  }
+  &.ga-modal-background {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+  .ga-modal {
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

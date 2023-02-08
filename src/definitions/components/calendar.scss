@@ -1,0 +1,97 @@
+$issue_red: #D75757;
+.ga-calendar {
+  //background-color: #d4d4d4;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 20px;
+  height: 400px;
+  .week-wrapper,
+  .cell-wrapper {
+    --grid-size: 7;
+    --cell-size: 42px;
+    --cell-gap: 1px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    //background-color: #666;
+    width: 100%;
+    height: auto;
+    .reset-btn {
+      position: absolute;
+      top: 0;
+      left: calc(100% + 5px);
+      background: linear-gradient(135deg, lighten($issue_red, 10), darken($issue_red, 30));
+      padding: var(--cell-gap);
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px;
+      color: #fff;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //font-size: 0.8em;
+    }
+    .cell {
+      background-color: #fff;
+      border-radius: 2px;
+      position: absolute;
+      width: var(--cell-size);
+      height: var(--cell-size);
+      top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+      left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+      transition: 250ms linear;
+      &.disabled {
+        pointer-events: none;
+        color: #c4c4c4;
+        opacity: .5;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background-color: #fff;
+        opacity: 0.3;
+      }
+      &:after {
+        content: attr(data-name);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 900;
+        font-size: 0.8em;
+      }
+      &.sun:after {
+        color: #dc4444;
+      }
+      &.sat:after {
+        color: #5b81cf;
+      }
+      &.today {
+        background-color: $primary;
+      }
+      &.today:before {
+        background-color: $primary;
+        border-radius: 50%;
+      }
+      &.today:after {
+        color: #ffffff;
+      }
+
+    }
+  }
+  .week-wrapper {
+    display: flex;
+    gap: 2px;
+    margin: 2px;
+    height: auto;
+    font-size: 0.8em;
+    .week-cell {
+      position: relative;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1em;
+      vertical-align: baseline;
+    }
+  }
+}

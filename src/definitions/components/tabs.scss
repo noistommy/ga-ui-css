@@ -1,0 +1,135 @@
+.ga-tabs {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  .tab-menu {
+    .tab-item {
+      cursor: pointer;
+      display: inline-block;
+      padding: 4px 12px;
+      padding-right: $tabItemGap;
+      &:hover {
+        //background-color: $surfaceHover;
+      }
+      &.active {
+        color: $primary;
+        //font-weight: 600;
+      }
+    }
+  }
+  &.vertical .tab-menu {
+    .tab-item {
+      display: block;
+    }
+  }
+  &.line {
+    border-bottom: $tabLineWidth solid $tabsLineColor;
+    .tab-item.active {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: $tabLineWidth;
+        background-color: $primary;
+      }
+    }
+    &.vertical {
+      border-bottom: 0;
+      border-left: $tabLineWidth solid $tabsLineColor;
+      .tab-item.active {
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: auto;
+          right: 100%;
+          width: $tabLineWidth;
+          height: 100%;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+  &.button {
+    .tab-menu {
+      .tab-item {
+        background-color: $baseButtonBg;
+        color: $baseButtonColor;
+        padding: $buttonPadding;
+        opacity: 0.5;
+        &:hover {
+          background-color: $hoverButtonBg;
+        }
+        &.active {
+          background-color: $surface;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .tab-contents {
+    width: 100%;
+    background-color: $surface;
+    padding: 20px;
+  }
+  &.browser {
+    .tab-menu {
+      display: flex;
+      //overflow: hidden;
+      padding: 0 10px;
+      .tab-item {
+        position: relative;
+        padding: 0;
+        min-width: 50px;
+        max-width: 150px;
+        background-color: #fff;
+        padding-right: 5px;
+        &.active span{
+          background-color: $surface;
+          opacity: 1;
+        }
+        .btn-close {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          padding: .4em;
+          transform: translateY(-50%);
+        }
+        .tabText {
+          display: block;
+          pointer-events: none;
+          width: 100%;
+          height: 100%;
+          padding: 4px 12px;
+          padding-right: 30px;
+          margin-right: 5px;
+          background-color: $baseButtonBg;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          opacity: 0.5;
+          border: 1px solid #ebebeb;
+          border-bottom: 0;
+          margin-top: 1px;
+          &:hover {
+            background-color: $hoverButtonBg;
+          }
+        }
+      }
+    }
+    .tab-contents {
+      border: 1px solid #ebebeb;
+    }
+  }
+}
+
+.ellipsis {
+  width: 100%;
+  display:inline-block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,142 @@
+.table-title {
+  background-color: lighten($headerBackgroundColor, 5);
+  padding: 10px 20px;
+}
+table.ga-table {
+  width: 100%;
+  text-align: $textAlign;
+  background-color: $background;
+  margin: $margin;
+  border: $border;
+  color: $tableFontColor;
+  font-size: $tableFontSize;
+  border-collapse: $borderCollapse;
+  border-spacing: $borderSpacing;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.labeled {
+    margin-top: 0;
+  }
+  thead {
+    tr {
+      th {
+        cursor: auto;
+        background: $headerBackgroundColor;
+        text-align: inherit;
+        color: rgba(0,0,0,.87);
+        padding: $inputPadding;
+        vertical-align: inherit;
+        text-transform: none;
+        border-bottom: $border;
+        border-left: $border;
+        white-space: nowrap;
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+  tfoot {
+    tr td {
+      border-top: $border !important;
+    }
+  }
+  &.structured {
+    tr {
+      th, td {
+        border-left: 0 solid $tableBorderColor;
+        border-right: $border;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+  tr {
+    td {
+      padding: $inputPadding;
+      text-align: $cellTextAlign;
+      border-top: $border;
+      line-height: $inputLineHeight;
+      &.label {
+        background-color: $headerBackgroundColor;
+      }
+    }
+    th, td {
+      border-left: $border;
+      &:first-child {
+        border-left: none;
+      }
+      &.disabled {
+        color: #f2f2f2;
+        pointer-events: none;
+      }
+    }
+    &:first-child td {
+      border-top: none;
+    }
+  }
+  &.single {
+    tr {
+      th, td {
+        border-left: none;
+      }
+    }
+  }
+  //.ga-input, .ga-select-box, .ga-switch, .ga-button {
+  //  font-size: 0.8em;
+  //}
+  [class*="align-left"] {
+    text-align: left;
+  }
+  [class*="align-center"] {
+    text-align: center;
+  }
+  [class*="align-right"] {
+    text-align: right;
+  }
+  [class*="align-top"] {
+    vertical-align: top;
+  }
+  [class*="align-middle"] {
+    vertical-align: middle;
+  }
+  [class*="align-bottom"] {
+    vertical-align: bottom;
+  }
+  &.column {
+    &.two td {width: calc( 100% / 2)}
+    &.three td {width: calc(100% / 3)}
+    &.four td {width: calc( 100% / 4)}
+    &.five td {width: calc( 100% / 5)}
+    &.six td {width: calc( 100% / 6)}
+    &.seven td {width: calc( 100% / 7)}
+    &.eight td {width: calc( 100% / 8)}
+    &.nine td {width: calc( 100% / 9)}
+    &.ten td {width: calc( 100% / 10)}
+  }
+  tbody tr td.col,
+  thead tr th.col {
+    @for $i from 1 through 10 {
+      &-#{$i} {width: $gridPercent * $i * 1% }
+    }
+  }
+  .ga-input input {
+    padding: $compactPadding;
+  }
+  .ga-select-box {
+    select {
+      padding: $compactPadding;
+    }
+    i {
+      padding: $compactVerticalPadding+px;
+    }
+  }
+  .ga-button {
+    padding: $compactPadding;
+  }
+}

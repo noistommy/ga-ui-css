@@ -1,0 +1,48 @@
+section#selectbox
+    .section-title
+        h1 Select Box
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-select-box.dropdown
+                .selected-item.ga-input.icon.right
+                    //i.icon.fa.fa-magnifying-glass
+                    input(type="text", placeholder="선택하세요", readonly)
+                    i.icon.fa.fa-chevron-down
+                .select-menu
+                    .ga-list.selection
+                        each col in [1, 2, 3, 4, 5, 6]
+                            .icon.item.option-item
+                                = `option${col}`
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-select-box.float
+                .selected-item.ga-input.icon.both
+                    i.icon.fa.fa-magnifying-glass
+                    input(type="text", placeholder="선택하세요")
+                    i.icon.fa.fa-chevron-down
+                .select-menu
+                    .ga-list.selection
+                        each col in [1, 2, 3, 4, 5, 6]
+                            .icon.item.option-item
+                                = `option${col}`
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-select-box(style={width: '300px'})
+                select
+                    each col in ['', 1, 2, 3, 4, 5, 6]
+                        if col == ''
+                            option(default, value=`${col}`)= '선택'
+                        else
+                            option(value=`${col}`)= `option${col}`
+                i.icon.fa.fa-chevron-down
+        h4.contents-title Compact
+        .contents-wrapper
+            .ga-select-box.compact(style={width: '300px'})
+                select
+                  each col in ['', 1, 2, 3, 4, 5, 6]
+                      if col == ''
+                          option(default, value=`${col}`)= '선택'
+                      else
+                          option(value=`${col}`)= `option${col}`
+                i.icon.fa.fa-chevron-down

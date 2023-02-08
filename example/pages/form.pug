@@ -1,0 +1,249 @@
+section#form
+    .section-title
+        h1 Form
+        .section-desc - Form System.
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+            .ga-form
+                .field
+                    label Title
+                    input(type="text", placeholder="입력")
+        h4.contents-title Header
+        .contents-wrapper
+            .ga-form
+                .header
+                    .title Form
+                .field
+                    label Title
+                    input(type="text", placeholder="입력")
+        h4.contents-title Inline
+        .contents-wrapper
+            .ga-form
+                .field.inline
+                    label Title
+                    input(type="text", placeholder="입력")
+                    //input(type="text", placeholder="입력")
+                    //input(type="text", placeholder="입력")
+        h4.contents-title Label
+        .contents-wrapper
+            .ga-form
+                .field
+                    label Title
+                    input(type="text", placeholder="기본 라벨")
+                .field
+                    input(type="text", placeholder="라벨 없음")
+                .fields.right-side
+                    .field.column.span-3
+                        label.title 타이틀 1
+                    .field.column
+                        input(type="text", placeholder="입력")
+                .fields.right-side
+                    .field.column.span-3
+                        label.title 타이틀 2
+                    .field.column
+                        input(type="text", placeholder="입력")
+                .fields.right-side
+                    .field.column.span-3
+                        label.title 타이틀 3
+                    .field.column
+                        input(type="text", placeholder="입력")
+        h4.contents-title Field
+        .contents-wrapper
+            .ga-form
+                .field
+                    label Field 1
+                    input(type="text", placeholder="입력")
+                .field
+                    label Field 2
+                    input(type="text", placeholder="입력")
+        h4.contents-title Fields
+        .contents-wrapper
+            .ga-form
+                .fields
+                    .field
+                        label Field 1
+                        input(type="text", placeholder="입력")
+                    .field
+                        label Field 2
+                        input(type="text", placeholder="입력")
+                    .field
+                        label Field 3
+                        input(type="text", placeholder="입력")
+        h4.contents-title Field
+            .contents-wrapper
+                .ga-form
+                    .field.disabled
+                        label Field 1
+                        input(type="text", placeholder="입력")
+                    .field.disabled
+                        label Field 2
+                        input(type="text", placeholder="입력")
+        h4.contents-title Fields 분할구성
+        .contents-wrapper
+            .ga-form
+                .field
+                    label 동일 분할 구성 (2분할)
+                    .fields.divide.half
+                        .field.column
+                            label field 1
+                            input(type="text", placeholder="입력")
+                        .field.column
+                            label field 2
+                            input(type="text", placeholder="입력")
+                .field
+                    label 동일 분할 구성 (4분할)
+                    .fields.divide.quarter
+                        .field.column
+                            label field 1
+                            input(type="text", placeholder="입력")
+                        .field.column
+                            label field 2
+                            input(type="text", placeholder="입력")
+                        .field.column
+                            label field 3
+                            input(type="text", placeholder="입력")
+                        .field.column
+                            label field 4
+                            input(type="text", placeholder="입력")
+                .field
+                    label  컬럼 분할 구성 (3 + 5 + 4)
+                    .fields
+                        .column.span-3
+                            label span 3
+                            input(type="text", placeholder="입력")
+                        .column.span-5
+                            label span 5
+                            input(type="text", placeholder="입력")
+                        .column.span-4
+                            label span 4
+                            input(type="text", placeholder="입력")
+        h4.contents-title Text Area
+        .contents-wrapper
+            .ga-form
+                .field
+                    label Textarea
+                    textarea(placeholder="글 입력")
+                .field.short
+                    label Textarea Short
+                    textarea(placeholder="글 입력")
+        h4.contents-title Check Box
+        .contents-wrapper
+            .ga-form
+                .field
+                    input(type='text', placeholder='입력')
+                .field
+                    .ga-checkbox
+                        input(type="checkbox")
+                        label 체크박스를 표시합니다.
+        h4.contents-title Radio Button
+        .contents-wrapper
+            .ga-form
+                .field
+                    label 교통 수단을 선택하세요
+                    .fields
+                        .field
+                            .ga-checkbox.radio
+                                input(type="radio", name="traffic")
+                                label Bus
+                        .field
+                            .ga-checkbox.radio
+                                input(type="radio", name="traffic")
+                                label Taxi
+                        .field
+                            .ga-checkbox.radio
+                                input(type="radio", name="traffic")
+                                label Subway
+                .field
+                    label.h4 이슈발생 시 올바른 행동은? (Field list)
+                    .fields.listed
+                        .field
+                            .ga-checkbox.radio
+                                input(type="radio", name="traffic")
+                                label 1번. 야근한다
+                        .field
+                            .ga-checkbox.radio
+                                input(type="radio", name="traffic")
+                                label 2번. 퇴근한다.
+                        .field
+                            .ga-checkbox.radio
+                                input(type="radio", name="traffic")
+                                label 3번. 아무것도 하지 않는다.
+        h4.contents-title Select Box
+        .contents-wrapper
+            .ga-form
+                .field
+                    .ga-select-box
+                        select
+                            each col in ['', 1, 2, 3, 4, 5, 6]
+                                if col == ''
+                                    option(default, value=`${col}`)= '선택'
+                                else
+                                    option(value=`${col}`)= `option${col}`
+                        i.arrow.icon.fa.fa-chevron-down
+        h4.contents-title Select Box(multiple)
+        .contents-wrapper
+        h4.contents-title Required
+        .contents-wrapper
+        h4.contents-title Switch
+        .contents-wrapper
+        h4.contents-title Template
+        .contents-wrapper
+            .ga-form
+                .fields.divide.half
+                    .field.column
+                        label 구분
+                        .ga-select-box
+                            select
+                                each col in ['', 1, 2, 3, 4, 5, 6]
+                                    if col == ''
+                                        option(default, value=`${col}`)= '구분 선택'
+                                    else
+                                        option(value=`${col}`)= `option${col}`
+                            i.arrow.icon.fa.fa-chevron-down
+                    .field.column
+                        label 운영체제
+                        .ga-select-box
+                            select
+                                each col in ['', 1, 2, 3, 4, 5, 6]
+                                    if col == ''
+                                        option(default, value=`${col}`)= 'OS 이미지'
+                                    else
+                                        option(value=`${col}`)= `option${col}`
+                            i.arrow.icon.fa.fa-chevron-down
+                    .field.column
+                       .fields.divide-3
+                           .field.column
+                               label CPU
+                               .ga-select-box
+                                   select
+                                       each col in ['', 1, 2, 3, 4, 5, 6]
+                                           if col == ''
+                                               option(default, value=`${col}`)= 'CPU'
+                                           else
+                                               option(value=`${col}`)= `option${col}`
+                                   i.arrow.icon.fa.fa-chevron-down
+                           .field.column
+                               label 메모리
+                               .ga-select-box
+                                   select
+                                       each col in ['', 1, 2, 3, 4, 5, 6]
+                                           if col == ''
+                                               option(default, value=`${col}`)= '메모리'
+                                           else
+                                               option(value=`${col}`)= `option${col}`
+                                   i.arrow.icon.fa.fa-chevron-down
+                           .field.column
+                               label 루트볼륨
+                               .ga-select-box
+                                   select
+                                       each col in ['', 1, 2, 3, 4, 5, 6]
+                                           if col == ''
+                                               option(default, value=`${col}`)= '루트볼륨'
+                                           else
+                                               option(value=`${col}`)= `option${col}`
+                                   i.arrow.icon.fa.fa-chevron-down
+                    .field.column
+                        label 서버
+                        .ga-input.unit(data-unit='대')
+                            input.align-right(type="text", placeholder="0")

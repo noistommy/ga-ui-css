@@ -1,0 +1,128 @@
+.ga-switch {
+  display: inline-block;
+  input {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &.slide {
+    position: relative;
+    width: 3em;
+    height: 1.3em;
+    top: 0.15em;
+    input:checked + .switch {
+      background-color: $primary
+    }
+    input:checked + .switch:before {
+      transform: translateX(1.7em);
+    }
+    .switch {
+      cursor: pointer;
+      position: absolute;
+      top:0.15em;
+      bottom:0;
+      left: 0.15em;
+      right: 0;
+      display: inline-block;
+      background-color: #c4c4c4;
+      border-radius: $switchRadiusSize;
+      /*transition: all 400ms ease-out;*/
+      &.round {
+        border-radius: 1em;
+        &:before {
+          border-radius: 50%;
+        }
+      }
+      &:before {
+        content: '';
+        position:absolute;
+        width: 1.6em;
+        height: 1.6em;
+        top: -0.15em;
+        left: -0.15em;
+        background-color: #fff;
+        border-radius: $switchRadiusSize;
+        //border: 1px solid #c4c4c4;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.16);
+        transition: all 250ms ease-out;
+        box-sizing: border-box;
+      }
+    }
+    &.inside {
+      width: 42px;
+      height: 22px;
+      top: 0;
+      input:checked + .switch:before {
+        transform: translateX(20px);
+      }
+      .switch {
+        top: 0;
+        left: 0;
+      }
+      .switch:before {
+        width: 18px;
+        height: 18px;
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+  &.button {
+    font-size: 0.9em;
+    background-color: #EFEFEF;
+    padding: 2px;
+    border-radius: $switchRadiusSize;
+    //box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.16);
+    input {
+      & ~ .off {
+        background-color: $primary;
+        color: $white;
+        font-weight: 700;
+        border-radius: $switchRadiusSize;
+        //box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.36);
+      }
+      & ~ .on {
+        background-color: transparent;
+      }
+    }
+    input:checked {
+      & ~ .on {
+        background-color: $primary;
+        color: $white;
+        font-weight: 700;
+        border-radius: $switchRadiusSize;
+        //box-shadow: 0 0 5px 0 #2985DB;
+      }
+      & ~ .off {
+        background-color: transparent;
+        color: #333333;
+        box-shadow: none;
+      }
+    }
+    &.round {
+      border-radius: 1em;
+      span.on, span.off {
+        border-radius: 1em;
+      }
+    }
+    span {
+      display: inline-block;
+      padding: 0.5em 0.8em;
+      line-height: 1em;
+    }
+    //.active {
+    //  background-color: #2985DB;
+    //  color: #ffffff;
+    //  font-weight: 700;
+    //  border-radius: 4px;
+    //}
+  }
+}
+
+.label-text {
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+  top:0;
+}

@@ -1,0 +1,270 @@
+@function relativePx($number) {
+    @return ($number/14)*1em
+};
+
+@function absolutePx($number) {
+    @return ($number/14)*1rem
+};
+
+$white: #ffffff;
+$black: #333333;
+//
+//font family
+//
+$fontName: 'Spoqa Han Sans';
+$fontNameKr: '';
+$fontSmoothing: antialiased;
+$baseFontColor: $black;
+$dModeBaseFontColor: $white;
+//
+//font weight
+//
+$light: 100;
+$regular: 400;
+$bold: 600;
+$bolder: 900;
+
+//
+//line height
+//
+$lineHeight: (18 / 14);
+
+//
+//letter spacing
+//
+$widerSpacing: 1px;
+$wideSpacing: 0.5px;
+$baseSpacing: normal;
+$narrowSpacing: -0.5px;
+$narrowerSpacing: -1px;
+
+//
+//border color
+//
+$borderColor: #D6D6D6;
+$borderDarkColor: darken($borderColor, 27.4);
+
+//
+//base background color
+//
+$background: #FFFFFF;
+$dModeBackground: #333333;
+
+//#definitions
+
+//
+// colors
+//
+
+$primary: #3c79b8;
+$secondary: #35363a;
+
+$info: #909090;
+$danger: #D50000;
+$attention: #EC6E00;
+$importance: #FDC036;
+
+$primaryText: $white;
+$secondaryText: $white;
+
+$infoText: $white;
+$dangerText: $white;
+$attentionText: $white;
+$importanceText: $white;
+
+$surface: #f2f2f2;
+$surfaceHover: #F4F4F4;
+
+$gray: #909090;
+$lightGray: lighten($gray, 16.1);
+$darkGray: lighten($black, 20.4);
+
+$darkPrimary: darken(saturate($primary, 23.9), 10.6);
+$darkSecondary: darken($secondary, 35.7);
+$darkerPrimary: darken(saturate($primary, 28.8), 20.8);
+$darkerSecondary: darken($secondary, 58.1);
+
+$surface1: #F8F8F8;
+$surface2: #EFF4FC;
+$surface3: #DAE8F8;
+
+
+$redColor: #D75757;
+$orangeColor: #EE9033;
+$yellowColor: #F8B825;
+$lightgreenColor: #B3BC40;
+$greenColor: #61A475;
+$lightblueColor: #8CC5CE;
+$blueColor: #70A3CA;
+$deepblueColor: #5178AF;
+$deeppurpleColor: #9180B4;
+$purpleColor: #AF77C0;
+$brownColor: #A86A82;
+$grayColor: #8B8B8B;
+
+$brandColors: (
+        'primary': ($primary, $darkPrimary, $primaryText),
+        'secondary': ($secondary, $darkSecondary, $secondaryText),
+);
+
+$stateColors: (
+        'success': ($greenColor, darken($greenColor, 10), $white),
+        'info': ($info, darken($info, 10), $infoText),
+        'danger': ($danger, darken($danger, 10), $dangerText),
+        'attention': ($attention, darken($attention, 10), $attentionText),
+        'importance': ($importance, darken($importance, 10), $importanceText),
+);
+
+$colors: (
+    'red': $redColor,
+    'orange': $orangeColor,
+    'yellow': $yellowColor,
+    'lightgreen': $lightgreenColor,
+    'green': $greenColor,
+    'lightblue': $lightblueColor,
+    'blue': $blueColor,
+    'deepblue': $deepblueColor,
+    'deeppurple': $deeppurpleColor,
+    'purple': $purpleColor,
+    'brown': $brownColor,
+    'gray': $grayColor,
+);
+
+$colors2: (
+        'red': #D93B3B,
+        'sunset': #D44D32,
+        'orange': #D95B2C,
+        'amber': #D3873F,
+        'yellow': #F5B54D,
+        'citron': #CAC747,
+        'lime': #85AB39,
+        'green': #48992F,
+        'mint': #3A874F,
+        'teal': #449698,
+        'cyan': #4D9BCC,
+        'blue': #4E7AF8,
+        'indigo': #5642ED,
+        'purple': #8756F3,
+        'pink': #BF3DA0,
+        'rose': #BB3A62,
+);
+
+//
+//heading
+//
+$headerFontWeight: $bold;
+$h1: absolutePx(22);
+$h2: absolutePx(20);
+$h3: absolutePx(18);
+$h4: absolutePx(16);
+$h5: absolutePx(14);
+
+//Size
+$tinySize: (10 / 14);
+$smallSize: (12 / 14);
+$mediumSize: (14 / 14);
+$largeSize: (18 / 14);
+$hugeSize: (20 / 14);
+$massiveSize: (24 / 14);
+
+// Scroll Bars
+
+$useCustomScrollbars: true;
+
+$thumbWidth: 8;
+$thumbBorderWidth: 2;
+
+$customScrollbarWidth: $thumbWidth + ($thumbBorderWidth * 2);
+$customScrollbarHeight: $customScrollbarWidth;
+
+
+$trackBackground: rgba(0, 0, 0, 0);
+$trackBorderRadius: 0px;
+
+$thumbBorderRadius: $customScrollbarWidth * 0.5;
+
+$thumbBackground: rgba(0, 0, 0, 0.55);
+$thumbTransition: color 0.2s ease;
+
+$thumbBorderColor: $background;
+
+$thumbInactiveBackground: rgba(0, 0, 0, 0.15);
+$thumbHoverBackground: rgba(128, 135, 139, 0.8);
+
+/* Inverted */
+$trackInvertedBackground: rgba(255, 255, 255, 0.1);
+$thumbInvertedBackground: rgba(255, 255, 255, 0.25);
+$thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
+$thumbInvertedHoverBackground: rgba(255, 255, 255, 0.35);
+
+$baseBorderRadius: relativePx(4);
+//$baseBorderRadius: 2em;
+$baseInputRadius: relativePx(4);
+
+// button & input
+$baseButtonColor: $black;
+$baseButtonBg: #efefef;
+
+$horizontalInputPadding: relativePx(14);
+$verticalInputPadding: relativePx(11);
+$horizontalPadding: $horizontalInputPadding + ($horizontalInputPadding * 0.5);
+$verticalPadding: $verticalInputPadding;
+
+$buttonPadding: $verticalPadding $horizontalPadding $verticalPadding;
+
+// button-compact
+$compactHorizontalPadding: $horizontalPadding * 0.5;
+$compactVerticalPadding: $verticalInputPadding * 0.5;
+
+$compactPadding: $compactVerticalPadding $compactHorizontalPadding;
+
+//Button + Equal
+
+$equalBtnWidth: 150px;
+$equalBtnPadding: 11px 20px;
+
+$equalLargeBtnWidth: 200px;
+$equalLargeBtnPadding: 18px 30px;
+
+//input base
+$inputLineHeight: relativePx(17);
+$lineHeightOffset:(( $inputLineHeight - 1em) / 2);
+//$inputLineHeight: 17 / 14;
+//$lineHeightOffset:(( $inputLineHeight - 1) / 2) * 14;
+
+$inputVerticalOffsetPadding: $verticalInputPadding - $lineHeightOffset;
+
+//$inputPadding: $inputVerticalOffsetPadding+px $horizontalInputPadding+px;
+$inputPadding: $inputVerticalOffsetPadding $horizontalInputPadding;
+// Grid system
+
+$gridWhole: 12;
+$gridGutter: 4;
+
+$gridWholeMobile: 4;
+$gridWholeTablet: 8;
+$gridWholeLaptop: 12;
+
+$gridPercent: (100 / $gridWhole);
+$gridHalf: $gridWhole / 2;
+$gridThird: $gridWhole / 3;
+$gridQuarter: $gridWhole / 4;
+$gridFifth: $gridWhole / 5;
+$gridSixth: $gridWhole / 6;
+$gridEighth: $gridWhole / 8;
+$gridTenth: $gridWhole / 10;
+
+$bp-mobile: 320px;
+$bp-tablet: 768px;
+$bp-laptop: 1280px;
+$bp-desktop: 1440px;
+
+//Dark Mode
+//$dModeBaseFontColor: $white;
+//$dModeBorderColor: #494F61;
+//$dModeBackground: #31363e;
+//
+//$dModeSurface: #272C34;
+
+
+

@@ -1,0 +1,162 @@
+.ga {
+  &-form .fields,
+  &-grid {
+    --gutter: $gridGutter;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: $gridGutter * -1px;
+    margin-bottom: $gridGutter * 1px;
+    &.left-side .column:first-child {flex-grow: 1}
+    &.right-side .column:last-child {flex-grow: 1}
+    &.divide {
+      @for $i from 1 through $gridWhole {
+        &-#{$i} > .column{width: 100% / $i}
+      }
+    }
+    &.divide {
+      > .column{width: (100% / 12);}
+      &.one > .column{width: (100% / 1);}
+      &.half > .column{width: (100% / 2);}
+      &.third > .column{width: (100% / 3);}
+      &.quarter > .column{width: (100% / 4);}
+      &.fifth > .column{width: (100% / 5);}
+      &.sixth > .column{width: (100% / 6);}
+      &.eighth > .column{width: (100% / 8);}
+      &.tenth > .column{width: (100% / 10);}
+      &.eleventh > .column{width: (100% / 11);}
+    }
+    &.justify {
+      &-left{justify-content: flex-start;}
+      &-center{justify-content: center;}
+      &-right{justify-content: flex-end;}
+      &-between{justify-content: space-between;}
+      &-around{justify-content: space-around;}
+    }
+    &.align {
+      &-top{align-items: flex-start;}
+      &-center{align-items: center;}
+      &-bottom{align-items: flex-end;}
+      &-stretch{align-items: stretch;}
+    }
+    .column {
+      padding: $gridGutter * 1px;
+      > .ga-grid,
+      > .ga-form .fields {
+        margin-bottom: $gridGutter * -1px;;
+      }
+    }
+    .rows > .column,
+    .column {
+      width: $gridPercent * 1%;
+      &.two {width: $gridPercent * 2%}
+      &.three {width: $gridPercent * 3%}
+      &.four {width: $gridPercent * 4%}
+      &.five {width: $gridPercent * 5%}
+      &.six {width: $gridPercent * 6%}
+      &.seven {width: $gridPercent * 7%}
+      &.eight {width: $gridPercent * 8%}
+      &.nine {width: $gridPercent * 9%}
+      &.ten {width: $gridPercent * 10%}
+      &.span {
+        @for $i from 1 through $gridWhole {
+          &-#{$i} {width: $gridPercent * $i * 1%; }
+        }
+      }
+      &.order {
+        @for $i from 1 through $gridWhole {
+          &-#{$i} {order: $i; }
+        }
+      }
+      &.offset {
+        @for $i from 1 through $gridWhole {
+          &-#{$i} {margin-left: $gridPercent * $i * 1%; }
+        }
+      }
+    }
+  }
+  &-grid > .rows {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0;
+  }
+}
+
+@media all and (max-width: #{$bp-tablet - 1px}) {
+  .ga {
+    &-form .fields,
+    &-grid {
+      .column {
+        &.span {
+          @for $i from 1 through $gridWhole {
+            &-xs-#{$i} {width: $gridPercent * $i * 1% !important; }
+          }
+        }
+        &.offset {
+          @for $i from 1 through $gridWhole {
+            &-xs-#{$i} {margin-left: $gridPercent * $i * 1% !important; }
+          }
+        }
+      }
+      &.divide {
+        @for $i from 1 through $gridWhole {
+          &-xs-#{$i} > .column { width: 100% / $i !important; }
+        }
+      }
+    }
+  }
+}
+@media all and (min-width: #{$bp-tablet}) and (max-width: #{$bp-laptop - 1px}) {
+  .ga {
+    &-form .fields,
+    &-grid {
+      .column {
+        &.span {
+          @for $i from 1 through $gridWhole {
+            &-sm-#{$i} {width: $gridPercent * $i * 1% !important; }
+          }
+        }
+        &.offset {
+          @for $i from 1 through $gridWhole {
+            &-sm-#{$i} {margin-left: $gridPercent * $i * 1% !important; }
+          }
+        }
+      }
+      &.divide {
+        @for $i from 1 through $gridWhole {
+          &-sm-#{$i} > .column { width: 100% / $i !important; }
+        }
+      }
+    }
+  }
+
+}
+@media all and (min-width: #{$bp-laptop}) and (max-width: #{$bp-desktop - 1px}) {
+  //@media all and (max-width: #{$bp-desktop - 1px}) {
+  .ga {
+    &-form .fields,
+    &-grid {
+      .column {
+        &.span {
+          @for $i from 1 through $gridWhole {
+            &-md-#{$i} {width: $gridPercent * $i * 1% !important; }
+          }
+        }
+        &.offset {
+          @for $i from 1 through $gridWhole {
+            &-md-#{$i} {margin-left: $gridPercent * $i * 1% !important; }
+          }
+        }
+      }
+      &.divide {
+        @for $i from 1 through $gridWhole {
+          &-md-#{$i} > .column { width: 100% / $i !important; }
+        }
+      }
+    }
+  }
+}

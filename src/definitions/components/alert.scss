@@ -1,0 +1,13 @@
+.ga-alert {
+  padding: 10px 20px;
+  border: 1px solid #d6d6d6;
+  border-radius: $baseBorderRadius;
+  color: #909090;
+  margin: 5px;
+  .title {
+    display: inline-block;
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  .message {}
+}

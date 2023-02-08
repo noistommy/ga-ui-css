@@ -1,0 +1,124 @@
+section#pagination
+    .section-title
+        h1 Pagination
+    .section-contents
+        h4.contents-title 기본
+        .contents-wrapper
+           .ga-pagination
+               - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+               .pagination-nav
+                   i.fa.fa-chevron-left
+               .pagination-page-wrapper
+                   .pagination-num.active 1
+                   each item in items
+                       .pagination-num=`${item}`
+               .pagination-nav
+                   i.fa.fa-chevron-right
+    .section-contents
+        h4.contents-title 기본 (표시 수 제한)
+        .contents-wrapper
+            .ga-pagination
+                - var items = [2, 3, 4]
+                .pagination-nav
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.active 1
+                    .pagination-num.block-preview
+                        i.fa.fa-ellipsis
+                    each item in items
+                        .pagination-num=`${item}`
+                    .pagination-num.block-next
+                        i.fa.fa-ellipsis
+                    .pagination-num 10
+                .pagination-nav
+                    i.fa.fa-chevron-right
+    .section-contents
+        h4.contents-title 버튼 스타일
+        .contents-wrapper
+            .ga-pagination.number.circle
+                - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+                .pagination-nav
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.active 1
+                    each item in items
+                        .pagination-num=`${item}`
+                .pagination-nav
+                    i.fa.fa-chevron-right
+    .section-contents
+        h4.contents-title 사용자 스타일
+        .contents-wrapper
+            .ga-pagination.number
+                - var items = [2, 3, 4]
+                .pagination-nav.pagination-item
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.pagination-item.active 1
+                    .pagination-num.pagination-item.block-preview
+                        i.fa.fa-ellipsis
+                    each item in items
+                        .pagination-num.pagination-item=`${item}`
+                    .pagination-num.pagination-item.block-next
+                        i.fa.fa-ellipsis
+                    .pagination-num.pagination-item 1000
+                .pagination-nav.pagination-item
+                    i.fa.fa-chevron-right
+    .section-contents
+        h4.contents-title 페이지 타입
+        .contents-wrapper
+            .ga-pagination.page
+                .pagination-nav.pagination-item
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-info 1/10
+                .pagination-nav.pagination-item
+                    i.fa.fa-chevron-right
+    .section-contents
+        h4.contents-title 조그맣게
+        .contents-wrapper
+            .ga-pagination.compact.number
+                - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+                .pagination-nav
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.active 1
+                    each item in items
+                        .pagination-num=`${item}`
+                .pagination-nav
+                    i.fa.fa-chevron-right
+    .section-contents
+        h4.contents-title 정렬
+        - var items = [2, 3, 4, 5]
+        .contents-wrapper
+            h5 LEFT
+            .ga-pagination.number.align-left
+                .pagination-nav
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.active 1
+                    each item in items
+                        .pagination-num=`${item}`
+                .pagination-nav
+                    i.fa.fa-chevron-right
+        .contents-wrapper
+            h5 CENTER
+            .ga-pagination.number.align-center
+                .pagination-nav
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.active 1
+                    each item in items
+                        .pagination-num=`${item}`
+                .pagination-nav
+                    i.fa.fa-chevron-right
+        .contents-wrapper
+            h5 RIGHT
+            .ga-pagination.number.align-right
+                .pagination-nav
+                    i.fa.fa-chevron-left
+                .pagination-page-wrapper
+                    .pagination-num.active 1
+                    each item in items
+                        .pagination-num=`${item}`
+                .pagination-nav
+                    i.fa.fa-chevron-right

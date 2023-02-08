@@ -1,0 +1,7 @@
+.logo
+    a(href="/") Gabia UI
+- var navList = [{name: "Button", path: '/button'}, {name:"Input", path: '/input'}]
+.menu-wrapper
+    each nav in navList
+        li.nav-item
+            a(href=`${nav.path}`)=nav.name

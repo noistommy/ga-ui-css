@@ -1,0 +1,279 @@
+@use 'sass:color';
+
+:root {
+    --bgc: #{$background};
+    --txt: #{$baseFontColor};
+    --brd: #{$borderColor};
+    --suf: #{$surface};
+    --hover-suf: #{darken($surface, 10)}
+}
+$amount: 0.5;
+
+$headerTopMargin: 2em - $lineHeight / 2;
+$headerMargin: $headerTopMargin 0 1rem;
+//@media (prefers-color-scheme: dark) {
+//    :root {
+//        --bgc: #{$dModeBackground};
+//        --txt: #{$dModeBaseFontColor};
+//        --brd: #{$dModeBorderColor};
+//        --suf: #{$dModeSurface};
+//        --hover-suf: #{lighten($dModeSurface, 10)}
+//    }
+//}
+body {
+    background-color: var(--bgc);
+    color: var(--txt);
+}
+
+//Definitions
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5 {
+    font-weight: $headerFontWeight;
+    &.header {
+        margin: $headerMargin;
+        &:first-child { margin-top: ($lineHeight / 2) * -1; }
+    }
+}
+h1,.h1 {font-size: $h1;}
+h2,.h2 {font-size: $h2;}
+h3,.h3 {font-size: $h3;}
+h4,.h4 {font-size: $h4;}
+h5,.h5 {font-size: $h5;}
+
+.tiny {font-size: $tinySize+em !important;}
+.small {font-size: $smallSize+em !important;}
+.medium {font-size: $mediumSize+em !important;}
+.large {font-size: $largeSize+em !important;}
+.huge {font-size: $hugeSize+em !important}
+.massive {font-size: $massiveSize+em !important;}
+
+.light {font-weight: $light !important;}
+.regular {font-weight: $regular !important;}
+.bold {font-weight: $bold !important;}
+.bolder {font-weight: $bolder !important;}
+
+.spacing {
+    &-wider {letter-spacing:$widerSpacing}
+    &-wide {letter-spacing:$wideSpacing}
+    &-normal {letter-spacing:normal}
+    &-narrow {letter-spacing:$narrowSpacing}
+    &-narrower {letter-spacing:$narrowerSpacing}
+}
+
+
+.primary {
+    background-color: $primary;
+    color: $primaryText;
+    box-shadow: 0 0 0 1px $primary inset;
+    &.dark {
+        background-color:$darkPrimary;
+    }
+    &.darker {
+        background-color:$darkerPrimary;
+    }
+}
+.secondary {
+    color: $secondaryText;
+    background-color: $secondary;
+    &.dark {
+        background-color: $darkSecondary;
+    }
+    &.darker {
+        background-color: $darkerSecondary;
+    }
+}
+.surface {
+    &1 {background-color: $surface1;}
+    &2 {background-color: $surface2;}
+    &3 {background-color: $surface3;}
+}
+.background {
+    background-color: $background;
+    border: 1px solid $gray;
+}
+.black {
+    background-color: $black;
+    &-text {
+        color: $black;
+    }
+}
+.white {
+    background-color: $white;
+    border: 1px solid $gray;
+    &-text {
+        color: $white;
+    }
+}
+.transparent {
+    background-color: transparent;
+}
+.gray {
+    background-color: $gray;
+    &.light {
+        background-color: $lightGray;
+    }
+    &.dark {
+        background-color: $darkGray;
+    }
+}
+
+@each $color, $value in $colors {
+    .ga-#{$color} {
+        background-color: $value !important;
+        color: $white !important;
+        border-color: darken($value, 10) !important;
+        &:hover {
+            background-color: darken($value, 10);
+        }
+        &-text {
+            color: $value !important;
+        }
+        &-bg {
+            background-color: $value !important;
+        }
+        &-border {
+            border-color: $value !important;
+        }
+    }
+    .ga-#{$color}-light {
+        background-color: lighten($value, 35) !important;
+        color: $value !important;
+        border-color: darken($value, 10) !important;
+    }
+}
+@each $color, $value in $colors2 {
+    .ga-#{$color}-2 {
+        background-color: $value !important;
+        color: $white !important;
+        border-color: darken($value, 10) !important;
+        &:hover {
+            background-color: darken($value, 10);
+        }
+        &-text {
+            color: $value !important;
+        }
+        &-bg {
+            background-color: $value !important;
+        }
+        &-border {
+            border-color: $value !important;
+        }
+    }
+}
+
+@each $color, $value in $stateColors {
+    .ga-#{$color} {
+        background-color: nth($value, 1) !important;
+        color: $white !important;
+        border-color: nth($value, 2) !important;
+        &:hover {
+            background-color: nth($value, 2);
+        }
+        &-text {
+            color: nth($value, 1) !important;
+        }
+        &-bg {
+            background-color: nth($value, 1) !important;
+        }
+        &-border {
+            border-color: nth($value, 2) !important;
+        }
+    }
+    .ga-#{$color}-light {
+        background-color: lighten(nth($value, 1), 35) !important;
+        color: nth($value, 1) !important;
+        border-color: nth($value, 2) !important;
+    }
+}
+
+//.success{background-color:$greenColor;}
+//.danger{background-color: $danger;}
+//.attention{background-color:$attention;}
+//.importance{background-color:$importance;}
+//.info{background-color:$secondary;}
+
+ * {
+     // ----- FireFox -----
+     // scrollbar-color: <막대 색상> <트랙 색상>
+     // scrollbar-width: thin | none | auto
+     scrollbar-color: $thumbBackground $trackBackground;
+     scrollbar-width: thin;
+
+     // ----- Internet Explorer -----
+     // scrollbar-face-color: <막대 색상>
+     // scrollbar-track-color: <트랙 색상>
+     // scrollbar-arrow-color: <양 끝 화살표 색상>
+     scrollbar-face-color: $thumbBackground;
+     scrollbar-track-color: $trackBackground;
+     scrollbar-arrow-color: #f1f1f1;
+     // ----- Webkit(Chrome, Edge, Safari) -----
+     &::-webkit-scrollbar{
+         // 스크롤바의 크기를 정의합니다.
+         // (width - 세로 스크롤 두께) (height - 가로 스크롤 두께)
+         width: $customScrollbarWidth+px;
+         height: $customScrollbarHeight+px;
+     }
+     &::-webkit-scrollbar-thumb{
+         // 스크롤바의 막대 색상을 정의합니다.
+         background-color: $trackBackground;
+         border-radius: $thumbBorderRadius+px;
+         border:$thumbBorderWidth+px solid $thumbBorderColor;
+     }
+     &:hover::-webkit-scrollbar-thumb {
+         background-color: $thumbBackground;
+     }
+     &::-webkit-scrollbar-track{
+         // 스크롤바의 트랙 색상을 정의합니다.
+         background-color: $trackBackground;
+     }
+ //     &::-webkit-scrollbar-button{
+ //         // 스크롤바의 버튼 색상을 정의합니다.
+ //     }
+ }
+
+ //.dark-mode {
+ //    //* {
+ //    //    color: $dModeBaseFontColor!important;
+ //    //}
+ //    body {
+ //        color: $dModeBaseFontColor;
+ //        background-color: $dModeBackground;
+ //    }
+ //    section {
+ //        background-color: rgba(255, 255, 255, 0.1);
+ //    }
+ //}
+ //
+@media (prefers-color-scheme: light) {
+    section {
+        &:after {
+            content: 'light';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    section {
+        &:after {
+            content: 'Dark';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+/*reset*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, th, td, input, select, button {margin:0;padding:0}
+fieldset, img {border:0 none}
+dl, ul, ol, menu, li {list-style:none}
+blockquote, q {quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content:'';content:none}
+input, select, textarea, button {vertical-align:middle}
+input::-ms-clear {display:none}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body {direction:ltr;-webkit-text-size-adjust:none}
+body, h1, h2, h3, h4, th, td, input, select, textarea, button, a, pre {color:#333;font-size:1rem;line-height:1.5;font-weight:400;font-family: 'Apple SD Gothic Neo','돋움',dotum, sans-serif}
+a {text-decoration:none; display: inline-block;}
+a:hover {text-decoration:none}
+a:active {background-color:transparent}
+address, caption, cite, code, dfn, em, var {font-style:normal;font-weight:normal}
+html {box-sizing:border-box;font-size: 14px;}
+*, *:before, *:after {box-sizing:inherit}
+:root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}
+label {margin-bottom: 0 !important}
+html, body {height:100%;}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+table {border-collapse:collapse;border-spacing:0}
