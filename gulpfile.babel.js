@@ -1,38 +1,44 @@
 'use strict';
 
-import {series, parallel, src, dest, watch} from 'gulp';
-import gulpUtil from 'gulp-util';
-import sassGlob from 'gulp-sass-Glob';
-import sass from 'gulp-sass';
+import {series, parallel, src, dest, watch} from 'gulp'; // Gulp
+import gulpUtil from 'gulp-util'; // log 풀력을 위한 util 모듈
+import sassGlob from 'gulp-sass-glob';
+import sass from 'gulp-sass';  // sass/scss -> css 빌드
 import autoprefixer from 'gulp-autoprefixer';
-import minifyCSS from 'gulp-clean-css';
-import uglify from 'gulp-uglify';
+import minifyCSS from 'gulp-clean-css'; // 최소화
+import uglify from 'gulp-uglify'; // 난독화
 import del from 'del';
+import concat from 'gulp-concat';
+import rename from 'gulp-rename';
+
 import pug from 'gulp-pug';
 
 import readlineSync from 'readline-sync';
 
-import fs, { writeFile } from 'fs';
+import fs from 'fs';
+
 
 // fs module test
-// writeFile('sample.json', JSON.stringify({ sample: 'data' }), () => {})
-
-import concat from 'gulp-concat';
-import rename from 'gulp-rename';
-
+// fa.writeFile('sample.json', JSON.stringify({ sample: 'data' }), () => {})
 
 import qa from './tasks/config/install'
 const question = qa
-gulpUtil.log('install:', question)
 
-const baseFile = 'gabiaui'
-let paths = {}
+let paths = {
+    // paths: {
+    //     output: {
+    //         packaged: ''
+    //     }
+    // }
+}
 
 fs.readFile('config.json', 'utf-8', (err, data) => {
     if (err) return console.log(err)
     paths = JSON.parse(data)
+    console.log(paths)
 })
 
+// install 여부 확인 (테스트 중...)
 const checkBuild = async (done) => {
     if(readlineSync.keyInYN('Do you want to build?')) {
         return await done()
@@ -40,52 +46,58 @@ const checkBuild = async (done) => {
     gulpUtil.log('OK. Not building')
 }
 
+// 빌드 전 이전 빌드 폴더 삭제
 const clean = () => {
-    site();
-    return del(['dist'])
+    // site();
+    return del(['dist/'])
 };
 
+// scss 빌드
 const build = () => {
-    return src([`src/${baseFile}.scss`],{sourcemaps:false})
+    const baseFile = paths.base
+    return src([`src/${baseFile}.scss`], {base:'src/', allowEmpty: true})
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifyCSS())
-    .pipe(dest('./dist',{sourcemaps:false}))
+    .pipe(dest('./dist'))
+    .pipe(dest(paths.paths.output.packaged, {sourcemaps:false}))
     .pipe(rename('gabiaui.css'))
-    .pipe(dest(paths.paths.output.packaged))
     .pipe(dest('./example/build'))
 }
-
-const assets = () => {
-    return src('src/assets/**').pipe(dest('./example/build/assets'))
-}
-
+// JS 빌드
 const buildJS = () => {
     return src('src/definitions/components/*.js')
-        .pipe(concat('gabiaUi.js'))
+        .pipe(concat('ga_ui.js'))
         .pipe(uglify()).pipe(dest('./dist/js'))
         .pipe(dest('./example/build/js'))
 }
 
+// assets 파일 빌드 폴더로 가져가기
+const assets = () => {
+    return src('src/assets/**').pipe(dest('./example/build/assets'))
+}
+//
+// 에제 페이지 컴파일
 const viewDev = () => {
     return src(['example/index.pug', 'example/**/*.pug']).pipe(pug()).pipe(dest('./example/build',{sourcemaps:false}))
 }
 
+// 작업 중 변경 감지 -> 빌드
 const watcher = () => {
     watch(['src/themes/default/**/*.scss','src/definitions/**/**/*.scss'], build)
-    watch('src/definitions/**/**/*.scss', viewDev)
     // watch(['src/themes/default/bases/variables.scss', 'src/themes/default/bases/reset.scss'], build)
+    watch('src/definitions/components/*.js', buildJS)
+
     watch(['example/*.scss'], site)
     watch(['example/**/*.pug'], viewDev)
-    watch('src/definitions/components/*.js', buildJS)
 }
 
-const siteUp = () => {
+// 예제 사이트 watch & build
+const siteWatcher = () => {
     watch(['example/style.scss'], site)
     watch(['example/**/*.pug'], viewDev)
 }
-// const name = Object.assign({}, ['style', 'style1'])
 const site = () => {
     return src(['example/style.scss', 'example/style1.scss'])
     .pipe(sassGlob())
@@ -96,8 +108,10 @@ const site = () => {
     .pipe(dest('./example/build'))
 }
 
-exports.install = question;
-exports.devSite = series(site, siteUp);
-exports.default = series(clean, checkBuild, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
+exports.install = question; // $ gulp install
+exports.clean = clean; // $ gulp clean
+exports.build = build; // $ gulp clean
+exports.devSite = series(site, siteWatcher); // $ gulp devSite
+exports.default = series(clean, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
     gulpUtil.log("Run gulp!!")
-});
+}); // $ gulp

@@ -1,6 +1,5 @@
 {
-    "base": "",
-  
+    "base": "gaui",
     "paths": {
       "source": {
         "config"      : "src/theme.config",
@@ -16,7 +15,6 @@
       },
       "clean"        : "dist/"
     },
-  
     "autoInstall": false
   
   }
