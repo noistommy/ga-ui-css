@@ -3,28 +3,41 @@ section#checkbox
         h1 Check Box
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-            .ga-checkbox
-                input(type="checkbox")
-                label Label
-            .ga-checkbox.checked
-                input(type="checkbox", checked)
-                label Checked Label
-            .ga-checkbox.radio
-                input(type="radio")
-                label Radio Button
-            .ga-checkbox.radio.checked
-                input(type="radio", checked)
-                label Radio Button
-        h4.contents-title Check Box
-        .contents-wrapper
-            .item.flex
+        .ga-card.attached
+            .contents-wrapper
                 .ga-checkbox
-                    input(type="checkbox", name="part")
-                .icon
-                    i.fa.fa-folder
-                .text ITEM
+                    input(type="checkbox")
+                    label Label
+                .ga-checkbox.checked
+                    input(type="checkbox", checked)
+                    label Checked Label
+                .ga-checkbox.radio
+                    input(type="radio")
+                    label Radio Button
+                .ga-checkbox.radio.checked
+                    input(type="radio", checked)
+                    label Radio Button
+            .footer
+              - var code = '<div class="ga-checkbox checked">\n    <input type="checkbox" />\n    <label>Larbel Text</label>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title Check Box
+        .ga-card.attached
+            .contents-wrapper
+                .item.flex
+                    .ga-checkbox
+                        input(type="checkbox", name="part")
+                    .icon
+                        i.fa.fa-folder
+                    .text ITEM
+            .footer
+              - var code = '<div class="ga-checkbox checked">\n    <input type="checkbox" />\n    <label>Larbel Text</label>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
+        h4.contents-title Check Box
+        .ga-card.attached
             .contents-wrapper
                 .ga-checkbox
                     input(type="checkbox", name="part")
@@ -35,14 +48,25 @@ section#checkbox
                 .ga-checkbox
                     input(type="checkbox", name="part")
                     label Design
+            .footer
+              - var code = '<div class="ga-checkbox checked">\n    <input type="checkbox" />\n    <label>Larbel Text</label>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title Radio
-        .contents-wrapper
-            .ga-checkbox.radio
-                input(type="radio", name="option")
-                label option 1
-            .ga-checkbox.radio
-                input(type="radio", name="option")
-                label option 2
-            .ga-checkbox.radio
-                input(type="radio", name="option")
-                label option 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-checkbox.radio
+                    input(type="radio", name="option")
+                    label option 1
+                .ga-checkbox.radio
+                    input(type="radio", name="option")
+                    label option 2
+                .ga-checkbox.radio
+                    input(type="radio", name="option")
+                    label option 3
+            .footer
+              - var code = '<div class="ga-checkbox checked">\n    <input type="checkbox" />\n    <label>Larbel Text</label>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
