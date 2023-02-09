@@ -1,0 +1,23 @@
+.ga-card {
+  width: 100%;
+  background-color: $cardBackgroundColor;
+  box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.16);
+  padding: $cardVerticalPadding $cardHorizontalPadding !important;
+  margin: 20px 0;
+  border-radius: $baseBorderRadius;
+  &.attached {
+    .header {
+      margin-left: $cardHorizontalPadding * -1;
+      margin-right: $cardHorizontalPadding * -1;
+      margin-top: $cardVerticalPadding * -1;
+      margin-bottom: $cardVerticalPadding;
+    }
+    .footer {
+      margin-left: $cardHorizontalPadding * -1;
+      margin-right: $cardHorizontalPadding * -1;
+      margin-bottom: $cardVerticalPadding * -1;
+      margin-top: $cardVerticalPadding;
+      background-color: $surface;
+    }
+  }
+}

@@ -4,109 +4,158 @@ section#badge
         .section-desc - Badge System
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-            .ga-button
-                | Badge
-                span.ga-badge.float 0
-            .ga-button
-                | Badge 1
-                span.ga-badge.float.primary 1
-            .ga-button
-                | Badge 10
-                span.ga-badge.float.secondary 10
-            .ga-button
-                | Badge New
-                span.ga-badge.float.red N
-            .ga-button
-                | Badge Update
-                span.ga-badge.float.green
-                    i.fa.fa-arrow-alt-up
-            .ga-button
-                | Badge In
-                span.ga-badge.mark.primary
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button
+                    | Badge
+                    span.ga-badge.float 0
+                .ga-button
+                    | Badge 1
+                    span.ga-badge.float.primary 1
+                .ga-button
+                    | Badge 10
+                    span.ga-badge.float.secondary 10
+                .ga-button
+                    | Badge New
+                    span.ga-badge.float.red N
+                .ga-button
+                    | Badge Update
+                    span.ga-badge.float.green
+                        i.fa.fa-arrow-alt-up
+                .ga-button
+                    | Badge In
+                    span.ga-badge.mark.primary
+            .footer
+              - var code = '<div class="some element">\n    <span class="ga-badge">{ Badge Contents }</span>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title 타입
-        .contents-wrapper
-            .ga-button
-                | Float
-                span.ga-badge.float.secondary 10
-            .ga-button
-                | Mark
-                span.ga-badge.mark.green
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button
+                    | Float
+                    span.ga-badge.float.secondary 10
+                .ga-button
+                    | Mark
+                    span.ga-badge.mark.green
+            .footer
+              - var code = '<div class="some element">\n    <span class="ga-badge float">{ Badge Contents }</span>\n</div>'
+              - var code1 = '<div class="some element">\n    <span class="ga-badge mark" />\n</div>'
+                pre
+                    code.language-markup
+                        | // float type
+                        | #{code}
+                        | // mark type
+                        | #{code1}
         h4.contents-title 원과 함꼐
-        .contents-wrapper
-            .ga-button.icon.circle
-                i.fa.fa-star
-                span.ga-badge.float.secondary 7
-            .ga-button.circle
-                | Counting Star
-                span.ga-badge.mark.green
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button.icon.circle
+                    i.fa.fa-star
+                    span.ga-badge.float.secondary 7
+                .ga-button.circle
+                    | Counting Star
+                    span.ga-badge.mark.green
+            .footer
+              - var code = '<div class="ga-button icon circle">\n    <i class="some icon" />\n    <span class="ga-badge float">{ Badge Contents }</span>\n</div>'
+              - var code1 = '<div class="ga-button icon circle">\n    Button Text\n    <span class="ga-badge mark" />\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
+                        | #{code1}
         h4.contents-title 텍스트 사용
-        .contents-wrapper
-            .ga-button
-                | First
-                span.ga-badge.float.secondary F
-            .ga-button
-                | NEW
-                span.ga-badge.float.red New
-            .ga-button
-                | UPDATE
-                span.ga-badge.float.green Update
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button
+                    | First
+                    span.ga-badge.float.secondary F
+                .ga-button
+                    | NEW
+                    span.ga-badge.float.red New
+                .ga-button
+                    | UPDATE
+                    span.ga-badge.float.green Update
+            .footer
+              - var code = '<div class="some element">\n    <span class="ga-badge float">{ Badge Text }</span>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title 그림자
-        .contents-wrapper
-            .ga-button
-                | 그림자
-                span.ga-badge.float.secondary.shadow
-                    i.fa.fa-o
-            .ga-button
-                | 그림자
-                span.ga-badge.float.secondary
-                    i.fa.fa-x
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button
+                    | 그림자
+                    span.ga-badge.float.secondary.shadow
+                        i.fa.fa-o
+                .ga-button
+                    | 그림자
+                    span.ga-badge.float.secondary
+                        i.fa.fa-x
+            .footer
+              - var code = '<div class="some element">\n    <span class="ga-badge float">{ Badge Contents }</span>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title 정렬
-        .contents-wrapper
-            .ga-button
-                | Left
-                span.ga-badge.float.secondary.shadow.align-left 30000
-            .ga-button
-                | Center
-                span.ga-badge.float.secondary.shadow.align-center 30000
-            .ga-button
-                | Right
-                span.ga-badge.float.secondary.shadow.align-right 30000
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button
+                    | Left
+                    span.ga-badge.float.secondary.shadow.align-left 30000
+                .ga-button
+                    | Center
+                    span.ga-badge.float.secondary.shadow.align-center 30000
+                .ga-button
+                    | Right
+                    span.ga-badge.float.secondary.shadow.align-right 30000
+            .footer
+              - var code = '<div class="some element">\n    <span class="ga-badge float shadow align-left">{ Badge Contents }</span>\n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title 정렬
-        .contents-wrapper
-            .ga-button
-                | Red
-                span.ga-badge.red 1
-            .ga-button
-                | Orange
-                span.ga-badge.orange 2
-            .ga-button
-                | Yellow
-                span.ga-badge.yellow 3
-            .ga-button
-                | Light Green
-                span.ga-badge.lightgreen 4
-            .ga-button
-                | Green
-                span.ga-badge.green 5
-            .ga-button
-                | Light Blue
-                span.ga-badge.lightblue 6
-            .ga-button
-                | Blue
-                span.ga-badge.blue 7
-            .ga-button
-                | Deep Blue
-                span.ga-badge.deepblue 8
-            .ga-button
-                | Deep Purple
-                span.ga-badge.deeppurple 9
-            .ga-button
-                | Purple
-                span.ga-badge.purple 10
-            .ga-button
-                | Brown
-                span.ga-badge.brown 11
-            .ga-button
-                | Gray
-                span.ga-badge.gray 12
+        .ga-card.attached
+            .contents-wrapper
+                .ga-button
+                    | Red
+                    span.ga-badge.red 1
+                .ga-button
+                    | Orange
+                    span.ga-badge.orange 2
+                .ga-button
+                    | Yellow
+                    span.ga-badge.yellow 3
+                .ga-button
+                    | Light Green
+                    span.ga-badge.lightgreen 4
+                .ga-button
+                    | Green
+                    span.ga-badge.green 5
+                .ga-button
+                    | Light Blue
+                    span.ga-badge.lightblue 6
+                .ga-button
+                    | Blue
+                    span.ga-badge.blue 7
+                .ga-button
+                    | Deep Blue
+                    span.ga-badge.deepblue 8
+                .ga-button
+                    | Deep Purple
+                    span.ga-badge.deeppurple 9
+                .ga-button
+                    | Purple
+                    span.ga-badge.purple 10
+                .ga-button
+                    | Brown
+                    span.ga-badge.brown 11
+                .ga-button
+                    | Gray
+                    span.ga-badge.gray 12
+            .footer
+              - var code = '<div class="some element">\n    <span class="ga-badge { Colors }">{ Badge Contents }</span>\n</div>'
+                pre
+                    code.language-markup
+                        | // red, orange, yellow, light-green, light-blue, blue, deep-blue, deep-purple, purple, brown, gray
+                        | #{code}

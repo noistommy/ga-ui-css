@@ -4,78 +4,125 @@ section#tag
         .section-desc - Tag System
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-            .ga-tag.label Standard
-            .ga-tag.label 라벨
-            .ga-tag.label
-                i.fa.fa-user
-            .ga-tag.label
-                i.fa.fa-star
-            .ga-tag.label
-                i.fa.fa-crown
-        h4.contents-title Line Type
-        .contents-wrapper
-            .ga-tag.line
-            .ga-tag.line.red
-            .ga-tag.line.blue
-            .ga-tag.line.green
-        h4.contents-title Dot Type
-        .contents-wrapper
-            .ga-tag.dot
-            .ga-tag.dot.red
-            .ga-tag.dot.blue
-            .ga-tag.dot.green
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tag.label Standard
+                .ga-tag.label 라벨
+                .ga-tag.label
+                    i.fa.fa-user
+                .ga-tag.label
+                    i.fa.fa-star
+                .ga-tag.label
+                    i.fa.fa-crown
+            .contents-wrapper
+                .ga-tag.line
+                .ga-tag.line.red
+                .ga-tag.line.blue
+                .ga-tag.line.green
+            .contents-wrapper
+                .ga-tag.dot
+                .ga-tag.dot.red
+                .ga-tag.dot.blue
+                .ga-tag.dot.green
+            .footer
+              - var code = '<div class="ga-tag label">{ Tag Contents }</div>'
+              - var code1 = '<div class="ga-tag line" />'
+              - var code2= '<div class="ga-tag dot" />'
+                pre
+                    code.language-markup
+                        | // 라벨 타입
+                        | #{code}
+                        | // 선 타입
+                        | #{code1}
+                        | // 점 타입
+                        | #{code2}
         h4.contents-title icon (only label type)
-        .contents-wrapper
-            .ga-tag.label
-                i.icon.left.fa.fa-chevron-left
-                | Left
-            .ga-tag.label
-                | Right
-                i.icon.right.fa.fa-chevron-right
-            .ga-tag.label.primary
-                i.icon.left.fa.fa-users
-                | Users
-            .ga-tag.label.secondary
-                i.icon.left.fa.fa-ufo
-                | Update
-            .ga-tag.label.red
-                i.icon.left.fa.fa-n
-                | New
-            .ga-tag.label.green
-                i.icon.left.fa.fa-phone
-                | Sale
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tag.label
+                    i.icon.left.fa.fa-chevron-left
+                    | Left
+                .ga-tag.label
+                    | Right
+                    i.icon.right.fa.fa-chevron-right
+                .ga-tag.label.primary
+                    i.icon.left.fa.fa-users
+                    | Users
+                .ga-tag.label.secondary
+                    i.icon.left.fa.fa-ufo
+                    | Update
+                .ga-tag.label.red
+                    i.icon.left.fa.fa-n
+                    | New
+                .ga-tag.label.green
+                    i.icon.left.fa.fa-phone
+                    | Sale
+            .footer
+              - var code = '<div class="ga-tag label">\n    <i class="icon left fa fa-icon" />\n    { Tag Contents }\n</div>'
+              - var code1 = '<div class="ga-tag label">\n    <i class="icon right fa fa-icon" />\n    { Tag Contents }\n</div>'
+                pre
+                    code.language-markup
+                        | // Left
+                        | #{code}
+                        | // Right
+                        | #{code1}
         h4.contents-title Tags
-        .contents-wrapper
-            .ga-tags
-                .ga-tag.label.red red
-                .ga-tag.label.orange orange
-                .ga-tag.label.yellow yellow
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tags
+                    .ga-tag.label.red red
+                    .ga-tag.label.orange orange
+                    .ga-tag.label.yellow yellow
+            .footer
+              - var code = '<div class="ga-tags">\n    <div class="ga-tag label">Tag 1</div>\n    <div class="ga-tag label">Tag 2</div>\n    <div class="ga-tag label">Tag 3</div>    \n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title Hover Effect
-        .contents-wrapper
-            .ga-tags.one-of-a-kind
-                .ga-tag.label.blue blue
-                .ga-tag.label.deepblue deep blue
-                .ga-tag.label.deeppurple deep purple
-                .ga-tag.label.purple purple
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tags.one-of-a-kind
+                    .ga-tag.label.blue blue
+                    .ga-tag.label.deepblue deep blue
+                    .ga-tag.label.deeppurple deep purple
+                    .ga-tag.label.purple purple
+            .footer
+              - var code = '<div class="ga-tags one-of-a-kind">\n    <div class="ga-tag label">Tag 1</div>\n    <div class="ga-tag label">Tag 2</div>\n    <div class="ga-tag label">Tag 3</div>    \n</div>'
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title Brand Colors
-        .contents-wrapper
-            .ga-tag.label.primary Primary
-            .ga-tag.label.secondary Secondary
-            .ga-tag.label.info Info
-            .ga-tag.label.danger Danger
-            .ga-tag.label.attention Attention
-            .ga-tag.label.importance Importance
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tag.label.primary Primary
+                .ga-tag.label.secondary Secondary
+                .ga-tag.label.info Info
+                .ga-tag.label.danger Danger
+                .ga-tag.label.attention Attention
+                .ga-tag.label.importance Importance
+            .footer
+              - var code = '<div class="ga-tag label { Brand | Status }">{ Tag Contents }</div>'
+                pre
+                    code.language-markup
+                        | // primary, secondary, success, danger, info, attention, importance
+                        | #{code}
         h4.contents-title Colors
-        .contents-wrapper
-            .ga-tag.label.red Red
-            .ga-tag.label.orange Orange
-            .ga-tag.label.yellow Yellow
-            .ga-tag.label.lightgreen Light Green
-            .ga-tag.label.lightblue Light Blue
-            .ga-tag.label.blue Blue
-            .ga-tag.label.deepblue Deep Blue
-            .ga-tag.label.deeppurple Deep Purple
-            .ga-tag.label.purple Purple
-            .ga-tag.label.brown Brown
-            .ga-tag.label.gray Gray
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tag.label.red Red
+                .ga-tag.label.orange Orange
+                .ga-tag.label.yellow Yellow
+                .ga-tag.label.lightgreen Light Green
+                .ga-tag.label.lightblue Light Blue
+                .ga-tag.label.blue Blue
+                .ga-tag.label.deepblue Deep Blue
+                .ga-tag.label.deeppurple Deep Purple
+                .ga-tag.label.purple Purple
+                .ga-tag.label.brown Brown
+                .ga-tag.label.gray Gray
+            .footer
+              - var code = '<div class="ga-tag label { Colors }">{ Tag Contents }</div>'
+                pre
+                    code.language-markup
+                        | // red, orange, yellow, light-green, light-blue, blue, deep-blue, deep-purple, purple, brown, gray
+                        | #{code}

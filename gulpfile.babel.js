@@ -25,17 +25,16 @@ import qa from './tasks/config/install'
 const question = qa
 
 let paths = {
-    // paths: {
-    //     output: {
-    //         packaged: ''
-    //     }
-    // }
+    paths: {
+        output: {
+            packaged: 'dist'
+        }
+    }
 }
 
 fs.readFile('config.json', 'utf-8', (err, data) => {
     if (err) return console.log(err)
     paths = JSON.parse(data)
-    console.log(paths)
 })
 
 // install 여부 확인 (테스트 중...)
