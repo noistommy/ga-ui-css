@@ -1,9 +1,9 @@
 @function relativePx($number) {
-    @return ($number/14)*1em
+    @return calc($number/14)*1em
 };
 
 @function absolutePx($number) {
-    @return ($number/14)*1rem
+    @return calc($number/14)*1rem
 };
 
 $white: #ffffff;
@@ -27,7 +27,7 @@ $bolder: 900;
 //
 //line height
 //
-$lineHeight: (18 / 14);
+$lineHeight: calc(18 / 14);
 
 //
 //letter spacing
@@ -160,12 +160,12 @@ $h4: absolutePx(16);
 $h5: absolutePx(14);
 
 //Size
-$tinySize: (10 / 14);
-$smallSize: (12 / 14);
-$mediumSize: (14 / 14);
-$largeSize: (18 / 14);
-$hugeSize: (20 / 14);
-$massiveSize: (24 / 14);
+$tinySize: calc(10 / 14);
+$smallSize: calc(12 / 14);
+$mediumSize: calc(14 / 14);
+$largeSize: calc(18 / 14);
+$hugeSize: calc(20 / 14);
+$massiveSize: calc(24 / 14);
 
 // Scroll Bars
 
@@ -228,9 +228,9 @@ $equalLargeBtnPadding: 18px 30px;
 
 //input base
 $inputLineHeight: relativePx(17);
-$lineHeightOffset:(( $inputLineHeight - 1em) / 2);
+$lineHeightOffset:(( $inputLineHeight - 1em) * 0.5);
 //$inputLineHeight: 17 / 14;
-//$lineHeightOffset:(( $inputLineHeight - 1) / 2) * 14;
+//$lineHeightOffset:(( $inputLineHeight - 1) * 0.5) * 14;
 
 $inputVerticalOffsetPadding: $verticalInputPadding - $lineHeightOffset;
 
@@ -245,14 +245,14 @@ $gridWholeMobile: 4;
 $gridWholeTablet: 8;
 $gridWholeLaptop: 12;
 
-$gridPercent: (100 / $gridWhole);
-$gridHalf: $gridWhole / 2;
-$gridThird: $gridWhole / 3;
-$gridQuarter: $gridWhole / 4;
-$gridFifth: $gridWhole / 5;
-$gridSixth: $gridWhole / 6;
-$gridEighth: $gridWhole / 8;
-$gridTenth: $gridWhole / 10;
+$gridPercent: calc(100 / $gridWhole);
+$gridHalf: calc($gridWhole * 0.5);
+$gridThird: calc($gridWhole / 3);
+$gridQuarter: calc($gridWhole / 4);
+$gridFifth: calc($gridWhole / 5);
+$gridSixth: calc($gridWhole / 6);
+$gridEighth: calc($gridWhole / 8);
+$gridTenth: calc($gridWhole / 10);
 
 $bp-mobile: 320px;
 $bp-tablet: 768px;
@@ -267,5 +267,11 @@ $bp-desktop: 1440px;
 //
 //$dModeSurface: #272C34;
 
-
-
+//breakpoint
+$breakpoints: (
+    xs: 0, //mobile-portrait
+    sm: 576px, //mibile-landscape
+    md: 768px, //tablet
+    lg: 992px, //desctop
+    xl: 1200px, //desktop-large
+) !default;

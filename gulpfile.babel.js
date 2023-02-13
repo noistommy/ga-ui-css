@@ -3,7 +3,8 @@
 import {series, parallel, src, dest, watch} from 'gulp'; // Gulp
 import gulpUtil from 'gulp-util'; // log 풀력을 위한 util 모듈
 import sassGlob from 'gulp-sass-glob';
-import sass from 'gulp-sass';  // sass/scss -> css 빌드
+// import DartSass from 'sass';
+import sass from 'gulp-dart-sass';  // sass/scss -> css 빌드
 import autoprefixer from 'gulp-autoprefixer';
 import minifyCSS from 'gulp-clean-css'; // 최소화
 import uglify from 'gulp-uglify'; // 난독화
@@ -53,14 +54,14 @@ const clean = () => {
 
 // scss 빌드
 const build = () => {
-    const baseFile = paths.base
-    return src([`src/${baseFile}.scss`], {base:'src/', allowEmpty: true})
+    const baseFile = 'gabiaui'
+    return src([`src/${baseFile}.scss`])
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifyCSS())
     .pipe(dest('./dist'))
-    .pipe(dest(paths.paths.output.packaged, {sourcemaps:false}))
+    .pipe(dest('./dist', {sourcemaps:false}))
     .pipe(rename('gabiaui.css'))
     .pipe(dest('./example/build'))
 }
@@ -85,7 +86,7 @@ const viewDev = () => {
 // 작업 중 변경 감지 -> 빌드
 const watcher = () => {
     watch(['src/themes/default/**/*.scss','src/definitions/**/**/*.scss'], build)
-    // watch(['src/themes/default/bases/variables.scss', 'src/themes/default/bases/reset.scss'], build)
+    watch(['src/themes/default/bases/variables.scss', 'src/themes/default/bases/reset.scss'], build)
     watch('src/definitions/components/*.js', buildJS)
 
     watch(['example/*.scss'], site)

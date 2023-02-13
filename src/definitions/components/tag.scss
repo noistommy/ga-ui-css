@@ -4,14 +4,14 @@
   border-radius: 0.6em;
   margin: 3px;
   &.line {
-    border-width: ($tagLineHeight / 2);
+    border-width: ($tagLineHeight * 0.5);
     width: $tagLineWidth;
     min-width: 30px;
     border-color: $baseTagColor;
   }
   &.dot {
-    border-radius: ($tagDotSize / 2);
-    border-width: ($tagDotSize / 2);
+    border-radius: ($tagDotSize * 0.5);
+    border-width: ($tagDotSize * 0.5);
     width:0;
     height:0;
     border-color: $baseTagColor;

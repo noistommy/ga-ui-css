@@ -185,7 +185,7 @@ $customScrollbarHeight: $customScrollbarWidth;
 $trackBackground: rgba(0, 0, 0, 0);
 $trackBorderRadius: 0px;
 
-$thumbBorderRadius: $customScrollbarWidth / 2;
+$thumbBorderRadius: $customScrollbarWidth * 0.5;
 
 $thumbBackground: rgba(0, 0, 0, 0.55);
 $thumbTransition: color 0.2s ease;
@@ -211,7 +211,7 @@ $baseButtonBg: #efefef;
 
 $horizontalInputPadding: relativePx(15);
 $verticalInputPadding: relativePx(9);
-$horizontalPadding: $horizontalInputPadding + ($horizontalInputPadding / 2);
+$horizontalPadding: $horizontalInputPadding + ($horizontalInputPadding * 0.5);
 $verticalPadding: $verticalInputPadding;
 
 $buttonPadding: $verticalPadding $horizontalPadding $verticalPadding;
@@ -232,7 +232,7 @@ $equalLargeBtnPadding: 18px 30px;
 
 //input base
 $inputLineHeight: relativePx(17);
-$lineHeightOffset:(( $inputLineHeight - 1) / 2);
+$lineHeightOffset:(( $inputLineHeight - 1) * 0.5);
 
 $inputVerticalOffsetPadding: $verticalInputPadding - $lineHeightOffset;
 
@@ -248,7 +248,7 @@ $gridWholeTablet: 8;
 $gridWholeLaptop: 12;
 
 $gridPercent: (100 / $gridWhole);
-$gridHalf: $gridWhole / 2;
+$gridHalf: $gridWhole * 0.5;
 $gridThird: $gridWhole / 3;
 $gridQuarter: $gridWhole / 4;
 $gridFifth: $gridWhole / 5;

@@ -109,7 +109,7 @@ table.ga-table {
     vertical-align: bottom;
   }
   &.column {
-    &.two td {width: calc( 100% / 2)}
+    &.two td {width: calc( 100% * 0.5)}
     &.three td {width: calc(100% / 3)}
     &.four td {width: calc( 100% / 4)}
     &.five td {width: calc( 100% / 5)}

@@ -1,15 +1,22 @@
 @use 'sass:color';
+@use 'sass:map';
 
 :root {
     --bgc: #{$background};
     --txt: #{$baseFontColor};
     --brd: #{$borderColor};
     --suf: #{$surface};
-    --hover-suf: #{darken($surface, 10)}
+    --hover-suf: #{darken($surface, 10)};
+
+    --mobile-p: #{map.get($breakpoints, 'xs')};
+    --mobile-l: #{map.get($breakpoints, 'sm')};
+    --tablet: #{map.get($breakpoints, 'md')};
+    --desktop: #{map.get($breakpoints, 'lg')};
+    --desktop-l: #{map.get($breakpoints, 'xl')};
 }
 $amount: 0.5;
 
-$headerTopMargin: 2em - $lineHeight / 2;
+$headerTopMargin: 2em - $lineHeight * 0.5;
 $headerMargin: $headerTopMargin 0 1rem;
 //@media (prefers-color-scheme: dark) {
 //    :root {
@@ -35,7 +42,7 @@ h5,.h5 {
     font-weight: $headerFontWeight;
     &.header {
         margin: $headerMargin;
-        &:first-child { margin-top: ($lineHeight / 2) * -1; }
+        &:first-child { margin-top: ($lineHeight * 0.5) * -1; }
     }
 }
 h1,.h1 {font-size: $h1;}
@@ -166,6 +173,7 @@ h5,.h5 {font-size: $h5;}
 }
 
 @each $color, $value in $stateColors {
+    .#{$color},
     .ga-#{$color} {
         background-color: nth($value, 1) !important;
         color: $white !important;
@@ -248,6 +256,41 @@ h5,.h5 {font-size: $h5;}
  //    }
  //}
  //
+ .container {
+    @if map.get($breakpoints, 'xs') {
+        /* Mobile - Portrait */
+        @media (max-width: map.get($breakpoints, 'xs')) {
+            max-width: map.get($breakpoints, 'xs');
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    @if map.get($breakpoints, 'sm') {
+        /* Mobile - Portrait */
+        @media (min-width: map.get($breakpoints, 'xs')) and (max-width: map.get($breakpoints, 'sm')) {
+            max-width: map.get($breakpoints, 'sm');
+        }
+    }
+    @if map.get($breakpoints, 'md') {
+        /* Mobile - Portrait */
+        @media (min-width: map.get($breakpoints, 'sm')) and (max-width: map.get($breakpoints, 'md')) {
+            max-width: map.get($breakpoints, 'md');
+        }
+    }
+    @if map.get($breakpoints, 'lg') {
+        /* Mobile - Portrait */
+        @media (min-width: map.get($breakpoints, 'md')) and (max-width: map.get($breakpoints, 'lg')) {
+            max-width: map.get($breakpoints, 'lg');
+        }
+    }
+    @if map.get($breakpoints, 'xl') {
+        /* Mobile - Portrait */
+        @media (min-width: map.get($breakpoints, 'xl')) {
+            max-width: map.get($breakpoints, 'xl');
+        }
+    }
+    
+ }
 @media (prefers-color-scheme: light) {
     section {
         &:after {
@@ -277,3 +320,4 @@ h5,.h5 {font-size: $h5;}
         }
     }
 }
+

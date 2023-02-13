@@ -11,5 +11,5 @@ $badgeVerticalPadding: 4px;
 $badgeHorizontalPadding: 6px;
 $badgePadding: $badgeVerticalPadding $badgeHorizontalPadding;
 $badgeShadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
-$badgeOffset: ($badgeSize / 2);
+$badgeOffset: ($badgeSize * 0.5);
 $badgeOffsetLeft: calc(100% - $badgeOffset);

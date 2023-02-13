@@ -1,4 +1,4 @@
 $baseButtonColor: var(--txt);
 $baseButtonBg: var(--suf);
 $hoverButtonBg: var(--hover-suf);
-$buttonIconDistance: $horizontalInputPadding / 2;
+$buttonIconDistance: $horizontalInputPadding * 0.5;
