@@ -266,25 +266,25 @@ h5,.h5 {font-size: $h5;}
         }
     }
     @if map.get($breakpoints, 'sm') {
-        /* Mobile - Portrait */
+        /* Mobile - Landscape */
         @media (min-width: map.get($breakpoints, 'xs')) and (max-width: map.get($breakpoints, 'sm')) {
             max-width: map.get($breakpoints, 'sm');
         }
     }
     @if map.get($breakpoints, 'md') {
-        /* Mobile - Portrait */
+        /* Tablet */
         @media (min-width: map.get($breakpoints, 'sm')) and (max-width: map.get($breakpoints, 'md')) {
             max-width: map.get($breakpoints, 'md');
         }
     }
     @if map.get($breakpoints, 'lg') {
-        /* Mobile - Portrait */
+        /* Desktop */
         @media (min-width: map.get($breakpoints, 'md')) and (max-width: map.get($breakpoints, 'lg')) {
             max-width: map.get($breakpoints, 'lg');
         }
     }
     @if map.get($breakpoints, 'xl') {
-        /* Mobile - Portrait */
+        /* Desktop - Large */
         @media (min-width: map.get($breakpoints, 'xl')) {
             max-width: map.get($breakpoints, 'xl');
         }
@@ -292,12 +292,13 @@ h5,.h5 {font-size: $h5;}
     
  }
 @media (prefers-color-scheme: light) {
-    section {
+    .page-wrapper {
+        position: relative;
         &:after {
             content: 'light';
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 0;
+            right: 0;
             z-index: 9999;
             background-color: #333;
             color: #fff;
@@ -307,12 +308,13 @@ h5,.h5 {font-size: $h5;}
 }
 
 @media (prefers-color-scheme: dark) {
-    section {
+    .page-wrapper {
+        position: relative;
         &:after {
             content: 'Dark';
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 0;
+            right: 0;
             z-index: 9999;
             background-color: #333;
             color: #fff;

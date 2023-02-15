@@ -4,34 +4,52 @@ section#grid
         .section-desc - Grid System.
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-            .ga-grid.divide
-                each col in [1, 2, 3, 4, 5, 6]
-                    .column
-                each col in [1, 2, 3, 4, 5, 6]
-                    .column
+        .ga-card.attached
+            .contents-wrapper
+                .ga-grid.divide
+                    each col in [1, 2, 3, 4, 5, 6]
+                        .column
+                    each col in [1, 2, 3, 4, 5, 6]
+                        .column
+            .footer
+                - var code = `<div class="ga-grid divide">\n    <div class="column" /> // column 1\n    <div class="column" /> // column 2\n    ...\n    <div class="column" /> // column 12\n</div>`
+                  pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title 균등 분할
-        .contents-wrapper
-            .ga-grid.divide.half
-                .column
-                .column
-            .ga-grid.divide.quarter
-                .column
-                .column
-                .column
-                .column
+        .ga-card.attached
+            .contents-wrapper
+                .ga-grid.divide-2
+                    .column
+                    .column
+                .ga-grid.divide-4
+                    .column
+                    .column
+                    .column
+                    .column
+            .footer
+              - var code = `<div class="ga-grid divide-{2|4|6|8|10}">\n    <div class="column" /> // column 1\n    <div class="column" /> // column 2\n    ...\n    <div class="column" /> // column divide number \n</div>`
+                pre
+                    code.language-markup
+                        | #{code}
         h4.contents-title  분할 구성
-        .contents-wrapper
-            .ga-grid.right-side
-                .rows
-                    .column.span-2
-                    .column.span-4
-                    .column.span-1
-                    .column
-                .rows
-                    .column.span-2
-                    .column.span-4
-                    .column.span-1
-                    .column
-                    .column.span-1
-                    .column
+        .ga-card.attached
+            .contents-wrapper
+                .ga-grid.right-side
+                    .rows
+                        .column.span-2
+                        .column.span-4
+                        .column.span-1
+                        .column
+                    .rows
+                        .column.span-2
+                        .column.span-4
+                        .column.span-1
+                        .column
+                        .column.span-1
+                        .column
+            .footer
+              - var code = `<div class="ga-grid">\n    <div class="column col-{number}" /> // column number\n    <div class="column col-{number}" /> // column number\n    ...\n    <div class="column col-{number}" /> // column number \n</div>`
+                pre
+                    code.language-markup
+                        | #{code}
