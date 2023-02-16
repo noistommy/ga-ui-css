@@ -3,91 +3,204 @@ section#list
         h1 List
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-            .ga-list
-                .item(draggable="true") Option 1
-                .item(draggable="true") Option 2
-                .item(draggable="true") Option 3
-                .item(draggable="true") Option 4
-                .item(draggable="true") Option 5
-                .item(draggable="true") Option 6
-                .item(draggable="true") Option 7
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list
+                    .item(draggable="true") Option 1
+                    .item(draggable="true") Option 2
+                    .item(draggable="true") Option 3
+                    .item(draggable="true") Option 4
+                    .item(draggable="true") Option 5
+                    .item(draggable="true") Option 6
+                    .item(draggable="true") Option 7
+            .footer
+                - var code_s = `<div class="ga-list">`
+                - var code_c_1 = `    <div class="item"> option1 </div>`
+                - var code_c_2 = `    <div class="item"> option2 </div>`
+                - var code_e = `    ...`
+                - var code_c_3 = `    <div class="item"> option3 </div>`
+                - var code_f = `</div>`
+                  pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
         h4.contents-title List Style
-        .contents-wrapper
-            .ga-list.ul
-                li.item Option 1
-                li.item Option 2
-                li.item Option 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list.ul
+                    li.item Option 1
+                    li.item Option 2
+                    li.item Option 3
+            .footer
+              - var code_s = `<div class="ga-list ul">`
+              - var code_c_1 = `    <div class="item"> option1 </div>`
+              - var code_c_2 = `    <div class="item"> option2 </div>`
+              - var code_e = `    ...`
+              - var code_c_3 = `    <div class="item"> option3 </div>`
+              - var code_f = `</div>`
+                pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
         h4.contents-title 선택된 아이템
-        .contents-wrapper
-            .ga-list.selection
-                .item.selected Option 1
-                .item Option 2
-                .item Option 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list.selection
+                    .item.selected Option 1
+                    .item Option 2
+                    .item Option 3
+            .footer
+              - var code_s = `<div class="ga-list selection">`
+              - var code_c_1 = `    <div class="item selected"> option1 </div>`
+              - var code_c_2 = `    <div class="item"> option2 </div>`
+              - var code_e = `    ...`
+              - var code_c_3 = `    <div class="item"> option3 </div>`
+              - var code_f = `</div>`
+                pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
         h4.contents-title Sub Title
-        .contents-wrapper
-            .ga-list
-                .item
-                    .item-title
-                        | Option 1
-                        .sub-title sub title is under the main Title
-                .item
-                    .item-title
-                        | Option 2
-                        .sub-title sub title is under the main Title
-                .item
-                    .item-title
-                        | Option 3
-                        .sub-title sub title is under the main Title
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list
+                    .item
+                        .item-title
+                            | Option 1
+                            .sub-title sub title is under the main Title
+                    .item
+                        .item-title
+                            | Option 2
+                            .sub-title sub title is under the main Title
+                    .item
+                        .item-title
+                            | Option 3
+                            .sub-title sub title is under the main Title
+            .footer
+              - var code_s = `<div class="ga-list">`
+              - var code_c_1 = `    <div class="item">\n         <div class="item-title">\n             option1\n             <div class="sub-title">sub text</div>\n         </div>\n    </div>`
+              - var code_c_2 = `    <div class="item">\n         <div class="item-title">\n             option2\n             <div class="sub-title">sub text</div>\n         </div>\n    </div>`
+              - var code_e = `    ...`
+              - var code_c_3 = `    <div class="item">\n         <div class="item-title">\n             option3\n             <div class="sub-title">sub text</div>\n         </div>\n    </div>`
+              - var code_f = `</div>`
+                pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
         h4.contents-title Icons
-        .contents-wrapper
-            .ga-list.selection
-                .item
-                    i.list-icon.icon.fa.fa-t-shirt
-                    .item-title Option 1
-                .item
-                    i.list-icon.icon.fa.fa-sun-bright
-                    .item-title Option 2
-                .item
-                    i.list-icon.icon.fa.fa-rabbit
-                    .item-title
-                        | Option 3
-                        .sub-title asdf
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list.selection
+                    .item
+                        i.list-icon.icon.fa.fa-t-shirt
+                        .item-title Option 1
+                    .item
+                        i.list-icon.icon.fa.fa-sun-bright
+                        .item-title Option 2
+                    .item
+                        i.list-icon.icon.fa.fa-rabbit
+                        .item-title
+                            | Option 3
+                            .sub-title asdf
+            .footer
+              - var code_s = `<div class="ga-list">`
+              - var code_c_1 = `    <div class="item">\n        <i class="list-icon icon fa fa-icon"></i>\n        <div class="item-title">option1</div>\n    </div>`
+              - var code_c_2 = `    <div class="item">\n        <i class="list-icon icon fa fa-icon"></i>\n        <div class="item-title">option2</div>\n    </div>`
+              - var code_e = `    ...`
+              - var code_c_3 = `    <div class="item">\n        <i class="list-icon icon fa fa-icon"></i>\n        <div class="item-title">option3</div>\n    </div>`
+              - var code_f = `</div>`
+                pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
         h4.contents-title Icons
-        .contents-wrapper
-            .ga-list
-                .item
-                    .item-title Option 1
-                    .btn-set
-                        .ga-button.icon.circle.outline.tiny
-                            i.fa.fa-plus
-                        .ga-button.icon.circle.outline.tiny
-                            i.fa.fa-minus
-                .item
-                    .item-title Option 2
-                    .btn-set
-                        .ga-button.icon.text
-                            i.fa.fa-plus
-                .item
-                    .item-title Option 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list
+                    .item
+                        .item-title Option 1
+                        .btn-set
+                            .ga-button.icon.circle.outline.tiny
+                                i.fa.fa-plus
+                            .ga-button.icon.circle.outline.tiny
+                                i.fa.fa-minus
+                    .item
+                        .item-title Option 2
+                        .btn-set
+                            .ga-button.icon.text
+                                i.fa.fa-plus
+                    .item
+                        .item-title Option 3
         h4.contents-title Bordered
-        .contents-wrapper
-            .ga-list.bordered
-                .item Option 1
-                .item Option 2
-                .item Option 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list.bordered
+                    .item Option 1
+                    .item Option 2
+                    .item Option 3
+            .footer
+              - var code_s = `<div class="ga-list bordered">`
+              - var code_c_1 = `    <div class="item"> option1 </div>`
+              - var code_c_2 = `    <div class="item"> option2 </div>`
+              - var code_e = `    ...`
+              - var code_c_3 = `    <div class="item"> option3 </div>`
+              - var code_f = `</div>`
+                pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
         h4.contents-title Image
-        .contents-wrapper
-            .ga-list
-                .item
-                    .item-img
-                        img(src="")
-                    .item-title Option 1
-                .item
-                    .item-img
-                        img(src="")
-                    .item-title Option 2
-                .item
-                    .item-img
-                        img(src="")
-                    .item-title Option 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-list
+                    .item
+                        .item-img
+                            img(src="")
+                        .item-title Option 1
+                    .item
+                        .item-img
+                            img(src="")
+                        .item-title Option 2
+                    .item
+                        .item-img
+                            img(src="")
+                        .item-title Option 3
+            .footer
+              - var code_s = `<div class="ga-list">`
+              - var code_c_1 = `    <div class="item">\n        <img src="{image_path}" />\n        <div class="item-title">option1</div>\n    </div>`
+              - var code_c_2 = `    <div class="item">\n        <img src="{image_path}" />\n        <div class="item-title">option2</div>\n    </div>`
+              - var code_e = `    ...`
+              - var code_c_3 = `    <div class="item">\n        <img src="{image_path}" />\n        <div class="item-title">option3</div>\n    </div>`
+              - var code_f = `</div>`
+                pre
+                    code.language-markup
+                        | #{code_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_f}
