@@ -259,7 +259,8 @@
   $textColor: #{nth($values, 1)};
   $hoverColor: #{nth($values, 2)};
   .ga-input {
-    //background-color: transparent;
+    background-color: transparent !important;
+    border: none !important;
     &.#{$color} {
       > input, > textarea {
         color: $textColor;

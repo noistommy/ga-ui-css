@@ -56,7 +56,7 @@ section#button.d-mode-border-color
           - var colors2 = [{name: 'deepblue', text: '짙은파랑'},{name: 'deeppurple', text: '짙은보라'},{name: 'purple', text: '보라'},{name: 'brown', text: '팥색'},{name: 'gray', text: '회색'}];
             .contents-wrapper
               each color in colors1
-                  button(class=`ga-button disabled ${color.name}`)=color.text
+                  button(class=`ga-button ${color.name}`)=color.text
             .contents-wrapper
               each color in colors2
                   button(class=`ga-button ${color.name}`)=color.text

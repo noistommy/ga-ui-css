@@ -59,9 +59,8 @@ const build = () => {
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(minifyCSS())
-    .pipe(dest('./dist'))
     .pipe(dest('./dist', {sourcemaps:false}))
+    .pipe(minifyCSS())
     .pipe(rename('gabiaui.css'))
     .pipe(dest('./example/build'))
 }
