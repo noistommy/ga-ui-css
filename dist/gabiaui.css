@@ -34625,10 +34625,10 @@ h5, .h5 {
 
 .container {
   /* Mobile - Portrait */
-  /* Mobile - Portrait */
-  /* Mobile - Portrait */
-  /* Mobile - Portrait */
-  /* Mobile - Portrait */
+  /* Mobile - Landscape */
+  /* Tablet */
+  /* Desktop */
+  /* Desktop - Large */
 }
 @media (max-width: 0) {
   .container {
@@ -34659,11 +34659,14 @@ h5, .h5 {
 }
 
 @media (prefers-color-scheme: light) {
-  section:after {
+  .page-wrapper {
+    position: relative;
+  }
+  .page-wrapper:after {
     content: "light";
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 9999;
     background-color: #333;
     color: #fff;
@@ -34671,11 +34674,14 @@ h5, .h5 {
   }
 }
 @media (prefers-color-scheme: dark) {
-  section:after {
+  .page-wrapper {
+    position: relative;
+  }
+  .page-wrapper:after {
     content: "Dark";
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 9999;
     background-color: #333;
     color: #fff;
@@ -36849,7 +36855,7 @@ h5, .h5 {
   display: inline-grid;
 }
 .ga-grid2.auto-fit {
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
 }
 .ga-grid2:last-child {
   margin: 0;
