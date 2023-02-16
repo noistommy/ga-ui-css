@@ -3,7 +3,6 @@
 import {series, parallel, src, dest, watch} from 'gulp'; // Gulp
 import gulpUtil from 'gulp-util'; // log 풀력을 위한 util 모듈
 import sassGlob from 'gulp-sass-glob';
-// import DartSass from 'sass';
 import sass from 'gulp-dart-sass';  // sass/scss -> css 빌드
 import autoprefixer from 'gulp-autoprefixer';
 import minifyCSS from 'gulp-clean-css'; // 최소화
@@ -62,6 +61,7 @@ const build = () => {
     .pipe(dest('./dist', {sourcemaps:false}))
     .pipe(minifyCSS())
     .pipe(rename('gabiaui.css'))
+    .pipe(minifyCSS())
     .pipe(dest('./example/build'))
 }
 // JS 빌드

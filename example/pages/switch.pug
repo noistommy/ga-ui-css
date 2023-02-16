@@ -8,6 +8,11 @@ section#switch
                 label.ga-switch.slide
                     input(type="checkbox", checked)
                     span.switch
+            .footer
+                - var code = `<label class="ga-switch slide">\n    <input type="checkbox" checked />\n    <span class="switch"/>\n</label>`
+                  pre
+                      code.language-markup
+                        | #{code}
     .section-contents
         h4.contents-title 기본 타입 2
         .ga-card.attached
@@ -15,6 +20,11 @@ section#switch
                 label.ga-switch.slide.inside
                     input(type="checkbox", checked)
                     span.switch
+            .footer
+              - var code = `<label class="ga-switch slide inside">\n    <input type="checkbox" checked />\n    <span class="switch"/>\n</label>`
+                pre
+                    code.language-markup
+                        | #{code}
     .section-contents
         h4.contents-title 둥그라미
         .ga-card.attached
@@ -26,6 +36,11 @@ section#switch
                 label.ga-switch.slide
                     input(type="checkbox", checked)
                     span.switch.round
+            .footer
+              - var code = `<label class="ga-switch slide">\n    <input type="checkbox" checked />\n    <span class="switch round"/>\n</label>`
+                pre
+                    code.language-markup
+                        | #{code}
     .section-contents
         h4.contents-title 버튼
         .ga-card.attached
@@ -39,3 +54,8 @@ section#switch
                     input(type="checkbox", checked)
                     span.on.active 승인
                     span.off 미승인
+            .footer
+              - var code = `<label class="ga-switch button">\n    <input type="checkbox" checked />\n    <span class="on active">ON</span>\n    <span class="off">OFF</span>\n</label>`
+                pre
+                    code.language-markup
+                        | #{code}
