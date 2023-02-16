@@ -12,7 +12,8 @@ block contents
         h1.h1.title  Style Guide
         include pages/base.pug
         include pages/colors.pug
-        include pages/button.pug
+        //- include pages/button.pug
+        a(href="/pages/button.html") BUTTON 
         include pages/input.pug
         include pages/tag.pug
         include pages/badge.pug
@@ -32,3 +33,6 @@ block contents
         include pages/panel.pug
         include pages/modal.pug
         include pages/toast.pug
+block js-source 
+    script(src="../prism/prism.js")
+    script(src="js/ga_ui.js")

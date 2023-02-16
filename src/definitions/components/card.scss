@@ -11,6 +11,8 @@
       margin-right: $cardHorizontalPadding * -1;
       margin-top: $cardVerticalPadding * -1;
       margin-bottom: $cardVerticalPadding;
+      background-color: $surface;
+      padding: ($cardVerticalPadding * 0.5) $cardHorizontalPadding
     }
     .footer {
       margin-left: $cardHorizontalPadding * -1;
@@ -18,6 +20,7 @@
       margin-bottom: $cardVerticalPadding * -1;
       margin-top: $cardVerticalPadding;
       background-color: $surface;
+      padding: ($cardVerticalPadding * 0.5) $cardHorizontalPadding
     }
   }
 }

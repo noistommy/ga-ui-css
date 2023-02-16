@@ -3,57 +3,157 @@ section#tabs
         h1 Tabs
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-            .ga-tabs
-                .tab-menu
-                    .tab-item.tab.active Item 1
-                    .tab-item.tab Item 2
-                    .tab-item.tab Item 3
-                    .tab-item.tab Item 4
-                    .tab-item.tab Item 5
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tabs
+                    .tab-menu
+                        .tab-item.tab.active Item 1
+                        .tab-item.tab Item 2
+                        .tab-item.tab Item 3
+                        .tab-item.tab Item 4
+                        .tab-item.tab Item 5
+            .footer
+                - var code_1_s = `<div class="ga-tabs">`
+                - var code_2_s = `      <div class="tab-menu">`
+                - var code_c_1 = `          <div class="tab-item tab active">Item 1</div>`
+                - var code_c_2 = `          <div class="tab-item tab">Item 2</div>`
+                - var code_e = `            ...`
+                - var code_c_3 = `          <div class="tab-item tab">Item n</div>`
+                - var code_2_f = `      </div>`
+                - var code_1_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_1_s}
+                        | #{code_2_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_2_f}
+                        | #{code_1_f}
         h4.contents-title Vertical
-        .contents-wrapper
-            .ga-tabs.vertical
-                .tab-menu
-                    .tab-item.tab.active Item 1
-                    .tab-item.tab Item 2
-                    .tab-item.tab Item 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tabs.vertical
+                    .tab-menu
+                        .tab-item.tab.active Item 1
+                        .tab-item.tab Item 2
+                        .tab-item.tab Item 3
+            .footer
+                - var code_1_s = `<div class="ga-tabs vertical">`
+                - var code_2_s = `      <div class="tab-menu">`
+                - var code_c_1 = `          <div class="tab-item tab active">Item 1</div>`
+                - var code_c_2 = `          <div class="tab-item tab">Item 2</div>`
+                - var code_e = `            ...`
+                - var code_c_3 = `          <div class="tab-item tab">Item n</div>`
+                - var code_2_f = `      </div>`
+                - var code_1_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_1_s}
+                        | #{code_2_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_2_f}
+                        | #{code_1_f}
         h4.contents-title Active (Line)
-        .contents-wrapper
-            .ga-tabs.line
-                .tab-menu
-                    .tab-item.tab.active Item 1
-                    .tab-item.tab Item 2
-                    .tab-item.tab Item 3
-                    .tab-item.tab Item 4
-                    .tab-item.tab Item 5
-        .contents-wrapper
-            .ga-tabs.line.vertical
-                .tab-menu
-                    .tab-item.tab.active Item 1
-                    .tab-item.tab Item 2
-                    .tab-item.tab Item 3
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tabs.line
+                    .tab-menu
+                        .tab-item.tab.active Item 1
+                        .tab-item.tab Item 2
+                        .tab-item.tab Item 3
+                        .tab-item.tab Item 4
+                        .tab-item.tab Item 5
+            .contents-wrapper
+                .ga-tabs.line.vertical
+                    .tab-menu
+                        .tab-item.tab.active Item 1
+                        .tab-item.tab Item 2
+                        .tab-item.tab Item 3
+            .footer
+                - var code_1_s = `<div class="ga-tabs line">`
+                - var code_2_s = `      <div class="tab-menu">`
+                - var code_c_1 = `          <div class="tab-item tab active">Item 1</div>`
+                - var code_c_2 = `          <div class="tab-item tab">Item 2</div>`
+                - var code_e = `            ...`
+                - var code_c_3 = `          <div class="tab-item tab">Item n</div>`
+                - var code_2_f = `      </div>`
+                - var code_1_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_1_s}
+                        | #{code_2_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_2_f}
+                        | #{code_1_f}
         h4.contents-title Active (Button)
-        .contents-wrapper
-            .ga-tabs.button
-                .tab-menu
-                    .tab-item.tab.active Item 1
-                    .tab-item.tab Item 2
-                    .tab-item.tab Item 3
-                    .tab-item.tab Item 4
-                    .tab-item.tab Item 5
-                .tab-contents
-                    | tab contents
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tabs.button
+                    .tab-menu
+                        .tab-item.tab.active Item 1
+                        .tab-item.tab Item 2
+                        .tab-item.tab Item 3
+                        .tab-item.tab Item 4
+                        .tab-item.tab Item 5
+                    .tab-contents
+                        | tab contents
+            .footer
+                - var code_1_s = `<div class="ga-tabs button">`
+                - var code_2_s = `      <div class="tab-menu">`
+                - var code_c_1 = `          <div class="tab-item tab active">Item 1</div>`
+                - var code_c_2 = `          <div class="tab-item tab">Item 2</div>`
+                - var code_e = `            ...`
+                - var code_c_3 = `          <div class="tab-item tab">Item n</div>`
+                - var code_2_f = `      </div>`
+                - var code_1_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_1_s}
+                        | #{code_2_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_2_f}
+                        | #{code_1_f}
         h4.contents-title Browser Tab
-        .contents-wrapper
-            .ga-tabs.browser
-                - var tabMenu = [1, 2, 3, 4, 5]
-                .tab-menu
-                    each tab in tabMenu
-                        .tab-item.tab
-                            span.tabText.ellipsis=`Item ${tab}`
-                            .btn-close.ga-button.icon.tiny.circle
-                                i.fa.fa-close
-                .tab-contents
-                    .tab-plus.ga-button.icon.primary ADD
-                        i.icon.right.fa.fa-plus
+        .ga-card.attached
+            .contents-wrapper
+                .ga-tabs.browser
+                    - var tabMenu = [1, 2, 3, 4, 5]
+                    .tab-menu
+                        each tab in tabMenu
+                            .tab-item.tab
+                                span.tabText.ellipsis=`Item ${tab}`
+                                .btn-close.ga-button.icon.tiny.circle
+                                    i.fa.fa-close
+                    .tab-contents
+                        .tab-plus.ga-button.icon.primary ADD
+                            i.icon.right.fa.fa-plus
+            .footer
+                - var code_1_s = `<div class="ga-tabs browser">`
+                - var code_2_s = `      <div class="tab-menu">`
+                - var code_c_1 = `          <div class="tab-item tab active">\n             <span class="tabText ellipsis">Item 1</span>\n             <span class="btn-close"><i class="fa fa-colse" /></span>\n          </div>`
+                - var code_c_2 = `          <div class="tab-item tab">\n            <span class="tabText ellipsis">Item 2</span>\n            <span class="btn-close"><i class="fa fa-colse" /></span>\n          </div>`
+                - var code_e = `            ...`
+                - var code_c_3 = `          <div class="tab-item tab">\n            <span class="tabText ellipsis">Item N</span>\n            <span class="btn-close"><i class="fa fa-colse" /></span>\n          </div>`
+                - var code_2_f = `      </div>`
+                - var code_1_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_1_s}
+                        | #{code_2_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_e}
+                        | #{code_c_3}
+                        | #{code_2_f}
+                        | #{code_1_f}

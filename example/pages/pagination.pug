@@ -3,122 +3,260 @@ section#pagination
         h1 Pagination
     .section-contents
         h4.contents-title 기본
-        .contents-wrapper
-           .ga-pagination
-               - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-               .pagination-nav
-                   i.fa.fa-chevron-left
-               .pagination-page-wrapper
-                   .pagination-num.active 1
-                   each item in items
-                       .pagination-num=`${item}`
-               .pagination-nav
-                   i.fa.fa-chevron-right
+        .ga-card.attached
+            .contents-wrapper
+                .ga-pagination
+                    - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        each item in items
+                            .pagination-num=`${item}`
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .footer 
+                - var code_s = `<div class="ga-pagination">`
+                - var code_c_l = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_c_s = `      <div class="pagination-page-wrapper">`
+                - var code_c_1 = `          <div class="pagination-num"> {n} </div>`
+                - var code_c_2 = `          ... ...`
+                - var code_c_f = `      </div>`
+                - var code_c_r = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_s}
+                        | #{code_c_l}
+                        | #{code_c_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_c_f}
+                        | #{code_c_r}
+                        | #{code_f}
     .section-contents
         h4.contents-title 기본 (표시 수 제한)
-        .contents-wrapper
-            .ga-pagination
-                - var items = [2, 3, 4]
-                .pagination-nav
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.active 1
-                    .pagination-num.block-preview
-                        i.fa.fa-ellipsis
-                    each item in items
-                        .pagination-num=`${item}`
-                    .pagination-num.block-next
-                        i.fa.fa-ellipsis
-                    .pagination-num 10
-                .pagination-nav
-                    i.fa.fa-chevron-right
+        .ga-card.attached
+            .contents-wrapper
+                .ga-pagination
+                    - var items = [2, 3, 4]
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        .pagination-num.block-preview
+                            i.fa.fa-ellipsis
+                        each item in items
+                            .pagination-num=`${item}`
+                        .pagination-num.block-next
+                            i.fa.fa-ellipsis
+                        .pagination-num 10
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .footer 
+                - var code_s = `<div class="ga-pagination">`
+                - var code_c_l = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_c_s = `      <div class="pagination-page-wrapper">`
+                - var code_c_1 = `          <div class="pagination-num"> 1 </div>`
+                - var code_c_2 = `          <div class="pagination-num block-prev"><i class="fa fa-ellipsis" /></div>`
+                - var code_c_3 = `          <div class="pagination-num"> {n} </div>`
+                - var code_c_e = `          ... ...`
+                - var code_c_4 = `          <div class="pagination-num block-next"><i class="fa fa-ellipsis" /></div>`
+                - var code_c_5 = `          <div class="pagination-num"> {Last num} </div>`
+                - var code_c_f = `      </div>`
+                - var code_c_r = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_s}
+                        | #{code_c_l}
+                        | #{code_c_s}
+                        | #{code_c_1}
+                        | #{code_c_2}
+                        | #{code_c_3}
+                        | #{code_c_e}
+                        | #{code_c_4}
+                        | #{code_c_5}
+                        | #{code_c_f}
+                        | #{code_c_r}
+                        | #{code_f}
     .section-contents
         h4.contents-title 버튼 스타일
-        .contents-wrapper
-            .ga-pagination.number.circle
-                - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-                .pagination-nav
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.active 1
-                    each item in items
-                        .pagination-num=`${item}`
-                .pagination-nav
-                    i.fa.fa-chevron-right
+        .ga-card.attached
+            .contents-wrapper
+                .ga-pagination.number.circle
+                    - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        each item in items
+                            .pagination-num=`${item}`
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .footer 
+                - var code_s = `<div class="ga-pagination number circle">`
+                - var code_c_l = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_c_s = `      <div class="pagination-page-wrapper">`
+                - var code_c_e = `          ... ...`
+                - var code_c_f = `      </div>`
+                - var code_c_r = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_s}
+                        | #{code_c_l}
+                        | #{code_c_s}
+                        | #{code_c_e}
+                        | #{code_c_f}
+                        | #{code_c_r}
+                        | #{code_f}
     .section-contents
         h4.contents-title 사용자 스타일
-        .contents-wrapper
-            .ga-pagination.number
-                - var items = [2, 3, 4]
-                .pagination-nav.pagination-item
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.pagination-item.active 1
-                    .pagination-num.pagination-item.block-preview
-                        i.fa.fa-ellipsis
-                    each item in items
-                        .pagination-num.pagination-item=`${item}`
-                    .pagination-num.pagination-item.block-next
-                        i.fa.fa-ellipsis
-                    .pagination-num.pagination-item 1000
-                .pagination-nav.pagination-item
-                    i.fa.fa-chevron-right
+        .ga-card.attached
+            .contents-wrapper
+                .ga-pagination.number
+                    - var items = [2, 3, 4]
+                    .pagination-nav.pagination-item
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.pagination-item.active 1
+                        .pagination-num.pagination-item.block-preview
+                            i.fa.fa-ellipsis
+                        each item in items
+                            .pagination-num.pagination-item=`${item}`
+                        .pagination-num.pagination-item.block-next
+                            i.fa.fa-ellipsis
+                        .pagination-num.pagination-item 1000
+                    .pagination-nav.pagination-item
+                        i.fa.fa-chevron-right
+            .footer 
+                - var code_s = `<div class="ga-pagination number">`
+                - var code_c_l = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_c_s = `      <div class="pagination-page-wrapper">`
+                - var code_c_e = `          ... ...`
+                - var code_c_f = `      </div>`
+                - var code_c_r = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_s}
+                        | #{code_c_l}
+                        | #{code_c_s}
+                        | #{code_c_e}
+                        | #{code_c_f}
+                        | #{code_c_r}
+                        | #{code_f}
     .section-contents
         h4.contents-title 페이지 타입
-        .contents-wrapper
-            .ga-pagination.page
-                .pagination-nav.pagination-item
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-info 1/10
-                .pagination-nav.pagination-item
-                    i.fa.fa-chevron-right
+        .ga-card.attached
+            .contents-wrapper
+                .ga-pagination.page
+                    .pagination-nav.pagination-item
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-info 1/10
+                    .pagination-nav.pagination-item
+                        i.fa.fa-chevron-right
+            .footer 
+                - var code_s = `<div class="ga-pagination page">`
+                - var code_c_l = `      <div class="pagination-nav pagination-item"><i class="fa fa-chevron-left" /></div>`
+                - var code_c_s = `      <div class="pagination-page-wrapper">`
+                - var code_c_e = `          <div class="pagination-info"> 1/10 </div>`
+                - var code_c_f = `      </div>`
+                - var code_c_r = `      <div class="pagination-nav pagination-item"><i class="fa fa-chevron-left" /></div>`
+                - var code_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_s}
+                        | #{code_c_l}
+                        | #{code_c_s}
+                        | #{code_c_e}
+                        | #{code_c_f}
+                        | #{code_c_r}
+                        | #{code_f}
     .section-contents
         h4.contents-title 조그맣게
-        .contents-wrapper
-            .ga-pagination.compact.number
-                - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-                .pagination-nav
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.active 1
-                    each item in items
-                        .pagination-num=`${item}`
-                .pagination-nav
-                    i.fa.fa-chevron-right
+        .ga-card.attached
+            .contents-wrapper
+                .ga-pagination.compact.number
+                    - var items = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        each item in items
+                            .pagination-num=`${item}`
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .footer 
+                - var code_s = `<div class="ga-pagination number compact">`
+                - var code_c_l = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_c_s = `      <div class="pagination-page-wrapper">`
+                - var code_c_e = `          ... ...`
+                - var code_c_f = `      </div>`
+                - var code_c_r = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                - var code_f = `  </div>`
+                pre 
+                    code.language-markup 
+                        | #{code_s}
+                        | #{code_c_l}
+                        | #{code_c_s}
+                        | #{code_c_e}
+                        | #{code_c_f}
+                        | #{code_c_r}
+                        | #{code_f}
     .section-contents
         h4.contents-title 정렬
-        - var items = [2, 3, 4, 5]
-        .contents-wrapper
-            h5 LEFT
-            .ga-pagination.number.align-left
-                .pagination-nav
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.active 1
-                    each item in items
-                        .pagination-num=`${item}`
-                .pagination-nav
-                    i.fa.fa-chevron-right
-        .contents-wrapper
-            h5 CENTER
-            .ga-pagination.number.align-center
-                .pagination-nav
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.active 1
-                    each item in items
-                        .pagination-num=`${item}`
-                .pagination-nav
-                    i.fa.fa-chevron-right
-        .contents-wrapper
-            h5 RIGHT
-            .ga-pagination.number.align-right
-                .pagination-nav
-                    i.fa.fa-chevron-left
-                .pagination-page-wrapper
-                    .pagination-num.active 1
-                    each item in items
-                        .pagination-num=`${item}`
-                .pagination-nav
-                    i.fa.fa-chevron-right
+        .ga-card.attached
+            - var items = [2, 3, 4, 5]
+            .contents-wrapper
+                h5 LEFT
+                .ga-pagination.number.align-left
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        each item in items
+                            .pagination-num=`${item}`
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .contents-wrapper
+                h5 CENTER
+                .ga-pagination.number.align-center
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        each item in items
+                            .pagination-num=`${item}`
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .contents-wrapper
+                h5 RIGHT
+                .ga-pagination.number.align-right
+                    .pagination-nav
+                        i.fa.fa-chevron-left
+                    .pagination-page-wrapper
+                        .pagination-num.active 1
+                        each item in items
+                            .pagination-num=`${item}`
+                    .pagination-nav
+                        i.fa.fa-chevron-right
+            .footer 
+                    - var code_s = `<div class="ga-pagination number align-{left | center | right}">`
+                    - var code_c_l = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                    - var code_c_s = `      <div class="pagination-page-wrapper">`
+                    - var code_c_e = `          ... ...`
+                    - var code_c_f = `      </div>`
+                    - var code_c_r = `      <div class="pagination-nav"><i class="fa fa-chevron-left" /></div>`
+                    - var code_f = `  </div>`
+                    pre 
+                        code.language-markup 
+                            | #{code_s}
+                            | #{code_c_l}
+                            | #{code_c_s}
+                            | #{code_c_e}
+                            | #{code_c_f}
+                            | #{code_c_r}
+                            | #{code_f}
