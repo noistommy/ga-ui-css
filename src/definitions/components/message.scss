@@ -1,0 +1,88 @@
+.ga-message {
+    padding: 15px 20px;
+    border-radius: 4px;
+    background-color: var(--bgc);
+    border: 1px solid var(--brd);
+    color: #999;
+    margin-bottom: 5px;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: var(--suf);
+    }
+
+    &.align {
+        &-left {
+            text-align: left;
+        }
+
+        &-center {
+            text-align: center;
+        }
+
+        &-right {
+            text-align: right;
+        }
+    }
+}
+
+.ga-messages {
+    display: flex;
+    gap: 8px;
+
+    &.list {
+        flex-direction: column;
+    }
+
+    .ga-message {
+        &.selected {
+            color: $primary;
+            background-color: var(--suf1);
+            border-color: $primary
+        }
+
+        &:hover {
+            background-color: var(--suf1);
+        }
+
+        &.disabled {
+            pointer-events: none;
+            color: #d4d4d4;
+            background-color: #ededed;
+            border-color: #ccc;
+        }
+    }
+
+    &.grid {
+        .column {
+            &.col {
+                @for $i from 1 through $gridWhole {
+                    &-#{$i} {
+                        width: $gridPercent * $i * 1%;
+                    }
+                }
+            }
+        }
+
+        &.divide {
+            @for $i from 1 through $gridWhole {
+                &-#{$i}>.column {
+                    width: calc(100% / $i)
+                }
+            }
+        }
+    }
+}
+
+@each $color, $value in $stateColors {
+    .ga-message {
+        &.#{$color} {
+            background-color: lighten(nth($value, 4), 6) !important;
+            color: nth($value, 1) !important;
+            border-color: nth($value, 1) !important;
+        }
+    }
+}

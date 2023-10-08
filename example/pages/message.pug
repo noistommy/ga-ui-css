@@ -1,0 +1,36 @@
+extends ../page_layout.pug
+
+block title
+    title Ga-UI BUTTON
+
+block contents
+    .page-wrapper
+        section#alert
+            .section-title
+                h1 Message
+            .section-contents
+                h4.contents-title 기본
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-message contents
+                        .ga-message 
+                            .msg-title.bold Title
+                            .msg-contents contents
+                    .footer 
+                        - var code = `<div class="ga-message">\n        // contents\n  </div>`
+                        pre 
+                            code.language-markup 
+                                | #{code}
+                h4.contents-title 상태
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-message.success Success
+                        .ga-message.danger Danger
+                        .ga-message.info Info
+                        .ga-message.attention Attention
+                        .ga-message.importance Importance
+                    .footer 
+                        - var code = `<div class="ga-message { status }">\n        // contents\n  </div>`
+                        pre 
+                            code.language-markup 
+                                | #{code}

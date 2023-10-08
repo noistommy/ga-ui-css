@@ -8,7 +8,7 @@ input, select, textarea, button {vertical-align:middle}
 input::-ms-clear {display:none}
 button {border:0 none;background-color:transparent;cursor:pointer}
 body {direction:ltr;-webkit-text-size-adjust:none}
-body, h1, h2, h3, h4, th, td, input, select, textarea, button, a, pre {color:inherit;font-size:1em;line-height:1.5;font-weight:400;font-family:$fontName,$fontNameKr,'Apple SD Gothic Neo','돋움',dotum, sans-serif}
+body, h1, h2, h3, h4, th, td, input, select, textarea, button, a, pre {color:inherit;font-size:1em;line-height:1.5;font-weight:400;font-family: $fontName,'Apple SD Gothic Neo','돋움',dotum, sans-serif}
 a {text-decoration:none; display: inline-block;}
 a:hover {text-decoration:none}
 a:active {background-color:transparent}

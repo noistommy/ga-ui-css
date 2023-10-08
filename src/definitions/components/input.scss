@@ -1,9 +1,14 @@
+@use 'sass:map';
+:root.light-mode {
+  --input-brd-hover: #{map.get($grays, 'gray-20')};
+}
 
+:root.dark-mode {
+  --input-brd-hover: #{map.get($grays, 'gray-80')};
+}
 .ga-input {
   position: relative;
   display: inline-flex;
-  //display: flex;
-  //vertical-align: middle;
   max-width: 100%;
   font-size: 1em;
   input, textarea, .input {
@@ -12,7 +17,8 @@
     padding: $inputPadding;
     line-height: $inputLineHeight;
     font-weight: 400;
-    border: 1px solid var(--brd);
+    border: 1px solid;
+    border-color: var(--brd);
     background-color: var(--bgc);
     color: var(--txt);
     transition-duration: .2s;
@@ -21,7 +27,7 @@
     flex: 1 0 auto;
     max-width: 100%;
     &:hover {
-      border-color: #c0c4cc;
+      border-color: var(--input-brd-hover);
     }
     &:focus {
       border-color: $primary;
@@ -31,7 +37,7 @@
     }
     &::placeholder {
       font-weight: 100;
-      color: #c4c4c4;
+      // color: #c4c4c4;
       opacity: 0.5;
     }
     &.align {
@@ -57,7 +63,8 @@
     background: transparent;
     border-radius: 0;
     border: 0;
-    border-bottom: 1px solid var(--brd);
+    border-bottom: 1px solid;
+    border-color: var(--brd);
     &:focus {
       border-color: $primary
     }
@@ -67,7 +74,7 @@
       background: transparent;
       border-color: transparent;
       &:hover {
-        border: 1px dashed var(--brd);
+        border: 1px dashed var(--input-brd-hover);
       }
       &:focus {
         border: 1px solid $primary;

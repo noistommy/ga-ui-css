@@ -1,8 +1,4 @@
-const buttons = document.querySelectorAll('.ga-buttons');
 
-buttons.forEach(elem => {
-    elem.addEventListener('click', e => {selectButtons(e.target, elem)})
-})
 
 function selectButtons(e, t) {
     const buttonList = t.querySelectorAll('.ga-button')
@@ -12,4 +8,12 @@ function selectButtons(e, t) {
             btn.classList.add('selected')
         }
     }
+}
+
+function useSelectButton() {
+    const buttons = document.querySelectorAll('.ga-buttons');
+
+    buttons.forEach(elem => {
+        elem.addEventListener('click', e => { selectButtons(e.target, elem) })
+    })
 }

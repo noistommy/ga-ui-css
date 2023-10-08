@@ -1,0 +1,1 @@
+function selectButtons(e,t){var c;for(c of t.querySelectorAll(".ga-button"))c.classList.remove("selected"),c===e&&c.classList.add("selected")}function useSelectButton(){document.querySelectorAll(".ga-buttons").forEach(t=>{t.addEventListener("click",e=>{selectButtons(e.target,t)})})}

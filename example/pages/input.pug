@@ -1,218 +1,229 @@
-section#input
-    .section-title
-        h1 Inputs
-        .section-desc - Input System.
-    .section-contents
-        h4.contents-title 기본
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Disabled
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.disabled
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input disabled">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Read only
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.readonly
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input disabled">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Underline
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.underline
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input underline">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Transparent
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.transparent
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input transparent">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Compact
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.compact
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input compact">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Edit
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.edit
-                    input(type="text", placeholder="입력하세요", value="원래 값")
-                .ga-button.icon.circle.edit-btn
-                    i.fa.fa-pen
-            .footer
-              - var code = '<div class="ga-input edit">\n    <input type="text" placeholder="입력하세요" />\n    <button class="ga-button icon edit-btn">\n        <i class="fa fa-pen"></i>\n    </button>\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Status
-        .ga-card.attached
-            .contents-wrapper
-                .ga-grid.divide-5
-                    .column
-                        .ga-input.success
-                            input(type="text", placeholder="성공")
-                    .column
-                        .ga-input.danger
-                            input(type="text", placeholder="에러발생")
-                    .column
-                        .ga-input.info
-                            input(type="text", placeholder="정보")
-                    .column
-                        .ga-input.attention
-                            input(type="text", placeholder="경고")
-                    .column
-                        .ga-input.importance
-                            input(type="text", placeholder="중요")
-            .footer
-              - var code = '<div class="ga-input { STATUS }">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Fluid
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.fluid
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input fluid">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Unit
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.unit(data-unit='대')
-                    input.align-right(type="text", placeholder="0")
-            .footer
-              - var code = '<div class="ga-input unit" data-unit="{ unit text }">\n    <input type="text" placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Icon
-        .ga-card.attached
-            .contents-wrapper
-                .ga-grid.divide-4
-                    .column
-                        | Left
-                        .ga-input.icon.left
+extends ../page_layout.pug
+
+block title
+    title Ga-UI INPUT
+
+block contents
+    .page-wrapper
+        section#input
+            .section-title
+                h1 Inputs
+                .section-desc - Input System.
+            .section-contents
+                h4.contents-title 기본
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input
                             input(type="text", placeholder="입력하세요")
-                            i.icon.fa.fa-magnifying-glass
-                    .column
-                        | Right
-                        .ga-input.icon.right.link
+                    .footer
+                        - var code = '<div class="ga-input">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Disabled
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.disabled
                             input(type="text", placeholder="입력하세요")
-                            i.icon.fa.fa-magnifying-glass.circle
-                    .column
-                        | Both
-                        .ga-input.icon.both
-                            i.icon.fa.fa-magnifying-glass
+                    .footer
+                        - var code = '<div class="ga-input disabled">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Read only
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.readonly
                             input(type="text", placeholder="입력하세요")
-                            i.icon.fa.fa-chevron-up
-            .footer
-              - var code = '<div class="ga-input icon left">\n    <input type="text" placeholder="입력하세요" />\n    <i class="fa fa-icon"></i>\n</div>'
-              - var code1 = '<div class="ga-input icon right link">\n    <input type="text" placeholder="입력하세요" />\n    <i class="fa fa-icon"></i>\n</div>'
-              - var code2 = '<div class="ga-input icon both">\n    <i class="fa fa-icon"></i>\n    <input type="text" placeholder="입력하세요" />\n    <i class="fa fa-icon"></i>\n</div>'
-                pre
-                    code.language-markup
-                        | // Left
-                        | #{code}
-                        | // Right + Icon link 연결
-                        | #{code1}
-                        | // Both
-                        | #{code2}
-        h4.contents-title Badge
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.badge
-                    input(type="text", placeholder="입력하세요")
-                    .ga-badge.secondary 30
-            .footer
-              - var code = '<div class="ga-input badge">\n    <input type="text" placeholder="입력하세요" />\n    <span class="ga-badge">B</span>\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Label
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.labeled.right.inline
-                    input(type="text", placeholder="입력하세요")
-                    label 원
-                .ga-input.labeled.right.inline
-                    input(type="text", placeholder="입력하세요")
-                    label.outline 0/30
-                .ga-input.labeled.left.inline
-                    label Name
-                    input(type="text", placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input labeled left">\n    <input type="text" placeholder="입력하세요" />\n    <label>Label Text</label>\n</div>'
-              - var code1 = '<div class="ga-input labeled right">\n    <input type="text" placeholder="입력하세요" />\n    <label>Label Text</label>\n</div>'
-                pre
-                    code.language-markup
-                        | // Left
-                        | #{code}
-                        | // Right
-                        | #{code1}
-        h4.contents-title Button
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.button.left
-                    input(type="text", placeholder="입력하세요")
-                    .ga-button 저장
-                .ga-input.button.right
-                    input(type="text", placeholder="입력하세요")
-                    .ga-button.icon
-                        i.fal.fa-copy
-            .footer
-              - var code = '<div class="ga-input button left">\n    <input type="text" placeholder="입력하세요" />\n    <button class="ga-button">Button Text</button>\n</div>'
-              - var code1 = '<div class="ga-input button right">\n    <input type="text" placeholder="입력하세요" />\n    <button class="ga-button">Button Text</button>\n</div>'
-                pre
-                    code.language-markup
-                        | // Left
-                        | #{code}
-                        | // Right
-                        | #{code1}
-        h4.contents-title Textarea
-        .ga-card.attached
-            .contents-wrapper
-                .ga-input.fluid
-                    textarea(placeholder="입력하세요")
-                .ga-input.short.fluid
-                    textarea(placeholder="입력하세요")
-            .footer
-              - var code = '<div class="ga-input">\n    <textarea placeholder="입력하세요" />\n</div>'
-              - var code1 = '<div class="ga-input short">\n    <textarea placeholder="입력하세요" />\n</div>'
-                pre
-                    code.language-markup
-                        | #{code}
-                        | #{code1}
+                    .footer
+                        - var code = '<div class="ga-input disabled">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Underline
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.underline
+                            input(type="text", placeholder="입력하세요")
+                    .footer
+                        - var code = '<div class="ga-input underline">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Transparent
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.transparent
+                            input(type="text", placeholder="입력하세요")
+                    .footer
+                        - var code = '<div class="ga-input transparent">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Compact
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.compact
+                            input(type="text", placeholder="입력하세요")
+                    .footer
+                        - var code = '<div class="ga-input compact">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Edit
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.edit
+                            input(type="text", placeholder="입력하세요", value="원래 값")
+                        .ga-button.icon.circle.edit-btn
+                            i.fa.fa-pen
+                    .footer
+                        - var code = '<div class="ga-input edit">\n    <input type="text" placeholder="입력하세요" />\n    <button class="ga-button icon edit-btn">\n        <i class="fa fa-pen"></i>\n    </button>\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Status
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid.divide-5
+                            .column
+                                .ga-input.success
+                                    input(type="text", placeholder="성공")
+                            .column
+                                .ga-input.danger
+                                    input(type="text", placeholder="에러발생")
+                            .column
+                                .ga-input.info
+                                    input(type="text", placeholder="정보")
+                            .column
+                                .ga-input.attention
+                                    input(type="text", placeholder="경고")
+                            .column
+                                .ga-input.importance
+                                    input(type="text", placeholder="중요")
+                    .footer
+                        - var code = '<div class="ga-input { STATUS }">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Fluid
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.fluid
+                            input(type="text", placeholder="입력하세요")
+                    .footer
+                        - var code = '<div class="ga-input fluid">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Unit
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.unit(data-unit='대')
+                            input.align-right(type="text", placeholder="0")
+                    .footer
+                        - var code = '<div class="ga-input unit" data-unit="{ unit text }">\n    <input type="text" placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Icon
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid.divide-4
+                            .column
+                                | Left
+                                .ga-input.icon.left
+                                    input(type="text", placeholder="입력하세요")
+                                    i.icon.fa.fa-magnifying-glass
+                            .column
+                                | Right
+                                .ga-input.icon.right.link
+                                    input(type="text", placeholder="입력하세요")
+                                    i.icon.fa.fa-magnifying-glass.circle
+                            .column
+                                | Both
+                                .ga-input.icon.both
+                                    i.icon.fa.fa-magnifying-glass
+                                    input(type="text", placeholder="입력하세요")
+                                    i.icon.fa.fa-chevron-up
+                    .footer
+                        - var code = '<div class="ga-input icon left">\n    <input type="text" placeholder="입력하세요" />\n    <i class="fa fa-icon"></i>\n</div>'
+                        - var code1 = '<div class="ga-input icon right link">\n    <input type="text" placeholder="입력하세요" />\n    <i class="fa fa-icon"></i>\n</div>'
+                        - var code2 = '<div class="ga-input icon both">\n    <i class="fa fa-icon"></i>\n    <input type="text" placeholder="입력하세요" />\n    <i class="fa fa-icon"></i>\n</div>'
+                            pre
+                                code.language-markup
+                                    | // Left
+                                    | #{code}
+                                    | // Right + Icon link 연결
+                                    | #{code1}
+                                    | // Both
+                                    | #{code2}
+                h4.contents-title Badge
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.badge
+                            input(type="text", placeholder="입력하세요")
+                            .ga-badge.secondary 30
+                    .footer
+                        - var code = '<div class="ga-input badge">\n    <input type="text" placeholder="입력하세요" />\n    <span class="ga-badge">B</span>\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Label
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.labeled.right.inline
+                            input(type="text", placeholder="입력하세요")
+                            label 원
+                        .ga-input.labeled.right.inline
+                            input(type="text", placeholder="입력하세요")
+                            label.outline 0/30
+                        .ga-input.labeled.left.inline
+                            label Name
+                            input(type="text", placeholder="입력하세요")
+                    .footer
+                        - var code = '<div class="ga-input labeled left">\n    <input type="text" placeholder="입력하세요" />\n    <label>Label Text</label>\n</div>'
+                        - var code1 = '<div class="ga-input labeled right">\n    <input type="text" placeholder="입력하세요" />\n    <label>Label Text</label>\n</div>'
+                            pre
+                                code.language-markup
+                                    | // Left
+                                    | #{code}
+                                    | // Right
+                                    | #{code1}
+                h4.contents-title Button
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.button.left
+                            input(type="text", placeholder="입력하세요")
+                            .ga-button 저장
+                        .ga-input.button.right
+                            input(type="text", placeholder="입력하세요")
+                            .ga-button.icon
+                                i.fal.fa-copy
+                    .footer
+                        - var code = '<div class="ga-input button left">\n    <input type="text" placeholder="입력하세요" />\n    <button class="ga-button">Button Text</button>\n</div>'
+                        - var code1 = '<div class="ga-input button right">\n    <input type="text" placeholder="입력하세요" />\n    <button class="ga-button">Button Text</button>\n</div>'
+                            pre
+                                code.language-markup
+                                    | // Left
+                                    | #{code}
+                                    | // Right
+                                    | #{code1}
+                h4.contents-title Textarea
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-input.fluid
+                            textarea(placeholder="입력하세요")
+                        .ga-input.short.fluid
+                            textarea(placeholder="입력하세요")
+                    .footer
+                        - var code = '<div class="ga-input">\n    <textarea placeholder="입력하세요" />\n</div>'
+                        - var code1 = '<div class="ga-input short">\n    <textarea placeholder="입력하세요" />\n</div>'
+                            pre
+                                code.language-markup
+                                    | #{code}
+                                    | #{code1}
+block module 
+    script(src="../js/input.js")
+    script. 
+        useEditInput();

@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 @function relativePx($number) {
     @return calc($number/14)*1em
 };
@@ -6,13 +8,30 @@
     @return calc($number/14)*1rem
 };
 
-$white: #ffffff;
-$black: #333333;
+$grays: (
+    "gray-0": #ffffff,
+    "gray-5": #f2f2f2,
+    "gray-10": #e9e9e9,
+    "gray-15": #dfdfdf,
+    "gray-20": #cccccc,
+    "gray-30": #b9b9b9,
+    "gray-40": #a6a6a6,
+    "gray-50": #939393,
+    "gray-60": #808080,
+    "gray-70": #6c6c6c,
+    "gray-80": #595959,
+    "gray-85": #464646,
+    "gray-90": #3d3d3d,
+    "gray-95": #333333,
+    "gray-100": #000000,
+);
+$white: map.get($grays, 'gray-0');
+$black: map.get($grays, 'gray-95');
+
 //
 //font family
 //
 $fontName: 'Spoqa Han Sans';
-$fontNameKr: '';
 $fontSmoothing: antialiased;
 $baseFontColor: $black;
 $dModeBaseFontColor: $white;
@@ -56,13 +75,21 @@ $dModeBackground: #333333;
 // colors
 //
 
-$primary: #3c79b8;
+// $primary: #3c79b8;
+$primary: #6d9d72;
 $secondary: #35363a;
 
+$success: #528E64;
 $info: #909090;
 $danger: #D50000;
 $attention: #EC6E00;
 $importance: #FDC036;
+
+$lightSuccess: #CBE1D2;
+$lightInfo: #D4E9ED;
+$lightDanger: #FBE0DA;
+$lightAttention: #FFE9D6;
+$lightImportance: #FFF3D7;
 
 $primaryText: $white;
 $secondaryText: $white;
@@ -83,6 +110,9 @@ $darkPrimary: darken(saturate($primary, 23.9), 10.6);
 $darkSecondary: darken($secondary, 35.7);
 $darkerPrimary: darken(saturate($primary, 28.8), 20.8);
 $darkerSecondary: darken($secondary, 58.1);
+
+$lightPrimary: lighten($primary, 35);
+$lightSecondary: lighten($secondary, 35);
 
 $surface1: #F8F8F8;
 $surface2: #EFF4FC;
@@ -108,12 +138,16 @@ $brandColors: (
 );
 
 $stateColors: (
-        'success': ($greenColor, darken($greenColor, 10), $white),
-        'info': ($info, darken($info, 10), $infoText),
-        'danger': ($danger, darken($danger, 10), $dangerText),
-        'attention': ($attention, darken($attention, 10), $attentionText),
-        'importance': ($importance, darken($importance, 10), $importanceText),
+    'success': ($success, darken($greenColor, 10), $white, $lightSuccess),
+    'info': ($info, darken($info, 10), $infoText, $lightInfo),
+    'danger': ($danger, darken($danger, 10), $dangerText, $lightDanger),
+    'attention': ($attention, darken($attention, 10), $attentionText, $lightAttention),
+    'importance': ($importance, darken($importance, 10), $importanceText, $lightImportance),
 );
+
+@function grayHsl($per) {
+    @return hsl(0, 0, $per) 
+}
 
 $colors: (
     'red': $redColor,

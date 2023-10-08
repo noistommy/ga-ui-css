@@ -1,387 +1,394 @@
-section#form
-    .section-title
-        h1 Form
-        .section-desc - Form System.
-    .section-contents
-        h4.contents-title 기본
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        label Title
-                        input(type="text", placeholder="입력")
-            .footer
-                -var code = `<div class="ga-form">\n    <div class="field">\n        <-- form contents(label, input ...) -->\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Header
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .header
-                        .title Form
-                    .field
-                        label Title
-                        input(type="text", placeholder="입력")
-            .footer
-              -var code = `<div class="ga-form">\n    <div class="header">\n       <div class="title">제목</div>\n    </div>\n    <div class="field">\n        <-- form contents(label, input ...) -->\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Inline
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field.inline
-                        label Title
-                        input(type="text", placeholder="입력")
-                        //input(type="text", placeholder="입력")
-                        //input(type="text", placeholder="입력")
-            .footer
-              -var code = `<div class="ga-form">\n    <div class="field inline">\n        <-- form contents(label, input ...) -->\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Label
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        label Title
-                        input(type="text", placeholder="기본 라벨")
-                    .field
-                        input(type="text", placeholder="라벨 없음")
-                    .fields.right-side
-                        .field.column.span-3
-                            label.title 타이틀 1
-                        .field.column
-                            input(type="text", placeholder="입력")
-                    .fields.right-side
-                        .field.column.span-3
-                            label.title 타이틀 2
-                        .field.column
-                            input(type="text", placeholder="입력")
-                    .fields.right-side
-                        .field.column.span-3
-                            label.title 타이틀 3
-                        .field.column
-                            input(type="text", placeholder="입력")
-            .footer
-              - var code = `<div class="ga-form">\n    <div class="field">\n        <label>label</label>\n        <input type="text" />\n    </div>\n</div>`
-              - var code1_1 = `<div class="ga-form">`
-              - var code1_2 = `    <div class="fields">`
-              - var code1_3 = `        <div class="field column span-3">\n             <label>label</label>\n        </div>`
-              - var code1_4 = `        <div class="field column span-9">\n             <input type="text">\n        </div>`
-              - var code1_5 = `    </div>`
-              - var code1_6 = `</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-                        // form + grid
-                        | #{code1_1}
-                        | #{code1_2}
-                        | #{code1_3}
-                        | #{code1_4}
-                        | #{code1_5}
-                        | #{code1_6}
-        h4.contents-title Field
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        label Field 1
-                        input(type="text", placeholder="입력")
-                    .field
-                        label Field 2
-                        input(type="text", placeholder="입력")
-            .footer
-              - var code = `<div class="ga-form">\n    <div class="field">\n        <label>label</label>\n        <input type="text" />\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Fields
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .fields
-                        .field
-                            label Field 1
-                            input(type="text", placeholder="입력")
-                        .field
-                            label Field 2
-                            input(type="text", placeholder="입력")
-                        .field
-                            label Field 3
-                            input(type="text", placeholder="입력")
-            .footer
-              - var code_1_s = `<div class="ga-form">`
-              - var code_2_s = `    <div class="fields">`
-              - var code_3_1 = `        <div class="field">\n             <input type="text">\n        </div>`
-              - var code_3_2 = `        <div class="field">\n             <input type="text">\n        </div>`
-              - var code_3_3 = `        <div class="field">\n             <input type="text">\n        </div>`
-              - var code_2_e = `    </div>`
-              - var code_1_e = `</div>`
-                pre
-                    code.language-markup
-                        | #{code_1_s}
-                        | #{code_2_s}
-                        | #{code_3_1}
-                        | #{code_3_2}
-                        | #{code_3_3}
-                        | #{code_2_e}
-                        | #{code_1_e}
-        h4.contents-title Field
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field.disabled
-                        label Field 1
-                        input(type="text", placeholder="입력")
-                    .field.disabled
-                        label Field 2
-                        input(type="text", placeholder="입력")
-            .footer
-              - var code = `<div class="ga-form">\n    <div class="field disabled">\n        <label>label</label>\n        <input type="text" />\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Fields 균등 분할 구성
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        label 2분할 구성
-                        .fields.divide-2
-                            .field.column
-                                label field 1
+extends ../page_layout.pug
+
+block title
+    title Ga-UI FORM
+
+block contents
+    .page-wrapper
+        section#form
+            .section-title
+                h1 Form
+                .section-desc - Form System.
+            .section-contents
+                h4.contents-title 기본
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .field
+                                label Title
                                 input(type="text", placeholder="입력")
-                            .field.column
-                                label field 2
+                    .footer
+                        -var code = `<div class="ga-form">\n    <div class="field">\n        <-- form contents(label, input ...) -->\n    </div>\n</div>`
+                        pre
+                            code.language-markup
+                                | #{code}
+                h4.contents-title Header
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .header
+                                .title Form
+                            .field
+                                label Title
                                 input(type="text", placeholder="입력")
-                    .field
-                        label 4분할 구성
-                        .fields.divide-4
-                            .field.column
-                                label field 1
+                    .footer
+                        -var code = `<div class="ga-form">\n    <div class="header">\n       <div class="title">제목</div>\n    </div>\n    <div class="field">\n        <-- form contents(label, input ...) -->\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Inline
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .field.inline
+                                label Title
                                 input(type="text", placeholder="입력")
-                            .field.column
-                                label field 2
+                                //input(type="text", placeholder="입력")
+                                //input(type="text", placeholder="입력")
+                    .footer
+                        -var code = `<div class="ga-form">\n    <div class="field inline">\n        <-- form contents(label, input ...) -->\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Label
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .field
+                                label Title
+                                input(type="text", placeholder="기본 라벨")
+                            .field
+                                input(type="text", placeholder="라벨 없음")
+                            .fields.right-side
+                                .field.column.span-3
+                                    label.title 타이틀 1
+                                .field.column
+                                    input(type="text", placeholder="입력")
+                            .fields.right-side
+                                .field.column.span-3
+                                    label.title 타이틀 2
+                                .field.column
+                                    input(type="text", placeholder="입력")
+                            .fields.right-side
+                                .field.column.span-3
+                                    label.title 타이틀 3
+                                .field.column
+                                    input(type="text", placeholder="입력")
+                    .footer
+                        - var code = `<div class="ga-form">\n    <div class="field">\n        <label>label</label>\n        <input type="text" />\n    </div>\n</div>`
+                        - var code1_1 = `<div class="ga-form">`
+                        - var code1_2 = `    <div class="fields">`
+                        - var code1_3 = `        <div class="field column span-3">\n             <label>label</label>\n        </div>`
+                        - var code1_4 = `        <div class="field column span-9">\n             <input type="text">\n        </div>`
+                        - var code1_5 = `    </div>`
+                        - var code1_6 = `</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                                    // form + grid
+                                    | #{code1_1}
+                                    | #{code1_2}
+                                    | #{code1_3}
+                                    | #{code1_4}
+                                    | #{code1_5}
+                                    | #{code1_6}
+                h4.contents-title Field
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .field
+                                label Field 1
                                 input(type="text", placeholder="입력")
-                            .field.column
-                                label field 3
+                            .field
+                                label Field 2
                                 input(type="text", placeholder="입력")
-                            .field.column
-                                label field 4
-                                input(type="text", placeholder="입력")
-            .footer
-              - var code_1_s = `<div class="ga-form">`
-              - var code_2_s = `    <div class="fields divide-{ 2|4|6|8|10 }">`
-              - var code_3_1 = `        <div class="field column">\n             <input type="text">\n        </div>`
-              - var code_3_2 = `        <div class="field column">\n             <input type="text">\n        </div>`
-              - var code_e = `        ... ...`
-              - var code_3_3 = `        <div class="field column">\n             <input type="text">\n        </div>`
-              - var code_2_e = `    </div>`
-              - var code_1_e = `</div>`
-                pre
-                    code.language-markup
-                        | #{code_1_s}
-                        | #{code_2_s}
-                        | #{code_3_1}
-                        | #{code_3_2}
-                        | #{code_e}
-                        | #{code_3_3}
-                        | #{code_2_e}
-                        | #{code_1_e}
-        h4.contents-title Fields 지정 분할 구성
-            .ga-card.attached
-                .contents-wrapper
-                    .ga-form
-                        .field
+                    .footer
+                        - var code = `<div class="ga-form">\n    <div class="field">\n        <label>label</label>\n        <input type="text" />\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Fields
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
                             .fields
-                                .column.span-3
-                                    label span 3
+                                .field
+                                    label Field 1
                                     input(type="text", placeholder="입력")
-                                .column.span-5
-                                    label span 5
+                                .field
+                                    label Field 2
                                     input(type="text", placeholder="입력")
-                                .column.span-4
-                                    label span 4
+                                .field
+                                    label Field 3
                                     input(type="text", placeholder="입력")
-                .footer
-                  - var code_1_s = `<div class="ga-form">`
-                  - var code_2_s = `    <div class="fields">`
-                  - var code_3_1 = `        <div class="field column span-{num}">\n             <input type="text">\n        </div>`
-                  - var code_3_2 = `        <div class="field column span-{num}">\n             <input type="text">\n        </div>`
-                  - var code_e = `        ... ...`
-                  - var code_3_3 = `        <div class="field column span-{num}">\n             <input type="text">\n        </div>`
-                  - var code_2_e = `    </div>`
-                  - var code_1_e = `</div>`
-                    pre
-                        code.language-markup
-                            | #{code_1_s}
-                            | #{code_2_s}
-                            | #{code_3_1}
-                            | #{code_3_2}
-                            | #{code_e}
-                            | #{code_3_3}
-                            | #{code_2_e}
-                            | #{code_1_e}
-        h4.contents-title Text Area
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        label Textarea
-                        textarea(placeholder="글 입력")
-                    .field.short
-                        label Textarea Short
-                        textarea(placeholder="글 입력")
-            .footer
-              - var code = `<div class="ga-form">\n    <div class="field">\n        <label>label</label>\n        <textarea />\n    </div>\n</div>`
-              - var code1 = `<div class="ga-form">\n    <div class="field short">\n        <label>label</label>\n        <textarea />\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | // Normal
-                        | #{code}
-                        | //Short
-                        | #{code1}
-        h4.contents-title Check Box
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        input(type='text', placeholder='입력')
-                    .field
-                        .ga-checkbox
-                            input(type="checkbox")
-                            label 체크박스를 표시합니다.
-            .footer
-              - var code = `<div class="ga-form">\n    <-- something form element field -->\n    <div class="field">\n        <div class="ga-checkbox">\n          <input type="checkbox" />\n          <label>label</label>\n        </div>\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Radio Button
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        label 교통 수단을 선택하세요
-                        .fields
+                    .footer
+                        - var code_1_s = `<div class="ga-form">`
+                        - var code_2_s = `    <div class="fields">`
+                        - var code_3_1 = `        <div class="field">\n             <input type="text">\n        </div>`
+                        - var code_3_2 = `        <div class="field">\n             <input type="text">\n        </div>`
+                        - var code_3_3 = `        <div class="field">\n             <input type="text">\n        </div>`
+                        - var code_2_e = `    </div>`
+                        - var code_1_e = `</div>`
+                            pre
+                                code.language-markup
+                                    | #{code_1_s}
+                                    | #{code_2_s}
+                                    | #{code_3_1}
+                                    | #{code_3_2}
+                                    | #{code_3_3}
+                                    | #{code_2_e}
+                                    | #{code_1_e}
+                h4.contents-title Field
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .field.disabled
+                                label Field 1
+                                input(type="text", placeholder="입력")
+                            .field.disabled
+                                label Field 2
+                                input(type="text", placeholder="입력")
+                    .footer
+                        - var code = `<div class="ga-form">\n    <div class="field disabled">\n        <label>label</label>\n        <input type="text" />\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Fields 균등 분할 구성
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
                             .field
-                                .ga-checkbox.radio
-                                    input(type="radio", name="traffic")
-                                    label Bus
+                                label 2분할 구성
+                                .fields.divide-2
+                                    .field.column
+                                        label field 1
+                                        input(type="text", placeholder="입력")
+                                    .field.column
+                                        label field 2
+                                        input(type="text", placeholder="입력")
                             .field
-                                .ga-checkbox.radio
-                                    input(type="radio", name="traffic")
-                                    label Taxi
+                                label 4분할 구성
+                                .fields.divide-4
+                                    .field.column
+                                        label field 1
+                                        input(type="text", placeholder="입력")
+                                    .field.column
+                                        label field 2
+                                        input(type="text", placeholder="입력")
+                                    .field.column
+                                        label field 3
+                                        input(type="text", placeholder="입력")
+                                    .field.column
+                                        label field 4
+                                        input(type="text", placeholder="입력")
+                    .footer
+                        - var code_1_s = `<div class="ga-form">`
+                        - var code_2_s = `    <div class="fields divide-{ 2|4|6|8|10 }">`
+                        - var code_3_1 = `        <div class="field column">\n             <input type="text">\n        </div>`
+                        - var code_3_2 = `        <div class="field column">\n             <input type="text">\n        </div>`
+                        - var code_e = `        ... ...`
+                        - var code_3_3 = `        <div class="field column">\n             <input type="text">\n        </div>`
+                        - var code_2_e = `    </div>`
+                        - var code_1_e = `</div>`
+                            pre
+                                code.language-markup
+                                    | #{code_1_s}
+                                    | #{code_2_s}
+                                    | #{code_3_1}
+                                    | #{code_3_2}
+                                    | #{code_e}
+                                    | #{code_3_3}
+                                    | #{code_2_e}
+                                    | #{code_1_e}
+                h4.contents-title Fields 지정 분할 구성
+                    .ga-card.attached
+                        .contents-wrapper
+                            .ga-form
+                                .field
+                                    .fields
+                                        .column.span-3
+                                            label span 3
+                                            input(type="text", placeholder="입력")
+                                        .column.span-5
+                                            label span 5
+                                            input(type="text", placeholder="입력")
+                                        .column.span-4
+                                            label span 4
+                                            input(type="text", placeholder="입력")
+                        .footer
+                            - var code_1_s = `<div class="ga-form">`
+                            - var code_2_s = `    <div class="fields">`
+                            - var code_3_1 = `        <div class="field column span-{num}">\n             <input type="text">\n        </div>`
+                            - var code_3_2 = `        <div class="field column span-{num}">\n             <input type="text">\n        </div>`
+                            - var code_e = `        ... ...`
+                            - var code_3_3 = `        <div class="field column span-{num}">\n             <input type="text">\n        </div>`
+                            - var code_2_e = `    </div>`
+                            - var code_1_e = `</div>`
+                                pre
+                                    code.language-markup
+                                        | #{code_1_s}
+                                        | #{code_2_s}
+                                        | #{code_3_1}
+                                        | #{code_3_2}
+                                        | #{code_e}
+                                        | #{code_3_3}
+                                        | #{code_2_e}
+                                        | #{code_1_e}
+                h4.contents-title Text Area
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
                             .field
-                                .ga-checkbox.radio
-                                    input(type="radio", name="traffic")
-                                    label Subway
-                    .field
-                        label.h4 이슈발생 시 올바른 행동은? (Field list)
-                        .fields.listed
+                                label Textarea
+                                textarea(placeholder="글 입력")
+                            .field.short
+                                label Textarea Short
+                                textarea(placeholder="글 입력")
+                    .footer
+                        - var code = `<div class="ga-form">\n    <div class="field">\n        <label>label</label>\n        <textarea />\n    </div>\n</div>`
+                        - var code1 = `<div class="ga-form">\n    <div class="field short">\n        <label>label</label>\n        <textarea />\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | // Normal
+                                    | #{code}
+                                    | //Short
+                                    | #{code1}
+                h4.contents-title Check Box
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
                             .field
-                                .ga-checkbox.radio
-                                    input(type="radio", name="traffic")
-                                    label 1번. 야근한다
+                                input(type='text', placeholder='입력')
                             .field
-                                .ga-checkbox.radio
-                                    input(type="radio", name="traffic")
-                                    label 2번. 퇴근한다.
+                                .ga-checkbox
+                                    input(type="checkbox")
+                                    label 체크박스를 표시합니다.
+                    .footer
+                        - var code = `<div class="ga-form">\n    <-- something form element field -->\n    <div class="field">\n        <div class="ga-checkbox">\n          <input type="checkbox" />\n          <label>label</label>\n        </div>\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Radio Button
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
                             .field
-                                .ga-checkbox.radio
-                                    input(type="radio", name="traffic")
-                                    label 3번. 아무것도 하지 않는다.
-            .footer
-              - var code = `<div class="ga-form">\n    <-- something form element field -->\n    <div class="field">\n        <div class="ga-checkbox radio">\n          <input type="radio" name="radios" />\n          <label>label</label>\n        </div>\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Select Box
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .field
-                        .ga-select-box
-                            select
-                                each col in ['', 1, 2, 3, 4, 5, 6]
-                                    if col == ''
-                                        option(default, value=`${col}`)= '선택'
-                                    else
-                                        option(value=`${col}`)= `option${col}`
-                            i.arrow.icon.fa.fa-chevron-down
-            .footer
-              - var code = `<div class="ga-form">\n    <-- something form element field -->\n    <div class="field">\n        <div class="ga-select-box">\n          <select />\n        </div>\n    </div>\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        //h4.contents-title Select Box(multiple)
-        //.contents-wrapper
-        //h4.contents-title Required
-        //.contents-wrapper
-        //h4.contents-title Switch
-        //.contents-wrapper
-        h4.contents-title Template
-        .ga-card.attached
-            .contents-wrapper
-                .ga-form
-                    .fields.divide.half
-                        .field.column
-                            label 구분
-                            .ga-select-box
-                                select
-                                    each col in ['', 1, 2, 3, 4, 5, 6]
-                                        if col == ''
-                                            option(default, value=`${col}`)= '구분 선택'
-                                        else
-                                            option(value=`${col}`)= `option${col}`
-                                i.arrow.icon.fa.fa-chevron-down
-                        .field.column
-                            label 운영체제
-                            .ga-select-box
-                                select
-                                    each col in ['', 1, 2, 3, 4, 5, 6]
-                                        if col == ''
-                                            option(default, value=`${col}`)= 'OS 이미지'
-                                        else
-                                            option(value=`${col}`)= `option${col}`
-                                i.arrow.icon.fa.fa-chevron-down
-                        .field.column
-                           .fields.divide-3
-                               .field.column
-                                   label CPU
-                                   .ga-select-box
-                                       select
-                                           each col in ['', 1, 2, 3, 4, 5, 6]
-                                               if col == ''
-                                                   option(default, value=`${col}`)= 'CPU'
-                                               else
-                                                   option(value=`${col}`)= `option${col}`
-                                       i.arrow.icon.fa.fa-chevron-down
-                               .field.column
-                                   label 메모리
-                                   .ga-select-box
-                                       select
-                                           each col in ['', 1, 2, 3, 4, 5, 6]
-                                               if col == ''
-                                                   option(default, value=`${col}`)= '메모리'
-                                               else
-                                                   option(value=`${col}`)= `option${col}`
-                                       i.arrow.icon.fa.fa-chevron-down
-                               .field.column
-                                   label 루트볼륨
-                                   .ga-select-box
-                                       select
-                                           each col in ['', 1, 2, 3, 4, 5, 6]
-                                               if col == ''
-                                                   option(default, value=`${col}`)= '루트볼륨'
-                                               else
-                                                   option(value=`${col}`)= `option${col}`
-                                       i.arrow.icon.fa.fa-chevron-down
-                        .field.column
-                            label 서버
-                            .ga-input.unit(data-unit='대')
-                                input.align-right(type="text", placeholder="0")
+                                label 교통 수단을 선택하세요
+                                .fields
+                                    .field
+                                        .ga-checkbox.radio
+                                            input(type="radio", name="traffic")
+                                            label Bus
+                                    .field
+                                        .ga-checkbox.radio
+                                            input(type="radio", name="traffic")
+                                            label Taxi
+                                    .field
+                                        .ga-checkbox.radio
+                                            input(type="radio", name="traffic")
+                                            label Subway
+                            .field
+                                label.h4 이슈발생 시 올바른 행동은? (Field list)
+                                .fields.listed
+                                    .field
+                                        .ga-checkbox.radio
+                                            input(type="radio", name="traffic")
+                                            label 1번. 야근한다
+                                    .field
+                                        .ga-checkbox.radio
+                                            input(type="radio", name="traffic")
+                                            label 2번. 퇴근한다.
+                                    .field
+                                        .ga-checkbox.radio
+                                            input(type="radio", name="traffic")
+                                            label 3번. 아무것도 하지 않는다.
+                    .footer
+                        - var code = `<div class="ga-form">\n    <-- something form element field -->\n    <div class="field">\n        <div class="ga-checkbox radio">\n          <input type="radio" name="radios" />\n          <label>label</label>\n        </div>\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Select Box
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .field
+                                .ga-select-box
+                                    select
+                                        each col in ['', 1, 2, 3, 4, 5, 6]
+                                            if col == ''
+                                                option(default, value=`${col}`)= '선택'
+                                            else
+                                                option(value=`${col}`)= `option${col}`
+                                    i.arrow.icon.fa.fa-chevron-down
+                    .footer
+                        - var code = `<div class="ga-form">\n    <-- something form element field -->\n    <div class="field">\n        <div class="ga-select-box">\n          <select />\n        </div>\n    </div>\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                //h4.contents-title Select Box(multiple)
+                //.contents-wrapper
+                //h4.contents-title Required
+                //.contents-wrapper
+                //h4.contents-title Switch
+                //.contents-wrapper
+                h4.contents-title Template
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-form
+                            .fields.divide.half
+                                .field.column
+                                    label 구분
+                                    .ga-select-box
+                                        select
+                                            each col in ['', 1, 2, 3, 4, 5, 6]
+                                                if col == ''
+                                                    option(default, value=`${col}`)= '구분 선택'
+                                                else
+                                                    option(value=`${col}`)= `option${col}`
+                                        i.arrow.icon.fa.fa-chevron-down
+                                .field.column
+                                    label 운영체제
+                                    .ga-select-box
+                                        select
+                                            each col in ['', 1, 2, 3, 4, 5, 6]
+                                                if col == ''
+                                                    option(default, value=`${col}`)= 'OS 이미지'
+                                                else
+                                                    option(value=`${col}`)= `option${col}`
+                                        i.arrow.icon.fa.fa-chevron-down
+                                .field.column
+                                    .fields.divide-3
+                                        .field.column
+                                            label CPU
+                                            .ga-select-box
+                                                select
+                                                    each col in ['', 1, 2, 3, 4, 5, 6]
+                                                        if col == ''
+                                                            option(default, value=`${col}`)= 'CPU'
+                                                        else
+                                                            option(value=`${col}`)= `option${col}`
+                                                i.arrow.icon.fa.fa-chevron-down
+                                        .field.column
+                                            label 메모리
+                                            .ga-select-box
+                                                select
+                                                    each col in ['', 1, 2, 3, 4, 5, 6]
+                                                        if col == ''
+                                                            option(default, value=`${col}`)= '메모리'
+                                                        else
+                                                            option(value=`${col}`)= `option${col}`
+                                                i.arrow.icon.fa.fa-chevron-down
+                                        .field.column
+                                            label 루트볼륨
+                                            .ga-select-box
+                                                select
+                                                    each col in ['', 1, 2, 3, 4, 5, 6]
+                                                        if col == ''
+                                                            option(default, value=`${col}`)= '루트볼륨'
+                                                        else
+                                                            option(value=`${col}`)= `option${col}`
+                                                i.arrow.icon.fa.fa-chevron-down
+                                .field.column
+                                    label 서버
+                                    .ga-input.unit(data-unit='대')
+                                        input.align-right(type="text", placeholder="0")

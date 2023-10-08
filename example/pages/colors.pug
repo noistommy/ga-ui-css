@@ -1,36 +1,78 @@
-section#typography
-    .section-title
-        h1 Colors
-    .section-contents
-        h4.contents-title Brands
-        .contents-wrapper
-            .color-box.primary 메인
-            .color-box.primary.dark 어두운
-        .contents-wrapper
-            .color-box.secondary 강조
-            .color-box.secondary.dark 어두운
-    .section-contents
-        h4.contents-title Status
-        .contents-wrapper
-            .color-box.success 성공
-            .color-box.info 정보
-            .color-box.danger 위험
-            .color-box.attention 경고
-            .color-box.importance 중요
-    .section-contents
-        h4.contents-title Types
-        .contents-wrapper
-            .color-box.ga-success.bordered 기본
-            .color-box.ga-success-text 텍스트
-            .color-box.ga-success-bg 배경
-            .color-box.bordered.ga-success-border 테두리
-    .section-contents
-        h4.contents-title Palette Colors
-        .contents-wrapper
-            - var colors = [{name: 'red', text: '빨강'},{name: 'orange', text: '주황'},{name: 'yellow', text: '노랑'},{name: 'lightgreen', text: '연두'},{name: 'green', text: '초록'},{name: 'lightblue', text: '하늘'},{name: 'blue', text: '파랑'},{name: 'deepblue', text: '짙은파랑'},{name: 'deeppurple', text: '짙은보라'},{name: 'purple', text: '보라'},{name: 'brown', text: '팥색'},{name: 'gray', text: '회색'}]
-                each color in colors
-                    div(class=`color-box ga-${color.name} bordered`)=color.text
-        .contents-wrapper
-          - var colors = [{name: 'red', text: '빨강'},{name: 'sunset', text: '썬셋'},{name: 'orange', text: '주황'},{name: 'amber', text: '엠버'},{name: 'yellow', text: '노랑'},{name: 'citron', text: '시트론'},{name: 'lime', text: '라임'},{name: 'green', text: '초록'},{name: 'mint', text: '민트'},{name: 'teal', text: '틸'},{name: 'cyan', text: '시안'},{name: 'blue', text: '파랑'},{name: 'indigo', text: '인디고'},{name: 'purple', text: '보라'},{name: 'pink', text: '핑크'},{name: 'rose', text: '로즈'}]
-          each color in colors
-              div(class=`color-box ga-${color.name}-2 bordered`)=color.text
+extends ../page_layout.pug
+
+block title
+    title Ga-UI COLORS
+
+block contents
+    .page-wrapper
+        section#typography
+            .section-title
+                h1 Colors
+            .section-contents
+                h4.contents-title Brands
+                .ga-card.attached
+                    .contents-wrapper
+                        .color-box.primary 메인
+                        .color-box.primary.dark 어두운
+                    .contents-wrapper
+                        .color-box.secondary 강조
+                        .color-box.secondary.dark 어두운
+                    .footer
+                        - var code_p = `<div class="primary">메인</div>`
+                        - var code_pd = `<div class="primary dark">메인 - 어두운</div>`
+                        - var code_s = `<div class="secondary">강조</div>`
+                        - var code_sd = `<div class="secondary dark">강조 - 어두운</div>`
+                        pre 
+                            code.language-markup 
+                                | #{code_p}
+                                |   #{code_pd}
+                                |   #{code_s}
+                                |   #{code_sd}
+
+            .section-contents
+                h4.contents-title Status
+                .ga-card
+                    .contents-wrapper
+                        .color-box.success 성공
+                        .color-box.info 정보
+                        .color-box.danger 위험
+                        .color-box.attention 경고
+                        .color-box.importance 중요
+            .section-contents
+                h4.contents-title Types
+                .ga-card
+                    .contents-wrapper
+                        .color-box.ga-success.bordered 기본
+                        .color-box.ga-success-text 텍스트
+                        .color-box.ga-success-bg 배경
+                        .color-box.bordered.ga-success-border 테두리
+            .section-contents
+                h4.contents-title Grayscale
+                .ga-card
+                    .contents-wrapper
+                        .color-box.small.gray-0 White (0)
+                        .color-box.small.gray-5 5
+                        .color-box.small.gray-10 10
+                        .color-box.small.gray-15 15
+                        .color-box.small.gray-20 20
+                        .color-box.small.gray-30 30
+                        .color-box.small.gray-40 40
+                        .color-box.small.gray-50 50
+                        .color-box.small.gray-60 60
+                        .color-box.small.gray-70 70
+                        .color-box.small.gray-80 80
+                        .color-box.small.gray-85 85
+                        .color-box.small.gray-90 90
+                        .color-box.small.gray-95 95
+                        .color-box.small.gray-100 Black (100)
+            .section-contents
+                h4.contents-title Palette Colors
+                .ga-card
+                    .contents-wrapper
+                        - var colors = [{name: 'red', text: '빨강'},{name: 'orange', text: '주황'},{name: 'yellow', text: '노랑'},{name: 'lightgreen', text: '연두'},{name: 'green', text: '초록'},{name: 'lightblue', text: '하늘'},{name: 'blue', text: '파랑'},{name: 'deepblue', text: '짙은파랑'},{name: 'deeppurple', text: '짙은보라'},{name: 'purple', text: '보라'},{name: 'brown', text: '팥색'},{name: 'gray', text: '회색'}]
+                        each color in colors
+                            div(class=`color-box ga-${color.name} bordered`)=color.text
+                    .contents-wrapper
+                        - var colors = [{name: 'red', text: '빨강'},{name: 'sunset', text: '썬셋'},{name: 'orange', text: '주황'},{name: 'amber', text: '엠버'},{name: 'yellow', text: '노랑'},{name: 'citron', text: '시트론'},{name: 'lime', text: '라임'},{name: 'green', text: '초록'},{name: 'mint', text: '민트'},{name: 'teal', text: '틸'},{name: 'cyan', text: '시안'},{name: 'blue', text: '파랑'},{name: 'indigo', text: '인디고'},{name: 'purple', text: '보라'},{name: 'pink', text: '핑크'},{name: 'rose', text: '로즈'}]
+                        each color in colors
+                            div(class=`color-box ga-${color.name}-2 bordered`)=color.text

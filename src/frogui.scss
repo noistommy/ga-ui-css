@@ -1,10 +1,8 @@
 
-//@import 'assets/fonts/Pretendard/pretendard.css';
-//@import 'assets/fonts/SpoqaHanSans/spoqahansans';
-
 @import "./theme.scss";
 /*Base*/
 @import './definitions/bases/reset';
+@import './definitions/bases/root';
 @import './definitions/bases/variables';
 @import './definitions/components/button';
 @import './definitions/components/input';
@@ -15,7 +13,7 @@
 @import './definitions/components/form';
 @import './definitions/components/tag';
 @import './definitions/components/badge';
-@import './definitions/components/alert';
+@import './definitions/components/message';
 @import './definitions/components/selectbox';
 @import './definitions/components/list';
 @import './definitions/components/tabs';
@@ -26,5 +24,3 @@
 @import './definitions/components/modal';
 @import './definitions/components/toast';
 @import './definitions/components/card';
-
-

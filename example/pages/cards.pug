@@ -1,36 +1,57 @@
-section#tabs
-    .section-title
-        h1 Cards
-    .section-contents
-        h4.contents-title 기본
-        .ga-card.attached
-            .contents-wrapper
-                .ga-card 
-                    | Contents 영역
-            .footer 
-                - var code = `<div class="ga-card">\n       <-- insert contents -->\n  </div>`
-                pre 
-                    code.language-markup 
-                        | #{code}
-        h4.contents-title Attached (header, footer)
-        .ga-card.attached
-            .contents-wrapper
-                .ga-card.attached 
-                    .header 
-                        | Header 영역
-                    | Contents 영역
+extends ../page_layout.pug
+
+block title
+    title Ga-UI CARD
+
+block contents
+    .page-wrapper
+        section#tabs
+            .section-title
+                h1 Cards
+            .section-contents
+                h4.contents-title 기본
+                .ga-card.attached
+                    .contents-wrapper.contents
+                        .ga-card
+                            .contents
+                                | Contents 영역         
+                    .footer
+                        .code-wrapper
+                            - var code = `<div class="ga-card">\n       <-- insert contents -->\n  </div>`
+                            pre 
+                                code.language-markup 
+                                    | #{code}
+                h4.contents-title Title
+                .ga-card.attached
+                    .contents-wrapper.contents
+                        .ga-card 
+                            .title Title
+                            .contents Contents 영역
                     .footer 
-                        | Footer 영역
-            .footer 
-                - var code_s = `<div class="ga-card"></div>`
-                - var code_c_1 = `    <div class="header">Header contents</div>`
-                - var code_c_2 = `    contents`
-                - var code_c_3 = `    <div class="footer">Footer contents</div>`
-                - var code_f = `</div>`
-                pre 
-                    code.language-markup 
-                        | #{code_s}
-                        | #{code_c_1}
-                        | #{code_c_2}
-                        | #{code_c_3}
-                        | #{code_f}
+                        .code-wrapper
+                            - var code = `<div class="ga-card">\n       <div class="title">Title</div>\n       <-- insert contents -->\n  </div>`
+                            pre 
+                                code.language-markup 
+                                    | #{code}
+                h4.contents-title Attached (header, footer)
+                .ga-card.attached
+                    .contents-wrapper.contents
+                        .ga-card.attached 
+                            .header 
+                                .title Header 영역
+                            .contents Contents 영역
+                            .footer Footer 영역
+                    .footer 
+                        .code-wrapper
+                            - var code_s = `<div class="ga-card"></div>`
+                            - var code_c_1 = `    <div class="header">Header contents</div>`
+                            - var code_c_2 = `    contents`
+                            - var code_c_3 = `    <div class="footer">Footer contents</div>`
+                            - var code_f = `</div>`
+                            pre 
+                                code.language-markup 
+                                    | #{code_s}
+                                    | #{code_c_1}
+                                    | #{code_c_2}
+                                    | #{code_c_3}
+                                    | #{code_f}

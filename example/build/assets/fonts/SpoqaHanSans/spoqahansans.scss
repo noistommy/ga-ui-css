@@ -1,8 +1,8 @@
 /*typography*/
 @font-face {
-    font-family:'Spoqa Han Sans Bold';
+    font-family:'Spoqa Han Sans';
     font-weight:700;
-    src:local('Spoqa Han Sans Bold'),
+    src:local('Spoqa Han Sans'),
     url('./bold/SpoqaHanSansBold.woff2') format('woff2'),
     url('./bold/SpoqaHanSansBold.woff') format('woff'),
     url('./bold/SpoqaHanSansBold.ttf') format('truetype');
@@ -10,23 +10,23 @@
 @font-face {
     font-family:'Spoqa Han Sans';
     font-weight:400;
-    src:local('Spoqa Han Sans Regular'),
+    src:local('Spoqa Han Sans'),
     url('./regular/SpoqaHanSansRegular.woff2') format('woff2'),
     url('./regular/SpoqaHanSansRegular.woff') format('woff'),
     url('./regular/SpoqaHanSansRegular.ttf') format('truetype');
 }
 @font-face {
-    font-family:'Spoqa Han Sans Light';
+    font-family:'Spoqa Han Sans';
     font-weight:300;
-    src:local('Spoqa Han Sans Light'),
+    src:local('Spoqa Han Sans'),
     url('./light/SpoqaHanSansLight.woff2') format('woff2'),
     url('./light/SpoqaHanSansLight.woff') format('woff'),
     url('./light/SpoqaHanSansLight.ttf') format('truetype');
 }
 @font-face {
-    font-family:'Spoqa Han Sans Thin';
+    font-family:'Spoqa Han Sans';
     font-weight:100;
-    src:local('Spoqa Han Sans Thin'),
+    src:local('Spoqa Han Sans'),
     url('./thin/SpoqaHanSansThin.woff2') format('woff2'),
     url('./thin/SpoqaHanSansThin.woff') format('woff'),
     url('./thin/SpoqaHanSansThin.ttf') format('truetype');

@@ -53,22 +53,23 @@ const clean = () => {
 
 // scss 빌드
 const build = () => {
-    const baseFile = 'gabiaui'
+    const baseFile = 'frogui'
     return src([`src/${baseFile}.scss`])
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(dest('./dist', {sourcemaps:false}))
     .pipe(minifyCSS())
-    .pipe(rename('gabiaui.css'))
+    .pipe(rename('frogui.css'))
     .pipe(minifyCSS())
     .pipe(dest('./example/build'))
 }
 // JS 빌드
 const buildJS = () => {
-    return src('src/definitions/components/*.js')
-        .pipe(concat('ga_ui.js'))
-        .pipe(uglify()).pipe(dest('./dist/js'))
+    return src(['src/definitions/components/*.js', 'example/base.js'])
+        .pipe(concat('frog_ui.js'))
+        .pipe(dest('./dist/js'))
+        .pipe(uglify())
         .pipe(dest('./example/build/js'))
 }
 
@@ -109,7 +110,7 @@ const site = () => {
 
 exports.install = question; // $ gulp install
 exports.clean = clean; // $ gulp clean
-exports.build = build; // $ gulp clean
+exports.build = build; // $ gulp build
 exports.devSite = series(site, siteWatcher); // $ gulp devSite
 exports.default = series(clean, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
     gulpUtil.log("Run gulp!!")

@@ -1,16 +1,16 @@
 const lastDayList = [31,28,31,30,31,30,31,31,30,31,30,31];
 const days = ['일', '월', '화', '수', '목', '금', '토']
+const calendar = document.querySelector('.ga-calendar');
 const wrapper = document.querySelector('.cell-wrapper');
 
 const getDate = () => {
     const y = new Date().getFullYear();
     const m = new Date().getMonth() + 1;
     const d = new Date().getDate();
-    return { year: y, month: m, date: d }
+    return { dy: y, dm: m, dd: d }
 }
 
-const {year, month, date} = getDate();
-console.log( date )
+const {dy, dm, dd} = getDate();
 const getStartDay = (year, month) => {
     let startIndex = 0;
 
@@ -33,7 +33,9 @@ const getStartDay = (year, month) => {
     return startIndex;
 };
 
-function setCalendar (year, month) {
+function setCalendar (year = dy, month = dm, date = dd) {
+    if (!wrapper) return;
+    // if (month != dm) date = 1;
     let startDay = getStartDay(year, month);
 
     let dayList = [];
@@ -44,14 +46,14 @@ function setCalendar (year, month) {
     let currDay = 1;
     let nextDay = 1;
 
-    for(let i=1;i<7; i++) {
+    for(let i=0;i<6; i++) {
         for(let j=0; j<7; j++) {
             const cell = document.createElement('span')
             cell.style['--x'] = j;
             cell.style['--y'] = i;
             cell.setAttribute('style', `--x:${j};--y: ${i}` )
             cell.classList.add('cell')
-            if(i===1 && j < startDay) {
+            if(i===0 && j < startDay) {
                 cell.classList.add('disabled')
                 cell.dataset.name = prevLast + (j - startDay) + 1
             } else if(currDay <= currLast) {
@@ -79,11 +81,14 @@ function setCalendar (year, month) {
         dayList = dayList.slice(0,-7)
     }
 
+    calendar.querySelector('span.year').innerHTML = year+'년';
+    calendar.querySelector('span.month').innerHTML = month+'월';
+
     return dayList;
 }
 
 
-setCalendar(year, month);
+// setCalendar();
 
 
 //

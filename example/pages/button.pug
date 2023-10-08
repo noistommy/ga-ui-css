@@ -1,12 +1,7 @@
-extends ../layout.pug
+extends ../page_layout.pug
 
 block title
     title Ga-UI BUTTON
-
-block style
-    link(href="../style.css", rel="stylesheet")
-    link(href="../gabiaui.css", rel="stylesheet")
-    link(href="../../prism/prism.css", rel="stylesheet")
 
 block contents
     .page-wrapper
@@ -66,17 +61,17 @@ block contents
                     - var colors1 = [{name: 'red', text: '빨강'},{name: 'orange', text: '주황'},{name: 'yellow', text: '노랑'},{name: 'lightgreen', text: '연두'},{name: 'green', text: '초록'},{name: 'lightblue', text: '하늘'},{name: 'blue', text: '파랑'}];
                     - var colors2 = [{name: 'deepblue', text: '짙은파랑'},{name: 'deeppurple', text: '짙은보라'},{name: 'purple', text: '보라'},{name: 'brown', text: '팥색'},{name: 'gray', text: '회색'}];
                         .contents-wrapper
-                        each color in colors1
-                            button(class=`ga-button ${color.name}`)=color.text
+                            each color in colors1
+                                button(class=`ga-button ${color.name}`)=color.text
                         .contents-wrapper
-                        each color in colors2
-                            button(class=`ga-button ${color.name}`)=color.text
+                            each color in colors2
+                                button(class=`ga-button ${color.name}`)=color.text
                         .contents-wrapper
-                        each color in colors1
-                            button(class=`ga-button ${color.name} outline`)=color.text
+                            each color in colors1
+                                button(class=`ga-button ${color.name} outline`)=color.text
                         .contents-wrapper
-                        each color in colors2
-                            button(class=`ga-button ${color.name} outline`)=color.text
+                            each color in colors2
+                                button(class=`ga-button ${color.name} outline`)=color.text
                     .footer
                         - var code = '<button class="ga-button { COLORS }">Color</button>';
                             pre
@@ -293,6 +288,7 @@ block contents
                             pre
                                 code.language-markup
                                     | #{code}
-block js-source 
-    script(src="../../prism/prism.js")
-    script(src="../js/ga_ui.js")
+block module 
+    script(src="../js/button.js")
+    script. 
+        useSelectButton()

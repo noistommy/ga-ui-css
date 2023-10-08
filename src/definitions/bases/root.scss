@@ -1,0 +1,55 @@
+@use 'sass:map';
+
+:root {
+    --bgc: #{map.get($grays, 'gray-0')};
+    --txt: #{map.get($grays, 'gray-95')};
+    --brd: #{map.get($grays, 'gray-15')};
+    --suf: #{map.get($grays, 'gray-5')};
+    --hover-suf: #{map.get($grays, 'gray-10')};
+
+    --depth-bg: #{map.get($grays, 'gray-0')};
+    --depth-bs: 0 0 16px 2px rgba(0, 0, 0, 0.16);
+
+    --mobile-p: #{map.get($breakpoints, 'xs')};
+    --mobile-l: #{map.get($breakpoints, 'sm')};
+    --tablet: #{map.get($breakpoints, 'md')};
+    --desktop: #{map.get($breakpoints, 'lg')};
+    --desktop-l: #{map.get($breakpoints, 'xl')};
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bgc: #{map.get($grays, 'gray-95')};
+        --txt: #{map.get($grays, 'gray-0')};
+        --brd: #{map.get($grays, 'gray-85')};
+        --suf: #{map.get($grays, 'gray-90')};
+        --hover-suf: #{map.get($grays, 'gray-90')};
+
+        // --depth-bg: #{map.get($grays, 'gray-80')};
+        --depth-bg: rgba(0, 0, 0, 0,2);
+        --depth-bs: none;
+    }
+}
+
+:root.light-mode {
+    --bgc: #{map.get($grays, 'gray-0')};
+    --txt: #{map.get($grays, 'gray-95')};
+    --brd: #{map.get($grays, 'gray-15')};
+    --suf: #{map.get($grays, 'gray-5')};
+    --hover-suf: #{map.get($grays, 'gray-10')};
+
+    --depth-bg: #{map.get($grays, 'gray-0')};
+    --depth-bs: 0 0 16px 2px rgba(0, 0, 0, 0.16);
+}
+
+:root.dark-mode {
+    --bgc: #{map.get($grays, 'gray-95')};
+    --txt: #{map.get($grays, 'gray-0')};
+    --brd: #{map.get($grays, 'gray-85')};
+    --suf: #{map.get($grays, 'gray-90')};
+    --hover-suf: #{map.get($grays, 'gray-85')};
+
+    // --depth-bg: #{map.get($grays, 'gray-80')};
+    --depth-bg: rgba(0, 0, 0, 0.16);
+    --depth-bs: none;
+}

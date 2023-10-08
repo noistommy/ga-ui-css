@@ -4,13 +4,15 @@ let selectedItem;
 
 items.forEach(item => {
     item.addEventListener('click', (e) => selectItem(e));
-
-    item.addEventListener('mousedown', (e) => { onMouseDown(e) })
+    if (item.getAttribute('draggable')) {
+        item.addEventListener('mousedown', (e) => { onMouseDown(e) })
+    }
+    
 })
 
 function selectItem({currentTarget, clientX, clientY}) {
     list = currentTarget.parentNode;
-    console.log(document.elementFromPoint(clientX, clientY))
+    // console.log(document.elementFromPoint(clientX, clientY))
     for (let i of list.children) {
         i.classList.remove('selected')
     }
@@ -23,7 +25,7 @@ function selectItem({currentTarget, clientX, clientY}) {
 // item.addEventListener('mousedown', (e) => { onMouseDown(e) })
 
 function onMouseDown({currentTarget}) {
-    console.log(currentTarget)
+    // console.log(currentTarget)
     currentTarget.classList.add('draggable-item-active')
     currentTarget.addEventListener('drag', (e) => { onDrag(e) })
     currentTarget.addEventListener('dragend', (e) => { onDragEnd(e) })
@@ -41,6 +43,6 @@ function onDrag({currentTarget, clientX, clientY}) {
 }
 
 function onDragEnd({currentTarget}) {
-    console.log(currentTarget)
+    // console.log(currentTarget)
     currentTarget.classList.remove('draggable-item-active')
 }

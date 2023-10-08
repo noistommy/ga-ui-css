@@ -67,7 +67,7 @@
     transition-duration: 500ms, 1000ms;
     line-height: 1em;
     vertical-align: baseline;
-    border: 1px solid #d6d6d6;
+    border: 1px solid var(--brd);
     opacity: 0;
     transform: translateX(20px);
     font-size: 1.2em;

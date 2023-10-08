@@ -1,48 +1,174 @@
-section#selectbox
-    .section-title
-        h1 Select Box
-    .section-contents
-        h4.contents-title 기본
-        .contents-wrapper
-            .ga-select-box.dropdown
-                .selected-item.ga-input.icon.right
-                    //i.icon.fa.fa-magnifying-glass
-                    input(type="text", placeholder="선택하세요", readonly)
-                    i.icon.fa.fa-chevron-down
-                .select-menu
-                    .ga-list.selection
-                        each col in [1, 2, 3, 4, 5, 6]
-                            .icon.item.option-item
-                                = `option${col}`
-        h4.contents-title 기본
-        .contents-wrapper
-            .ga-select-box.float
-                .selected-item.ga-input.icon.both
-                    i.icon.fa.fa-magnifying-glass
-                    input(type="text", placeholder="선택하세요")
-                    i.icon.fa.fa-chevron-down
-                .select-menu
-                    .ga-list.selection
-                        each col in [1, 2, 3, 4, 5, 6]
-                            .icon.item.option-item
-                                = `option${col}`
-        h4.contents-title 기본
-        .contents-wrapper
-            .ga-select-box(style={width: '300px'})
-                select
-                    each col in ['', 1, 2, 3, 4, 5, 6]
-                        if col == ''
-                            option(default, value=`${col}`)= '선택'
-                        else
-                            option(value=`${col}`)= `option${col}`
-                i.icon.fa.fa-chevron-down
-        h4.contents-title Compact
-        .contents-wrapper
-            .ga-select-box.compact(style={width: '300px'})
-                select
-                  each col in ['', 1, 2, 3, 4, 5, 6]
-                      if col == ''
-                          option(default, value=`${col}`)= '선택'
-                      else
-                          option(value=`${col}`)= `option${col}`
-                i.icon.fa.fa-chevron-down
+extends ../page_layout.pug
+
+block title
+    title Ga-UI SELECT BOX
+
+block contents
+    .page-wrapper
+        section#selectbox
+            .section-title
+                h1 Select Box
+            .section-contents
+                h4.contents-title 기본 - Dropdown
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-select-box.dropdown
+                            .selected-item.ga-input.icon.right
+                                //i.icon.fa.fa-magnifying-glass
+                                input(type="text", placeholder="선택하세요", readonly)
+                                i.icon.fa.fa-chevron-down
+                            .select-menu
+                                .ga-list.selection
+                                    each col in [1, 2, 3, 4, 5, 6]
+                                        .icon.item.option-item
+                                            = `option${col}`
+                    .footer 
+                        - var code_s_1 = `<div class="ga-select-box dropdown">`
+                        - var code_s_2 = `      <div class="select-item ga-input icon right">`
+                        - var code_c_1 = `          <input type="text" readonly />`
+                        - var code_c_2 = `          <i class="icon fa fa-chevron-down">`
+                        - var code_f_2 = `      </div>`
+                        - var code_s_3 = `      <div class="select-menu">`
+                        - var code_s_4 = `          <div class="ga-list selection">`
+                        - var code_c_3 = `              <div class="item option-item">OPTION</div>`
+                        - var code_e= `                 ... ...`
+                        - var code_f_4 = `          </div">`
+                        - var code_f_3 = `      </div>` 
+                        - var code_f_1 = `  </div>` 
+                        pre 
+                            code.language-markup 
+                                | #{code_s_1}
+                                | #{code_s_2}
+                                | #{code_c_1}
+                                | #{code_c_2}
+                                | #{code_f_2}
+                                | #{code_s_3}
+                                | #{code_s_4}
+                                | #{code_c_3}
+                                | #{code_e}
+                                | #{code_f_4}
+                                | #{code_f_3}
+                                | #{code_f_1}
+                h4.contents-title 기본 - Float
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-select-box.float
+                            .selected-item.ga-input.icon.both
+                                i.icon.fa.fa-magnifying-glass
+                                input(type="text", placeholder="선택하세요")
+                                i.icon.fa.fa-chevron-down
+                            .select-menu
+                                .ga-list.selection
+                                    each col in [1, 2, 3, 4, 5, 6]
+                                        .icon.item.option-item
+                                            = `option${col}`
+                    .footer 
+                        - var code_s_1 = `<div class="ga-select-box float">`
+                        - var code_s_2 = `      <div class="select-item ga-input icon right">`
+                        - var code_c_1 = `          <input type="text" readonly />`
+                        - var code_c_2 = `          <i class="icon fa fa-chevron-down">`
+                        - var code_f_2 = `      </div>`
+                        - var code_e= `     // select menu`
+                        - var code_f_1 = `  </div>` 
+                        pre 
+                            code.language-markup 
+                                | #{code_s_1}
+                                | #{code_s_2}
+                                | #{code_c_1}
+                                | #{code_c_2}
+                                | #{code_f_2}
+                                | #{code_e}
+                                | #{code_f_1}
+                h4.contents-title Compact
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-select-box
+                            .selected-item.ga-input.icon.both.compact
+                                i.icon.fa.fa-magnifying-glass
+                                input(type="text", placeholder="선택하세요")
+                                i.icon.fa.fa-chevron-down
+                            .select-menu
+                                .ga-list.selection
+                                    each col in [1, 2, 3, 4, 5, 6]
+                                        .icon.item.option-item
+                                            = `option${col}`
+                    .footer 
+                        - var code_s_1 = `<div class="ga-select-box">`
+                        - var code_s_2 = `      <div class="select-item ga-input icon right copact">`
+                        - var code_c_1 = `          <input type="text" readonly />`
+                        - var code_c_2 = `          <i class="icon fa fa-chevron-down">`
+                        - var code_f_2 = `      </div>`
+                        - var code_e= `     // select menu`
+                        - var code_f_1 = `  </div>` 
+                        pre 
+                            code.language-markup 
+                                | #{code_s_1}
+                                | #{code_s_2}
+                                | #{code_c_1}
+                                | #{code_c_2}
+                                | #{code_f_2}
+                                | #{code_e}
+                                | #{code_f_1}
+                h4.contents-title use 'Select' tag
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-select-box(style={width: '300px'})
+                            select
+                                each col in ['', 1, 2, 3, 4, 5, 6]
+                                    if col == ''
+                                        option(default, value=`${col}`)= '선택'
+                                    else
+                                        option(value=`${col}`)= `option${col}`
+                            i.icon.fa.fa-chevron-down
+                    .footer 
+                        - var code_s_1 = `<div class="ga-select-box">`
+                        - var code_s_2 = `      <select>`
+                        - var code_c_1 = `          <option default value=""> OPTION 1</option>`
+                        - var code_e= `             ... ...` 
+                        - var code_c_2 = `           <option value="value"> OPTION n</option>`
+                        - var code_f_2 = `      </select>`
+                        - var code_c_3= `       <i class="icon fa fa-chevron-down" />`
+                        - var code_f_1 = `  </div>` 
+                        pre 
+                            code.language-markup 
+                                | #{code_s_1}
+                                | #{code_s_2}
+                                | #{code_c_1}
+                                | #{code_e}
+                                | #{code_c_2}
+                                | #{code_f_2}
+                                | #{code_c_3}
+                                | #{code_f_1}
+                                
+                h4.contents-title Compact
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-select-box.compact(style={width: '300px'})
+                            select
+                                each col in ['', 1, 2, 3, 4, 5, 6]
+                                    if col == ''
+                                        option(default, value=`${col}`)= '선택'
+                                    else
+                                        option(value=`${col}`)= `option${col}`
+                            i.icon.fa.fa-chevron-down
+                    .footer 
+                        - var code_s_1 = `<div class="ga-select-box compact">`
+                        - var code_s_2 = `      <select>`
+                        - var code_c_1 = `          <option default value=""> OPTION 1</option>`
+                        - var code_e= `             ... ...` 
+                        - var code_c_2 = `           <option value="value"> OPTION n</option>`
+                        - var code_f_2 = `      </select>`
+                        - var code_c_3= `       <i class="icon fa fa-chevron-down" />`
+                        - var code_f_1 = `  </div>` 
+                        pre 
+                            code.language-markup 
+                                | #{code_s_1}
+                                | #{code_s_2}
+                                | #{code_c_1}
+                                | #{code_e}
+                                | #{code_c_2}
+                                | #{code_f_2}
+                                | #{code_c_3}
+                                | #{code_f_1}
+block module 
+    script(src="../js/selectbox.js")

@@ -6,13 +6,16 @@ const closeModal = () => {
   modal.classList.remove('open')
 }
 closeB = document.querySelector('.close');
-showB.onclick = () => {
-  modal.classList.add('open')
-  // closeB = document.querySelector('.close');
-  // closeB.addEventListener('click', closeModal)
+if(modal) {
+  showB.onclick = () => {
+    modal.classList.add('open')
+    // closeB = document.querySelector('.close');
+    // closeB.addEventListener('click', closeModal)
+  }
+  closeB.onclick = () => {
+    closeModal()
+  }
 }
-closeB.onclick = () => {
-  closeModal()
-}
+
 
 

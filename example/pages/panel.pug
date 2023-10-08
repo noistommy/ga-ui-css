@@ -1,79 +1,88 @@
-section#panel
-    .section-title
-        h1 Panel
-        .section-desc
-    .section-contents
-        h4.contents-title 기본
-        .contents-wrapper
-            .ga-panel
-                .panel-header
-                    .title 제목
-                .panel-content
-                    .content-wrapper CONTENT
-                        p
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
-                            | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
-                            | eius est facere pariatur voluptas!
-                        p
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
-                            | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
-                            | eius est facere pariatur voluptas!
-    .section-contents
-        h4.contents-title 기본
-        .contents-wrapper
-            .ga-panel.collapse
-                .panel-header
-                    .title 제목
-                    button.panel-toggle-btn.ga-button.icon.outline
-                        i.fa.fa-caret-up
-                .panel-content
-                    .content-wrapper
-                        p
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
-                            | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
-                            | eius est facere pariatur voluptas!
-                        p
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
-                            | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
-                            | eius est facere pariatur voluptas!
-    .section-contents
-        h4.contents-title 기본
-        .contents-wrapper
-            .ga-panel.open
-                .panel-header
-                    .title 제목
-                    button.panel-toggle-btn.ga-button.icon.outline
-                        i.fa.fa-chevron-up
-                .panel-content
-                    .content-wrapper
-                        .content-head
-                            | Head Area
-                        .content-body
-                            - var rows = [{name: '김아무개', age: 11, job: '학생'},{name: '이아무개', age: 17, job: '대학생'},{name: '박아무개', age: 31, job: '대학원생'},]
-                            table.ga-table
-                                thead
-                                    tr.align-center
-                                        th 이름
-                                        th.align-right 나이
-                                        th 직업
-                                tbody
-                                    each row in rows
-                                        tr
-                                            td= `${row.name}`
-                                            td.align-right= `${row.age}`
-                                            td= `${row.job}`
-                        .content-foot
-                            .ga-pagination.number.align-center.small
-                                - var items = [2, 3, 4, 5]
-                                .pagination-nav
-                                    i.fa.fa-chevron-left
-                                .pagination-page-wrapper
-                                    .pagination-num.active 1
-                                    each item in items
-                                        .pagination-num=`${item}`
-                                .pagination-nav
-                                    i.fa.fa-chevron-right
+extends ../page_layout.pug
+
+block title
+    title Ga-UI PANEL
+
+block contents
+    .page-wrapper
+        section#panel
+            .section-title
+                h1 Panel
+                .section-desc
+            .section-contents
+                h4.contents-title 기본
+                .contents-wrapper
+                    .ga-panel
+                        .panel-header
+                            .title 제목
+                        .panel-content
+                            .content-wrapper CONTENT
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
+                                    | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
+                                    | eius est facere pariatur voluptas!
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
+                                    | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
+                                    | eius est facere pariatur voluptas!
+            .section-contents
+                h4.contents-title 기본
+                .contents-wrapper
+                    .ga-panel.collapse
+                        .panel-header
+                            .title 제목
+                            button.panel-toggle-btn.ga-button.icon.outline
+                                i.fa.fa-caret-up
+                        .panel-content
+                            .content-wrapper
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
+                                    | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
+                                    | eius est facere pariatur voluptas!
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    | Commodi consequuntur corporis expedita fuga, incidunt obcaecati qui,
+                                    | quis, rem reprehenderit rerum sed sit. Distinctio doloremque dolorum
+                                    | eius est facere pariatur voluptas!
+            .section-contents
+                h4.contents-title 기본
+                .contents-wrapper
+                    .ga-panel.open
+                        .panel-header
+                            .title 제목
+                            button.panel-toggle-btn.ga-button.icon.outline
+                                i.fa.fa-chevron-up
+                        .panel-content
+                            .content-wrapper
+                                .content-head
+                                    | Head Area
+                                .content-body
+                                    - var rows = [{name: '김아무개', age: 11, job: '학생'},{name: '이아무개', age: 17, job: '대학생'},{name: '박아무개', age: 31, job: '대학원생'},]
+                                    table.ga-table
+                                        thead
+                                            tr.align-center
+                                                th 이름
+                                                th.align-right 나이
+                                                th 직업
+                                        tbody
+                                            each row in rows
+                                                tr
+                                                    td= `${row.name}`
+                                                    td.align-right= `${row.age}`
+                                                    td= `${row.job}`
+                                .content-foot
+                                    .ga-pagination.number.align-center.small
+                                        - var items = [2, 3, 4, 5]
+                                        .pagination-nav
+                                            i.fa.fa-chevron-left
+                                        .pagination-page-wrapper
+                                            .pagination-num.active 1
+                                            each item in items
+                                                .pagination-num=`${item}`
+                                        .pagination-nav
+                                            i.fa.fa-chevron-right
+block module 
+    script(src="../js/panel.js")

@@ -135,7 +135,7 @@ function toastBoard () {
 const tBoard = toastBoard()
 
 openBtn.addEventListener('click', (e) => {
-  if(e.target.nodeName !== 'BUTTON') return
+  // if(e.target.nodeName !== 'BUTTON') return
   const type = e.target.textContent
   tBoard.addToast(type, 'This is Toast Testing.', {
     containerClass: 'top-right',

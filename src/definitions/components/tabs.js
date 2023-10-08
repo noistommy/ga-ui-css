@@ -13,9 +13,14 @@ closes.forEach(btn => {
     btn.addEventListener('click', e => removeTab(e));
 })
 
-add.addEventListener('click', e => addTab(e))
+if(add) {
+    add.addEventListener('click', e => addTab(e))
+}
 
-bTabs[0].classList.add('active');
+if(bTabs.length > 0) {
+    bTabs[0].classList.add('active');
+}
+
 
 setWidth();
 function selectTab({target}) {

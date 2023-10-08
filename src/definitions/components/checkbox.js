@@ -1,4 +1,4 @@
-const checkbox = document.querySelectorAll('.ga-checkbox');
+// const checkbox = document.querySelectorAll('.ga-checkbox');
 
 function changChecked(e, t, s=null) {
     let input = e.previousSibling
@@ -16,10 +16,22 @@ function selectRadio(e, elem) {
     changChecked(e, elem)
 }
 
-checkbox.forEach(elem => {
-    if(elem.className.indexOf('radio') > -1) {
-        elem.addEventListener('click', e => {selectRadio(e.target, elem)})
-    } else {
-        elem.addEventListener('click', e => {changChecked(e.target, elem)})
-    }
-})
+// checkbox.forEach(elem => {
+//     if(elem.className.indexOf('radio') > -1) {
+//         elem.addEventListener('click', e => {selectRadio(e.target, elem)})
+//     } else {
+//         elem.addEventListener('click', e => {changChecked(e.target, elem)})
+//     }
+// })
+
+function useCheckBox(wrapper = document) {
+    const cbs = wrapper.querySelectorAll('.ga-checkbox');
+    cbs.forEach(elem => {
+        if (elem.className.indexOf('radio') > -1) {
+            elem.addEventListener('click', e => { selectRadio(e.target, elem) })
+        } else {
+            elem.addEventListener('click', e => { changChecked(e.target, elem) })
+        }
+    })
+
+}

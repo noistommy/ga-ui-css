@@ -1,194 +1,201 @@
-section#table
-    .section-title
-        h1 Table
-        .section-desc
-    - var rows = [{name: '김아무개', age: 11, job: '학생'},{name: '이아무개', age: 17, job: '대학생'},{name: '박아무개', age: 31, job: '대학원생'},]
-    .section-contents
-        h4.contents-title 기본
-        .contents-wrapper
-            table.ga-table
-                thead
-                    tr.align-center
-                        th 이름
-                        th.align-right 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td.align-right= `${row.age}`
-                            td= `${row.job}`
-                tfoot
-    .section-contents
-        h4.contents-title Single Rows
-        .contents-wrapper
-            table.ga-table.single
-                thead
-                    tr
-                        th 이름
-                        th 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td= `${row.age}`
-                            td= `${row.job}`
-    .section-contents
-        h4.contents-title Table Label
-        .contents-wrapper
-            .table-title Table Title
-            table.ga-table.labeled
-                thead
-                    tr
-                        th 이름
-                        th 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td= `${row.age}`
-                            td= `${row.job}`
-    .section-contents
-        h4.contents-title Footer + Pagination
-        .contents-wrapper
-            table.ga-table
-                thead
-                    tr
-                        th 이름
-                        th 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td= `${row.age}`
-                            td= `${row.job}`
-                tfoot
-                    tr
-                        td(colspan="3")
-                            .ga-pagination.number.align-center.small
-                                - var items = [2, 3, 4, 5]
-                                .pagination-nav
-                                    i.fa.fa-chevron-left
-                                .pagination-page-wrapper
-                                    .pagination-num.active 1
-                                    each item in items
-                                        .pagination-num=`${item}`
-                                .pagination-nav
-                                    i.fa.fa-chevron-right
-    .section-contents
-        h4.contents-title table with Form Element
-        .contents-wrapper
-            table.ga-table.structured
-                tbody
-                    tr
-                        td.label.align-center 입력
-                        td(colspan="3")
-                            .ga-input.transparent
-                                input(type="text", placeholder="입력하세요")
-                    tr
-                        td.label.align-center 선택
-                        td(colspan="3")
-                            .ga-select-box(style={width: '300px'})
-                                select
-                                    each col in ['', 1, 2, 3, 4, 5, 6]
-                                        if col == ''
-                                            option(default, value=`${col}`)= '선택'
-                                        else
-                                            option(value=`${col}`)= `option${col}`
-                                i.icon.fa.fa-chevron-down
-                    tr
-                        td.label.align-center(rowspan="2") 택일
-                        td.label 택 1
-                        td(colspan="2")
-                            label.ga-switch.slide
-                                input(type="checkbox", checked)
-                                span.switch.round
-                    tr
-                        td.label 택 2
-                        td(colspan="2")
-                            label.ga-switch.button
-                                input(type="checkbox", checked)
-                                span.on.active 승인
-                                span.off 미승인
-                    tr
-                        td.align-center.label 실행
-                        td
-                            button.ga-button.primary 저장
-                        td.align-center.label 취소
-                        td
-                            button.ga-button.secondary.outline 취소
-    .section-contents
-        h4.contents-title tables
-        .contents-wrapper
-            table.ga-table
-                thead
-                    tr.align-center
-                        th 이름
-                        th.align-right 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td.align-right= `${row.age}`
-                            td= `${row.job}`
-            table.ga-table
-                thead
-                    tr.align-center
-                        th 이름
-                        th.align-right 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td.align-right= `${row.age}`
-                            td= `${row.job}`
-    .section-contents
-        h4.contents-title table column count
-        h5.contents-desc 지정된 갯수로 균등 전체 컬럼 쥰등 분할 (10 단계 퍼센트 분할)
-        .contents-wrapper
-            table.ga-table.column.three
-                thead
-                    tr
-                        th 이름
-                        th 나이
-                        th 직업
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td= `${row.age}`
-                            td= `${row.job}`
-            table.ga-table.column.four
-                thead
-                    tr
-                        th 이름
-                        th 나이
-                        th 직업
-                        th Lorem
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td= `${row.age}`
-                            td= `${row.job}`
-                            td= `Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-    .section-contents
-        h4.contents-title table + grid - column width
-        .contents-wrapper
-            table.ga-table
-                thead
-                    tr
-                        th 이름 (Auto)
-                        th.col-6 나이 (Column 6)
-                        th.col-1 직업 학생만 (Column 1)
-                tbody
-                    each row in rows
-                        tr
-                            td= `${row.name}`
-                            td= `${row.age}`
-                            td= `${row.job}`
+extends ../page_layout.pug
+
+block title
+    title Ga-UI TABLE
+    
+block contents
+    .page-wrapper
+        section#table
+            .section-title
+                h1 Table
+                .section-desc
+            - var rows = [{name: '김아무개', age: 11, job: '학생'},{name: '이아무개', age: 17, job: '대학생'},{name: '박아무개', age: 31, job: '대학원생'},]
+            .section-contents
+                h4.contents-title 기본
+                .contents-wrapper
+                    table.ga-table
+                        thead
+                            tr.align-center
+                                th 이름
+                                th.align-right 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td.align-right= `${row.age}`
+                                    td= `${row.job}`
+                        tfoot
+            .section-contents
+                h4.contents-title Single Rows
+                .contents-wrapper
+                    table.ga-table.single
+                        thead
+                            tr
+                                th 이름
+                                th 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td= `${row.age}`
+                                    td= `${row.job}`
+            .section-contents
+                h4.contents-title Table Label
+                .contents-wrapper
+                    .table-title Table Title
+                    table.ga-table.labeled
+                        thead
+                            tr
+                                th 이름
+                                th 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td= `${row.age}`
+                                    td= `${row.job}`
+            .section-contents
+                h4.contents-title Footer + Pagination
+                .contents-wrapper
+                    table.ga-table
+                        thead
+                            tr
+                                th 이름
+                                th 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td= `${row.age}`
+                                    td= `${row.job}`
+                        tfoot
+                            tr
+                                td(colspan="3")
+                                    .ga-pagination.number.align-center.small
+                                        - var items = [2, 3, 4, 5]
+                                        .pagination-nav
+                                            i.fa.fa-chevron-left
+                                        .pagination-page-wrapper
+                                            .pagination-num.active 1
+                                            each item in items
+                                                .pagination-num=`${item}`
+                                        .pagination-nav
+                                            i.fa.fa-chevron-right
+            .section-contents
+                h4.contents-title table with Form Element
+                .contents-wrapper
+                    table.ga-table.structured
+                        tbody
+                            tr
+                                td.label.align-center 입력
+                                td(colspan="3")
+                                    .ga-input.transparent
+                                        input(type="text", placeholder="입력하세요")
+                            tr
+                                td.label.align-center 선택
+                                td(colspan="3")
+                                    .ga-select-box(style={width: '300px'})
+                                        select
+                                            each col in ['', 1, 2, 3, 4, 5, 6]
+                                                if col == ''
+                                                    option(default, value=`${col}`)= '선택'
+                                                else
+                                                    option(value=`${col}`)= `option${col}`
+                                        i.icon.fa.fa-chevron-down
+                            tr
+                                td.label.align-center(rowspan="2") 택일
+                                td.label 택 1
+                                td(colspan="2")
+                                    label.ga-switch.slide
+                                        input(type="checkbox", checked)
+                                        span.switch.round
+                            tr
+                                td.label 택 2
+                                td(colspan="2")
+                                    label.ga-switch.button
+                                        input(type="checkbox", checked)
+                                        span.on.active 승인
+                                        span.off 미승인
+                            tr
+                                td.align-center.label 실행
+                                td
+                                    button.ga-button.primary 저장
+                                td.align-center.label 취소
+                                td
+                                    button.ga-button.secondary.outline 취소
+            .section-contents
+                h4.contents-title tables
+                .contents-wrapper
+                    table.ga-table
+                        thead
+                            tr.align-center
+                                th 이름
+                                th.align-right 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td.align-right= `${row.age}`
+                                    td= `${row.job}`
+                    table.ga-table
+                        thead
+                            tr.align-center
+                                th 이름
+                                th.align-right 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td.align-right= `${row.age}`
+                                    td= `${row.job}`
+            .section-contents
+                h4.contents-title table column count
+                h5.contents-desc 지정된 갯수로 균등 전체 컬럼 쥰등 분할 (10 단계 퍼센트 분할)
+                .contents-wrapper
+                    table.ga-table.column.three
+                        thead
+                            tr
+                                th 이름
+                                th 나이
+                                th 직업
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td= `${row.age}`
+                                    td= `${row.job}`
+                    table.ga-table.column.four
+                        thead
+                            tr
+                                th 이름
+                                th 나이
+                                th 직업
+                                th Lorem
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td= `${row.age}`
+                                    td= `${row.job}`
+                                    td= `Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
+            .section-contents
+                h4.contents-title table + grid - column width
+                .contents-wrapper
+                    table.ga-table
+                        thead
+                            tr
+                                th 이름 (Auto)
+                                th.col-6 나이 (Column 6)
+                                th.col-1 직업 학생만 (Column 1)
+                        tbody
+                            each row in rows
+                                tr
+                                    td= `${row.name}`
+                                    td= `${row.age}`
+                                    td= `${row.job}`

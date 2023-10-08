@@ -9,7 +9,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1em;
-    font-family: $fontName;
+    // font-family: $fontName;
     vertical-align: baseline;
     cursor: pointer;
     color: $baseButtonColor;
@@ -23,10 +23,7 @@
     text-shadow: none;
     box-shadow: 0 0 0 1px transparent inset;
     transition: opacity .1s ease,
-    background-color .1s ease,
-    color .1s ease,
-    box-shadow .1s ease,
-    background .1s ease;
+    background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
     &.hover, &.focus,
     &:hover, &:focus {
         background-color: $hoverButtonBg;
@@ -107,12 +104,14 @@
         border-radius: 2em;
     }
     &.outline {
-        background-color: $background;
+        background-color: $white;
+        color: $black;
+        // background-color: var(--bgc);
         //background-color: transparent;
         //border:1px solid $borderColor;
-        box-shadow: 0 0 0 1px $borderColor inset;
+        box-shadow: 0 0 0 1px var(--brd) inset;
         &:hover {
-            background-color: #F6F6F6;
+            background-color: var(----hover-suf);
         }
     }
     &.compact {
@@ -291,7 +290,7 @@
 
 @each $color, $value in $colors {
     $hoverColor: darken($value, 10);
-    $textColor: #white;
+    $textColor: $white;
     .ga-button {
         &.#{$color} {
             background-color: $value;
@@ -337,4 +336,3 @@
         }
     }
 }
-

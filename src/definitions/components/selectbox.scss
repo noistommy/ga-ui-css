@@ -135,6 +135,7 @@
     line-height: 1.5;
   }
   &.compact {
+    .select-item,
     select {
       padding: $compactPadding;
     }

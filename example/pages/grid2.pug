@@ -1,80 +1,87 @@
-section#grid
-    .section-title
-        h1 Grid 2
-        .section-desc - Grid System.
-    .section-contents
-        h4.contents-title 기본
-        .ga-card.attached
-            .contents-wrapper
-                .ga-grid2.divide-column-8.row-2
-                    each col in [1, 2, 3, 4, 5, 6]
-                        .column
-                    each col in [1, 2, 3, 4, 5, 6]
-                        .column
-            .footer
-                - var code = `<div class="ga-grid2 divide-column-{num} row-{num}">\n    <div class="column" />\n    <div class="column" />\n    ...\n    <div class="column" />\n</div>`
-                  pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title 분할 구성
-        .ga-card.attached
-            .contents-wrapper
-                .ga-grid2
-                    .column.col-1
-                    .column.col-3
-                    .column.col-1
-                    .column.col-3
-                    .column.col-1
-                    .column.col-3
-                    .column.col-1
-                    .column.col-3
-                    .column.col-1
-                    .column.col-3
-                    .column.col-1
-                    .column.col-3
-            .footer
-              - var code = `<div class="ga-grid2">\n    <div class="column col-{num}" />\n    <div class="column col-{num}" />\n    ...\n    <div class="column col-{num}" />\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title Auto-fit
-        .ga-card.attached
-            .contents-wrapper
-                .ga-grid2.divide-column-10.auto-fit
-                    .column
-                    .column
-                    .column
-                    .column
-            .footer
-              - var code = `<div class="ga-grid2 auto-fit">\n    <div class="column" />\n    <div class="column" />\n    ...\n    <div class="column" /> // grid column 보다 작은 column 갯수 일 때 \n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
-        h4.contents-title  Grid + Table
-        .ga-card.attached
-            .contents-wrapper
-                .ga-grid2.tabled.row-2
-                    .column.label.col-1 이름
-                    .column.col-3.align-left 왼쪽
-                    .column.label.col-1 나이
-                    .column.col-3.align-center 중간
-                    .column.label.col-1 직업
-                    .column.col-3.align-right 오른쪽
-                    .column.label.col-1 이름
-                    .column.col-3.align-top 위
-                    .column.label.col-1 나이
-                    .column.col-3
-                        .ga-select-box.fluid
-                            select
-                                option(value='') 선택
-                                option(value='10') 10
-                                option(value='20') 20
-                                option(value='30') 30
-                            i.icon.fa.fa-caret-down
-                    .column.label.col-1 직업
-                    .column.col-3.align-bottom 아래
-            .footer
-              - var code = `<div class="ga-grid2 tabled row-{num}">\n    <div class="column label col-{num}" /> // <th />\n    <div class="column align-{left|center|right}" /> // <td />\n    ...\n</div>`
-                pre
-                    code.language-markup
-                        | #{code}
+extends ../page_layout.pug
+
+block title
+    title Ga-UI GRID 2
+
+block contents
+    .page-wrapper
+        section#grid
+            .section-title
+                h1 Grid 2
+                .section-desc - Grid System.
+            .section-contents
+                h4.contents-title 기본
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid2.divide-column-8.row-2
+                            each col in [1, 2, 3, 4, 5, 6]
+                                .column
+                            each col in [1, 2, 3, 4, 5, 6]
+                                .column
+                    .footer
+                        - var code = `<div class="ga-grid2 divide-column-{num} row-{num}">\n    <div class="column" />\n    <div class="column" />\n    ...\n    <div class="column" />\n</div>`
+                        pre
+                            code.language-markup
+                                | #{code}
+                h4.contents-title 분할 구성
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid2
+                            .column.col-1
+                            .column.col-3
+                            .column.col-1
+                            .column.col-3
+                            .column.col-1
+                            .column.col-3
+                            .column.col-1
+                            .column.col-3
+                            .column.col-1
+                            .column.col-3
+                            .column.col-1
+                            .column.col-3
+                    .footer
+                        - var code = `<div class="ga-grid2">\n    <div class="column col-{num}" />\n    <div class="column col-{num}" />\n    ...\n    <div class="column col-{num}" />\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title Auto-fit
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid2.divide-column-10.auto-fit
+                            .column
+                            .column
+                            .column
+                            .column
+                    .footer
+                        - var code = `<div class="ga-grid2 auto-fit">\n    <div class="column" />\n    <div class="column" />\n    ...\n    <div class="column" /> // grid column 보다 작은 column 갯수 일 때 \n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
+                h4.contents-title  Grid + Table
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid2.tabled.row-2
+                            .column.label.col-1 이름
+                            .column.col-3.align-left 왼쪽
+                            .column.label.col-1 나이
+                            .column.col-3.align-center 중간
+                            .column.label.col-1 직업
+                            .column.col-3.align-right 오른쪽
+                            .column.label.col-1 이름
+                            .column.col-3.align-top 위
+                            .column.label.col-1 나이
+                            .column.col-3
+                                .ga-select-box.fluid
+                                    select
+                                        option(value='') 선택
+                                        option(value='10') 10
+                                        option(value='20') 20
+                                        option(value='30') 30
+                                    i.icon.fa.fa-caret-down
+                            .column.label.col-1 직업
+                            .column.col-3.align-bottom 아래
+                    .footer
+                        - var code = `<div class="ga-grid2 tabled row-{num}">\n    <div class="column label col-{num}" /> // <th />\n    <div class="column align-{left|center|right}" /> // <td />\n    ...\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}

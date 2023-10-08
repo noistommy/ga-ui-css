@@ -1,38 +1,59 @@
 extends layout.pug
 
 block title
-    title Gabia-UI Test
+    title Design System
 
 block style
-    link(href="gabiaui.css", rel="stylesheet")
-    link(href="../prism/prism.css", rel="stylesheet")
+    link(href="frogui.css", rel="stylesheet")
+    //- link(href="../prism/prism.css", rel="stylesheet")
 
 block contents
     .page-wrapper
-        h1.h1.title  Style Guide
-        include pages/base.pug
-        include pages/colors.pug
+        h1.h1.title Style Guide
+        a.ga-button(href="./pages/base.html") BASE 
+        a.ga-button(href="./pages/colors.html") COLORS 
+        a.ga-button(href="./pages/input.html") INPUT 
+        a.ga-button(href="./pages/tag.html") TAG 
+        a.ga-button(href="./pages/badge.html") BADGE 
+        a.ga-button(href="./pages/button.html") BUTTON 
+        a.ga-button(href="./pages/checkbox.html") CHECK BOX 
+        a.ga-button(href="./pages/message.html") MESSAGE 
+        a.ga-button(href="./pages/switch.html") SWITCH 
+        a.ga-button(href="./pages/selectbox.html") SELECTBOX 
+        a.ga-button(href="./pages/grid.html") GRID 
+        a.ga-button(href="./pages/grid2.html") GRID 2
+        a.ga-button(href="./pages/form.html") FORM
+        a.ga-button(href="./pages/list.html") LIST
+        a.ga-button(href="./pages/tabs.html") TABS
+        a.ga-button(href="./pages/cards.html") CARDS
+        a.ga-button(href="./pages/pagination.html") PAGINATION
+        a.ga-button(href="./pages/calendar.html") CARENDAR
+        a.ga-button(href="./pages/table.html") TABLE
+        a.ga-button(href="./pages/panel.html") PANEL
+        a.ga-button(href="./pages/modal.html") MODAL
+        a.ga-button(href="./pages/toast.html") TOAST
+        
+        //- include pages/base.pug
+        //- include pages/colors.pug
         //- include pages/button.pug
-        a(href="/pages/button.html") BUTTON 
-        include pages/input.pug
-        include pages/tag.pug
-        include pages/badge.pug
-        include pages/alert.pug
-        include pages/checkbox.pug
-        include pages/switch.pug
-        include pages/selectbox.pug
-        include pages/grid.pug
-        include pages/grid2.pug
-        include pages/form.pug
-        include pages/list.pug
-        include pages/tabs.pug
-        include pages/cards.pug
-        include pages/pagination.pug
-        include pages/calendar.pug
-        include pages/table.pug
-        include pages/panel.pug
-        include pages/modal.pug
-        include pages/toast.pug
+        //- include pages/input.pug
+        //- include pages/tag.pug
+        //- include pages/badge.pug
+        //- include pages/alert.pug
+        //- include pages/checkbox.pug
+        //- include pages/switch.pug
+        //- include pages/selectbox.pug
+        //- include pages/grid.pug
+        //- include pages/grid2.pug
+        //- include pages/form.pug
+        //- include pages/list.pug
+        //- include pages/tabs.pug
+        //- include pages/cards.pug
+        //- include pages/pagination.pug
+        //- include pages/calendar.pug
+        //- include pages/table.pug
+        //- include pages/panel.pug
+        //- include pages/modal.pug
+        //- include pages/toast.pug
 block js-source 
-    script(src="../prism/prism.js")
-    script(src="js/ga_ui.js")
+    //- script(src="../prism/prism.js")

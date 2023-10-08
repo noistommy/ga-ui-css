@@ -12,11 +12,28 @@ html
 
         link(href="style.css", rel="stylesheet")
     body
-        .container
-            //.left-part
-            //    include lnb.pug
+        .side-menu
+            .background
+            .menu-wrapper
+                - var path = '.'
+                include lnb.pug
+        header.gnb
+            .logo 
+                span FROG 
+                div.sub-logo Flexible Robots always Observe Goodman.
+            nav.main-menu
+                .toggle-menu
+                    .ga-button.icon.circle.show-menu
+                        i.fa.fa-bars
+            nav.sub-menu
+                .mode
+                    .ga-button.icon.circle.toggle-mode
+                        i.fa.fa-sun
+                .github
+                    a.ga-button.icon.circle.toggle-mode(href="https://github.com/noistommy/ga-ui-css")
+                        i.fa-brands.fa-github
+        .main-container.container.main
             .right-part
                 block contents
         block js-source
-        //- script(src="../prism/prism.js")
-        //- script(src="js/ga_ui.js")
+        script(src="./js/base.js")

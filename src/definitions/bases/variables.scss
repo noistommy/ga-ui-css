@@ -1,32 +1,11 @@
 @use 'sass:color';
 @use 'sass:map';
 
-:root {
-    --bgc: #{$background};
-    --txt: #{$baseFontColor};
-    --brd: #{$borderColor};
-    --suf: #{$surface};
-    --hover-suf: #{darken($surface, 10)};
-
-    --mobile-p: #{map.get($breakpoints, 'xs')};
-    --mobile-l: #{map.get($breakpoints, 'sm')};
-    --tablet: #{map.get($breakpoints, 'md')};
-    --desktop: #{map.get($breakpoints, 'lg')};
-    --desktop-l: #{map.get($breakpoints, 'xl')};
-}
 $amount: 0.5;
 
 $headerTopMargin: 2em - $lineHeight * 0.5;
 $headerMargin: $headerTopMargin 0 1rem;
-//@media (prefers-color-scheme: dark) {
-//    :root {
-//        --bgc: #{$dModeBackground};
-//        --txt: #{$dModeBaseFontColor};
-//        --brd: #{$dModeBorderColor};
-//        --suf: #{$dModeSurface};
-//        --hover-suf: #{lighten($dModeSurface, 10)}
-//    }
-//}
+
 body {
     background-color: var(--bgc);
     color: var(--txt);
@@ -128,6 +107,25 @@ h5,.h5 {font-size: $h5;}
     }
 }
 
+//grayscale
+.gray {
+    &-0 {background-color: map.get($grays, 'gray-0');}
+    &-5 {background-color: map.get($grays, 'gray-5');}
+    &-10 {background-color: map.get($grays, 'gray-10');}
+    &-15 {background-color: map.get($grays, 'gray-15');}
+    &-20 {background-color: map.get($grays, 'gray-20');}
+    &-30 {background-color: map.get($grays, 'gray-30');}
+    &-40 {background-color: map.get($grays, 'gray-40');}
+    &-50 {background-color: map.get($grays, 'gray-50'); color: #ffffff;}
+    &-60 {background-color: map.get($grays, 'gray-60'); color: #ffffff;}
+    &-70 {background-color: map.get($grays, 'gray-70'); color: #ffffff;}
+    &-80 {background-color: map.get($grays, 'gray-80'); color: #ffffff;}
+    &-85 {background-color: map.get($grays, 'gray-85'); color: #ffffff;}
+    &-90 {background-color: map.get($grays, 'gray-90'); color: #ffffff;}
+    &-95 {background-color: map.get($grays, 'gray-95'); color: #ffffff;}
+    &-100 {background-color: map.get($grays, 'gray-100'); color: #ffffff;}
+}
+
 @each $color, $value in $colors {
     .ga-#{$color} {
         background-color: $value !important;
@@ -227,9 +225,9 @@ h5,.h5 {font-size: $h5;}
      }
      &::-webkit-scrollbar-thumb{
          // 스크롤바의 막대 색상을 정의합니다.
-         background-color: $trackBackground;
+         background-color: var(--bgc);
          border-radius: $thumbBorderRadius+px;
-         border:$thumbBorderWidth+px solid $thumbBorderColor;
+         border:$thumbBorderWidth+px solid var(--bgc);
      }
      &:hover::-webkit-scrollbar-thumb {
          background-color: $thumbBackground;
@@ -289,6 +287,7 @@ h5,.h5 {font-size: $h5;}
             max-width: map.get($breakpoints, 'xl');
         }
     }
+    &.center {margin: 0 auto}
     
  }
 @media (prefers-color-scheme: light) {
@@ -311,15 +310,21 @@ h5,.h5 {font-size: $h5;}
     .page-wrapper {
         position: relative;
         &:after {
-            content: 'Dark';
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            content: 'Dark mode';
+            position: fixed;
+            top: 5px;
+            left: 50%;
             z-index: 9999;
             background-color: #333;
             color: #fff;
-            padding: 10px;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-radius: 2em;
+            opacity: 0;
         }
     }
 }
+
+// grayscale
+
 
