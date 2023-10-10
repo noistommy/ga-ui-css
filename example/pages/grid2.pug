@@ -44,6 +44,22 @@ block contents
                             pre
                                 code.language-markup
                                     | #{code}
+                h4.contents-title 분할 구성 (+ROW)
+                .ga-card.attached
+                    .contents-wrapper
+                        .ga-grid2.set-rows(style="--grid-row-num: 9")
+                            .column.col-6.row-6
+                            .column.col-6.row-4
+                            .column.col-6.row-2
+                            .column.col-12
+                            .column.col-6.row-2
+                            .column.col-6.row-2
+                            
+                    .footer
+                        - var code = `<div class="ga-grid2 set-rows"\n style="--grid-row-num: {num}">\n    <div class="column col-{num} row-{num}" />\n    <div class="column col-{num}" />\n    ...\n    <div class="column col-{num}" />\n</div>`
+                            pre
+                                code.language-markup
+                                    | #{code}
                 h4.contents-title Auto-fit
                 .ga-card.attached
                     .contents-wrapper

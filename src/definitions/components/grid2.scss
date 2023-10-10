@@ -8,6 +8,9 @@
     grid-gap: var(--grid-gap);
     grid-template-columns: repeat(var(--grid-col-num), 1fr);
     margin-bottom: var(--grid-gap);
+    &.set-rows {
+      grid-template-rows: repeat(var(--grid-row-num), 1fr);
+    }
     &.inline {
       display: inline-grid;
     }
@@ -61,7 +64,11 @@
           &-#{$i} {
             grid-column: auto / span $i;
           }
-          &-row-#{$i} {
+        }
+      }
+      &.row {
+        @for $i from 1 through $gridWhole {
+          &-#{$i} {
             grid-row: auto / span $i;
           }
         }

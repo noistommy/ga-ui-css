@@ -32,7 +32,215 @@ block contents
         a.ga-button(href="./pages/panel.html") PANEL
         a.ga-button(href="./pages/modal.html") MODAL
         a.ga-button(href="./pages/toast.html") TOAST
-        
+    .page-wrapper.summary#typography
+        h5.header typography
+        .ga-grid2.set-rows.align-center(style="--grid-row-num: 6")
+            .column.col-6.row-4
+                .ga-grid
+                    .column.span-3.mainWord Aa
+                    .column.span-8.mainWord 가나다
+                    .column.span-12
+                        
+            //- .column.col-6.row-4 2
+            .column.col-6.row-4
+                h1.header [H1] Frog UI System (28px)
+                h2.header [H2] Frog UI System (24px)
+                h3.header [H3] Frog UI System (18px)
+                h4.header [H4] Frog UI System (16px)
+                h5.header [H5] Frog UI System (14px)
+            .column.col-6.row-2
+                p ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                p abcdefghijklmnopqrstuvwxyz
+                p 1234567890 ,./(){}[]\|:;"'?
+                p 가나다라마바사 스포크 한 산스
+            .column.col-6.row-2
+                .ga-grid
+                    .column.span-2 [light]
+                    .column.span-6.light Frog UI System (100)
+                    .column.span-4
+                    .column.span-2 [regular]
+                    .column.span-6 Frog UI System (400)
+                    .column.span-4
+                    .column.span-2 [bold]
+                    .column.span-6.bold Frog UI System (600)
+                    .column.span-4
+                    .column.span-2 [bolder]
+                    .column.span-6.bolder Frog UI System (900)
+                    .column.span-4
+    .page-wrapper.summary#colors
+        h5.header color system
+        .ga-grid
+            .column.sub-title colors
+            .column
+                .color-item
+                    .chip.primary
+                    .name primary
+            .column
+                .color-item
+                    .chip.secondary
+                    .name secondary
+            .column
+                .color-item
+                    .chip.success
+                    .name success
+            .column
+                .color-item
+                    .chip.danger
+                    .name danger
+            .column
+                .color-item
+                    .chip.attention
+                    .name attention
+            .column
+                .color-item
+                    .chip.importance
+                    .name importance
+            .column
+                .color-item
+                    .chip.gray-0
+                    .name white
+            .column
+                .color-item
+                    .chip.gray-100
+                    .name black
+        .ga-grid
+            .column.sub-title grayscale
+            .column
+                .color-item
+                    .chip.gray-10
+                    .name gray-10
+            .column
+                .color-item
+                    .chip.gray-15
+                    .name gray-15
+            .column
+                .color-item
+                    .chip.gray-20
+                    .name gray-20
+            .column
+                .color-item
+                    .chip.gray-30
+                    .name gray-30
+            .column
+                .color-item
+                    .chip.gray-40
+                    .name gray-40
+            .column
+                .color-item
+                    .chip.gray-50
+                    .name gray-50
+            .column
+                .color-item
+                    .chip.gray-60
+                    .name gray-60
+            .column
+                .color-item
+                    .chip.gray-70
+                    .name gray-70
+            .column
+                .color-item
+                    .chip.gray-80
+                    .name gray-80 
+            .column
+                .color-item
+                    .chip.gray-90
+                    .name gray-90 
+            .column
+                .color-item
+                    .chip.gray-95
+                    .name gray-95
+    .page-wrapper.summary#grids
+        h5.header grid system
+        .sub-title grid(flex)
+        .ga-grid
+            each col in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                .column
+                    .gray-item.gray-15
+        .sub-title grid(grid)
+        .ga-grid2.set-rows(style="--grid-row-num: 6; --grid-gap: 10px")
+            .column.col-4.row-4
+                .gray-item.gray-15
+            .column.col-8.row-2
+                .gray-item.gray-15
+            .column.col-4.row-2
+                .gray-item.gray-15
+            .column.col-4.row-2
+                .gray-item.gray-15
+            .column.col-3
+                .gray-item.gray-15
+            .column.col-3
+                .gray-item.gray-15
+            .column.col-3
+                .gray-item.gray-15
+            .column.col-3
+                .gray-item.gray-15
+            .column.col-12
+                .gray-item.gray-15
+    .page-wrapper.summary
+        h5.header elements
+        .ga-grid
+            .column.span-1 
+                .sub-title input
+            .column.span-4
+                .field
+                    .ga-input.fluid
+                        input(type="text", placeholder="입력하세요") 
+                .field
+                    .ga-input.fluid.disabled
+                        input(type="text", placeholder="입력하세요") 
+            .column.span-1
+            .column.span-1
+                .sub-title buttons
+            .column.span-5
+                .field
+                    button.ga-button.primary 메인
+                    button.ga-button.secondary 강조
+                .field
+                    button.ga-button.success 성공
+                    button.ga-button.info 정보
+                    button.ga-button.danger 위험
+                    button.ga-button.attention 경고
+                    button.ga-button.importance 중요
+            .column.span-1 
+                .sub-title select box
+            .column.span-4
+                .field
+                    .ga-select-box.dropdown
+                        .selected-item.ga-input.icon.right.fluid
+                            input(type="text", placeholder="선택하세요", readonly)
+                            i.icon.fa.fa-chevron-down
+                        .select-menu
+                            .ga-list.selection
+                                each col in [1, 2, 3, 4, 5, 6]
+                                    .icon.item.option-item
+                                        = `option${col}`
+                .field
+                     .ga-select-box.float
+                        .selected-item.ga-input.icon.right
+                            input(type="text", placeholder="선택하세요", readonly)
+                            i.icon.fa.fa-chevron-down
+                        .select-menu
+                            .ga-list.selection
+                                each col in [1, 2, 3, 4, 5, 6]
+                                    .icon.item.option-item
+                                        = `option${col}`
+            .column.span-1
+            .column.span-1
+                .sub-title badge
+            .column.span-5
+                .ga-button
+                    | Badge
+                    span.ga-badge.float 0
+                .ga-button
+                    | Badge 1
+                    span.ga-badge.float.primary 1
+                .ga-button
+                    | Badge New
+                    span.ga-badge.float.red N
+                .ga-button
+                    | Badge In
+                    span.ga-badge.mark.primary
+
         //- include pages/base.pug
         //- include pages/colors.pug
         //- include pages/button.pug

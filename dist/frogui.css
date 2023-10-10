@@ -36952,6 +36952,9 @@ h5, .h5 {
   grid-template-columns: repeat(var(--grid-col-num), 1fr);
   margin-bottom: var(--grid-gap);
 }
+.ga-grid2.set-rows {
+  grid-template-rows: repeat(var(--grid-row-num), 1fr);
+}
 .ga-grid2.inline {
   display: inline-grid;
 }
@@ -37072,73 +37075,73 @@ h5, .h5 {
 .ga-grid2 > .column.col-1 {
   grid-column: auto/span 1;
 }
-.ga-grid2 > .column.col-row-1 {
-  grid-row: auto/span 1;
-}
 .ga-grid2 > .column.col-2 {
   grid-column: auto/span 2;
-}
-.ga-grid2 > .column.col-row-2 {
-  grid-row: auto/span 2;
 }
 .ga-grid2 > .column.col-3 {
   grid-column: auto/span 3;
 }
-.ga-grid2 > .column.col-row-3 {
-  grid-row: auto/span 3;
-}
 .ga-grid2 > .column.col-4 {
   grid-column: auto/span 4;
-}
-.ga-grid2 > .column.col-row-4 {
-  grid-row: auto/span 4;
 }
 .ga-grid2 > .column.col-5 {
   grid-column: auto/span 5;
 }
-.ga-grid2 > .column.col-row-5 {
-  grid-row: auto/span 5;
-}
 .ga-grid2 > .column.col-6 {
   grid-column: auto/span 6;
-}
-.ga-grid2 > .column.col-row-6 {
-  grid-row: auto/span 6;
 }
 .ga-grid2 > .column.col-7 {
   grid-column: auto/span 7;
 }
-.ga-grid2 > .column.col-row-7 {
-  grid-row: auto/span 7;
-}
 .ga-grid2 > .column.col-8 {
   grid-column: auto/span 8;
-}
-.ga-grid2 > .column.col-row-8 {
-  grid-row: auto/span 8;
 }
 .ga-grid2 > .column.col-9 {
   grid-column: auto/span 9;
 }
-.ga-grid2 > .column.col-row-9 {
-  grid-row: auto/span 9;
-}
 .ga-grid2 > .column.col-10 {
   grid-column: auto/span 10;
-}
-.ga-grid2 > .column.col-row-10 {
-  grid-row: auto/span 10;
 }
 .ga-grid2 > .column.col-11 {
   grid-column: auto/span 11;
 }
-.ga-grid2 > .column.col-row-11 {
-  grid-row: auto/span 11;
-}
 .ga-grid2 > .column.col-12 {
   grid-column: auto/span 12;
 }
-.ga-grid2 > .column.col-row-12 {
+.ga-grid2 > .column.row-1 {
+  grid-row: auto/span 1;
+}
+.ga-grid2 > .column.row-2 {
+  grid-row: auto/span 2;
+}
+.ga-grid2 > .column.row-3 {
+  grid-row: auto/span 3;
+}
+.ga-grid2 > .column.row-4 {
+  grid-row: auto/span 4;
+}
+.ga-grid2 > .column.row-5 {
+  grid-row: auto/span 5;
+}
+.ga-grid2 > .column.row-6 {
+  grid-row: auto/span 6;
+}
+.ga-grid2 > .column.row-7 {
+  grid-row: auto/span 7;
+}
+.ga-grid2 > .column.row-8 {
+  grid-row: auto/span 8;
+}
+.ga-grid2 > .column.row-9 {
+  grid-row: auto/span 9;
+}
+.ga-grid2 > .column.row-10 {
+  grid-row: auto/span 10;
+}
+.ga-grid2 > .column.row-11 {
+  grid-row: auto/span 11;
+}
+.ga-grid2 > .column.row-12 {
   grid-row: auto/span 12;
 }
 .ga-grid2.tabled {
