@@ -7,7 +7,7 @@ import sass from 'gulp-dart-sass';  // sass/scss -> css 빌드
 import autoprefixer from 'gulp-autoprefixer';
 import minifyCSS from 'gulp-clean-css'; // 최소화
 import uglify from 'gulp-uglify'; // 난독화
-import del from 'del';
+import { deleteAsync } from 'del';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 
@@ -21,8 +21,8 @@ import fs from 'fs';
 // fs module test
 // fa.writeFile('sample.json', JSON.stringify({ sample: 'data' }), () => {})
 
-import qa from './tasks/config/install'
-const question = qa
+// import qa from './tasks/config/install'
+// const question = qa
 
 let paths = {
     paths: {
@@ -48,7 +48,7 @@ const checkBuild = async (done) => {
 // 빌드 전 이전 빌드 폴더 삭제
 const clean = () => {
     // site();
-    return del(['dist/'])
+    return deleteAsync(['dist/'])
 };
 
 // scss 빌드
@@ -108,10 +108,28 @@ const site = () => {
     .pipe(dest('./example/build'))
 }
 
-exports.install = question; // $ gulp install
-exports.clean = clean; // $ gulp clean
-exports.build = build; // $ gulp build
-exports.devSite = series(site, siteWatcher); // $ gulp devSite
-exports.default = series(clean, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
-    gulpUtil.log("Run gulp!!")
-}); // $ gulp
+
+// ... existing code ...
+
+// exports.install = question; 
+// exports.clean = clean;
+// exports.build = build;
+// exports.devSite = series(site, siteWatcher);
+// exports.default = series(clean, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
+//     gulpUtil.log("Run gulp!!")
+// });
+
+// export {
+//     question as install,
+//     clean,
+//     build,
+//     series(site, siteWatcher) as devSite,
+//     series(clean, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
+//         gulpUtil.log("Run gulp!!")
+//     }) as default
+// };
+export { clean, build }
+export const devSite = series(site, siteWatcher)
+export default series(clean, parallel(viewDev, site, build, buildJS, assets), watcher, () => {
+            gulpUtil.log("Run gulp!!")
+        })
