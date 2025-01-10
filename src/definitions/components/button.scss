@@ -248,7 +248,7 @@
                 background-color: $hoverColor;
             }
             &.outline {
-                background-color: transparent!important;
+                background-color: var(----hover-suf) !important;
                 color: $bgColor!important;
                 box-shadow: 0 0 0 1px $hoverColor inset;
                 &.selected,
@@ -302,7 +302,7 @@
                 background-color: $hoverColor;
             }
             &.outline{
-                background-color: transparent;
+                background-color: var(----hover-suf);
                 color: $value;
                 box-shadow: 0 0 0 1px $hoverColor inset;
                 &.selected,

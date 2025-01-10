@@ -9,6 +9,12 @@ $headerMargin: $headerTopMargin 0 1rem;
 body {
     background-color: var(--bgc);
     color: var(--txt);
+    font-family: $fontName;
+}
+
+a {
+    color: var(--txt);
+    text-decoration: none;
 }
 
 //Definitions
@@ -21,7 +27,7 @@ h5,.h5 {
     font-weight: $headerFontWeight;
     &.header {
         margin: $headerMargin;
-        &:first-child { margin-top: ($lineHeight * 0.5) * -1; }
+        &:first-child { margin-top: ($lineHeight * 0.5) * 1em; }
     }
 }
 h1,.h1 {font-size: $h1;}

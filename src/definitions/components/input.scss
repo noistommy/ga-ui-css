@@ -10,10 +10,9 @@
   position: relative;
   display: inline-flex;
   max-width: 100%;
-  font-size: 1em;
   input, textarea, .input {
     vertical-align: baseline;
-    font-size: 1rem;
+    font-size: 1em;
     padding: $inputPadding;
     line-height: $inputLineHeight;
     font-weight: 400;

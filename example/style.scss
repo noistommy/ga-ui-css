@@ -119,9 +119,10 @@ header.gnb .logo {
     a {
       width: 100%;
       padding: 10px;
-    }
-    &:hover {
-      background-color: #6d9d72; //frog green
+      &:hover {
+        background-color: #6d9d72; //frog green
+        color: #fff;
+      }
     }
   }
 }

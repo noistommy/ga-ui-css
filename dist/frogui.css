@@ -33506,72 +33506,36 @@
   src: url(https://static.gabia.com/libs/font-awesome/6.1.1/fonts/fa-v4compatibility.woff2) format("woff2"), url(https://static.gabia.com/libs/font-awesome/6.1.1/fonts/fa-v4compatibility.ttf) format("truetype");
   unicode-range: u+f041, u+f047, u+f065-f066, u+f07d-f07e, u+f080, u+f08b, u+f08e, u+f090, u+f09a, u+f0ac, u+f0ae, u+f0b2, u+f0d0, u+f0d6, u+f0e4, u+f0ec, u+f10a-f10b, u+f123, u+f13e, u+f148-f149, u+f14c, u+f156, u+f15e, u+f160-f161, u+f163, u+f175-f178, u+f195, u+f1f8, u+f219, u+f250, u+f252, u+f27a;
 }
-/*reset*/
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, th, td, input, select, button {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, input,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: inherit;
 }
 
-fieldset, img {
-  border: 0 none;
-}
-
-dl, ul, ol, menu, li {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
-}
-
-input, select, textarea, button {
-  vertical-align: middle;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  border: 0 none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-body {
-  direction: ltr;
-  -webkit-text-size-adjust: none;
-}
-
-body, h1, h2, h3, h4, th, td, input, select, textarea, button, a, pre {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 400;
-  font-family: "Apple SD Gothic Neo", "돋움", dotum, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  background-color: transparent;
-}
-
-address, caption, cite, code, dfn, em, var {
-  font-style: normal;
-  font-weight: normal;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 html {
@@ -33579,33 +33543,22 @@ html {
   font-size: 14px;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+body {
+  line-height: 1;
 }
 
-:root {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-       text-size-adjust: 100%;
-  cursor: default;
-  overflow-wrap: break-word;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+ol, ul {
+  list-style: none;
 }
 
-label {
-  margin-bottom: 0 !important;
+blockquote, q {
+  quotes: none;
 }
 
-html, body {
-  height: 100%;
-}
-
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
 }
 
 table {
@@ -33615,87 +33568,6 @@ table {
 
 /* Inverted */
 /*Base*/
-/*reset*/
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, th, td, input, select, button {
-  margin: 0;
-  padding: 0;
-}
-
-fieldset, img {
-  border: 0 none;
-}
-
-dl, ul, ol, menu, li {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
-}
-
-input, select, textarea, button {
-  vertical-align: middle;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  border: 0 none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-body {
-  direction: ltr;
-  -webkit-text-size-adjust: none;
-}
-
-body, h1, h2, h3, h4, th, td, input, select, textarea, button, a, pre {
-  color: inherit;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 400;
-  font-family: "Pretendard", "Apple SD Gothic Neo", "돋움", dotum, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  background-color: transparent;
-}
-
-address, caption, cite, code, dfn, em, var {
-  font-style: normal;
-  font-weight: normal;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-i {
-  pointer-events: none;
-}
-
 :root {
   --bgc: #ffffff;
   --txt: #333333;
@@ -33745,6 +33617,12 @@ i {
 body {
   background-color: var(--bgc);
   color: var(--txt);
+  font-family: "Pretendard Variable";
+}
+
+a {
+  color: var(--txt);
+  text-decoration: none;
 }
 
 h1, .h1,
@@ -33766,7 +33644,7 @@ h2.header:first-child, .h2.header:first-child,
 h3.header:first-child, .h3.header:first-child,
 h4.header:first-child, .h4.header:first-child,
 h5.header:first-child, .h5.header:first-child {
-  margin-top: -0.6428571429;
+  margin-top: 0.6428571429em;
 }
 
 h1, .h1 {
@@ -33814,7 +33692,7 @@ h5, .h5 {
 }
 
 .light {
-  font-weight: 100 !important;
+  font-weight: 300 !important;
 }
 
 .regular {
@@ -34997,7 +34875,7 @@ h5, .h5 {
   background-color: #3c9845;
 }
 .ga-button.primary.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #6d9d72 !important;
   box-shadow: 0 0 0 1px #3c9845 inset;
 }
@@ -35040,7 +34918,7 @@ h5, .h5 {
   background-color: black;
 }
 .ga-button.secondary.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #35363a !important;
   box-shadow: 0 0 0 1px black inset;
 }
@@ -35083,7 +34961,7 @@ h5, .h5 {
   background-color: #4d855e;
 }
 .ga-button.success.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #528E64 !important;
   box-shadow: 0 0 0 1px #4d855e inset;
 }
@@ -35126,7 +35004,7 @@ h5, .h5 {
   background-color: #777777;
 }
 .ga-button.info.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #909090 !important;
   box-shadow: 0 0 0 1px #777777 inset;
 }
@@ -35169,7 +35047,7 @@ h5, .h5 {
   background-color: #a20000;
 }
 .ga-button.danger.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #D50000 !important;
   box-shadow: 0 0 0 1px #a20000 inset;
 }
@@ -35212,7 +35090,7 @@ h5, .h5 {
   background-color: #b95600;
 }
 .ga-button.attention.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #EC6E00 !important;
   box-shadow: 0 0 0 1px #b95600 inset;
 }
@@ -35255,7 +35133,7 @@ h5, .h5 {
   background-color: #fcb004;
 }
 .ga-button.importance.outline {
-  background-color: transparent !important;
+  background-color: var(----hover-suf) !important;
   color: #FDC036 !important;
   box-shadow: 0 0 0 1px #fcb004 inset;
 }
@@ -35295,7 +35173,7 @@ h5, .h5 {
   background-color: #cb3030;
 }
 .ga-button.red.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #D75757;
   box-shadow: 0 0 0 1px #cb3030 inset;
 }
@@ -35332,7 +35210,7 @@ h5, .h5 {
   background-color: #dc7612;
 }
 .ga-button.orange.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #EE9033;
   box-shadow: 0 0 0 1px #dc7612 inset;
 }
@@ -35369,7 +35247,7 @@ h5, .h5 {
   background-color: #e3a007;
 }
 .ga-button.yellow.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #F8B825;
   box-shadow: 0 0 0 1px #e3a007 inset;
 }
@@ -35406,7 +35284,7 @@ h5, .h5 {
   background-color: #8f9633;
 }
 .ga-button.lightgreen.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #B3BC40;
   box-shadow: 0 0 0 1px #8f9633 inset;
 }
@@ -35443,7 +35321,7 @@ h5, .h5 {
   background-color: #4d855e;
 }
 .ga-button.green.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #61A475;
   box-shadow: 0 0 0 1px #4d855e inset;
 }
@@ -35480,7 +35358,7 @@ h5, .h5 {
   background-color: #68b3bf;
 }
 .ga-button.lightblue.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #8CC5CE;
   box-shadow: 0 0 0 1px #68b3bf inset;
 }
@@ -35517,7 +35395,7 @@ h5, .h5 {
   background-color: #4b8bbc;
 }
 .ga-button.blue.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #70A3CA;
   box-shadow: 0 0 0 1px #4b8bbc inset;
 }
@@ -35554,7 +35432,7 @@ h5, .h5 {
   background-color: #41608c;
 }
 .ga-button.deepblue.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #5178AF;
   box-shadow: 0 0 0 1px #41608c inset;
 }
@@ -35591,7 +35469,7 @@ h5, .h5 {
   background-color: #7560a1;
 }
 .ga-button.deeppurple.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #9180B4;
   box-shadow: 0 0 0 1px #7560a1 inset;
 }
@@ -35628,7 +35506,7 @@ h5, .h5 {
   background-color: #9a54b0;
 }
 .ga-button.purple.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #AF77C0;
   box-shadow: 0 0 0 1px #9a54b0 inset;
 }
@@ -35665,7 +35543,7 @@ h5, .h5 {
   background-color: #8d5269;
 }
 .ga-button.brown.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #A86A82;
   box-shadow: 0 0 0 1px #8d5269 inset;
 }
@@ -35702,7 +35580,7 @@ h5, .h5 {
   background-color: #727272;
 }
 .ga-button.gray.outline {
-  background-color: transparent;
+  background-color: var(----hover-suf);
   color: #8B8B8B;
   box-shadow: 0 0 0 1px #727272 inset;
 }
@@ -35742,11 +35620,10 @@ h5, .h5 {
   position: relative;
   display: inline-flex;
   max-width: 100%;
-  font-size: 1em;
 }
 .ga-input input, .ga-input textarea, .ga-input .input {
   vertical-align: baseline;
-  font-size: 1rem;
+  font-size: 1em;
   padding: 0.6785714286em 1em;
   line-height: 1.2142857143em;
   font-weight: 400;
@@ -37701,7 +37578,7 @@ h5, .h5 {
   font-weight: 400;
   line-height: 1em;
   border-radius: 2em;
-  font-family: "Pretendard";
+  font-family: "Pretendard Variable";
   display: inline-block;
   margin: 0 0.14285714em;
   background-color: var(--suf);
@@ -38775,6 +38652,9 @@ h5, .h5 {
 }
 
 .ga-calendar {
+  --grid-size: 7;
+  --cell-size: 42px;
+  --cell-gap: 1px;
   border-radius: 4px;
   padding: 5px;
   margin: 20px;
@@ -38782,9 +38662,6 @@ h5, .h5 {
 }
 .ga-calendar .week-wrapper,
 .ga-calendar .cell-wrapper {
-  --grid-size: 7;
-  --cell-size: 42px;
-  --cell-gap: 1px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -38801,7 +38678,7 @@ h5, .h5 {
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   color: #fff;
-  font-weight: 900;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38809,7 +38686,6 @@ h5, .h5 {
 .ga-calendar .week-wrapper .cell,
 .ga-calendar .cell-wrapper .cell {
   background-color: #fff;
-  border-radius: 2px;
   position: absolute;
   width: var(--cell-size);
   height: var(--cell-size);
@@ -38838,7 +38714,7 @@ h5, .h5 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-weight: 900;
+  font-weight: 500;
   font-size: 0.8em;
 }
 .ga-calendar .week-wrapper .cell.sun:after,
@@ -38864,8 +38740,8 @@ h5, .h5 {
 }
 .ga-calendar .week-wrapper {
   display: flex;
-  gap: 2px;
-  margin: 2px;
+  gap: var(--cell-gap);
+  margin: var(--cell-gap);
   height: auto;
   font-size: 0.8em;
 }

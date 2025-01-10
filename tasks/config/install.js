@@ -11,11 +11,12 @@ const question = () => {
         name: 'tesk',
         message: 'are you OK?'
     },
-     (res) => {
-        answer = res
-         if(res.tesk === 'yes') {
-           gulpUtil.log(answer)
-         }
+    (res) => {
+      answer = res
+        if(res.tesk === 'yes') {
+          gulpUtil.log(answer)
+        }
     }))
 }
-export default question
+
+export {question}

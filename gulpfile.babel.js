@@ -17,12 +17,14 @@ import readlineSync from 'readline-sync';
 
 import fs from 'fs';
 
+import prompt from 'gulp-prompt';
+
 
 // fs module test
 // fa.writeFile('sample.json', JSON.stringify({ sample: 'data' }), () => {})
 
-// import qa from './tasks/config/install'
-// const question = qa
+
+
 
 let paths = {
     paths: {
@@ -54,6 +56,7 @@ const clean = () => {
 // scss 빌드
 const build = () => {
     const baseFile = 'frogui'
+    gulpUtil.log(baseFile)
     return src([`src/${baseFile}.scss`])
     .pipe(sassGlob())
     .pipe(sass())
@@ -107,11 +110,23 @@ const site = () => {
     .pipe(minifyCSS())
     .pipe(dest('./example/build'))
 }
-
-
+const question = () => {
+    return src('gulpfile.babel.js')
+    .pipe(prompt.prompt({
+        type: 'input',
+        name: 'tesk',
+        message: 'are you OK?'
+    },
+    (res) => {
+        gulpUtil.log(res)
+        if(res.tesk === 'yes') {
+            build ()
+        }
+    }))
+}
 // ... existing code ...
 
-// exports.install = question; 
+export { question } 
 // exports.clean = clean;
 // exports.build = build;
 // exports.devSite = series(site, siteWatcher);

@@ -1,5 +1,8 @@
 $issue_red: #D75757;
 .ga-calendar {
+  --grid-size: 7;
+  --cell-size: 42px;
+  --cell-gap: 1px;
   //background-color: #d4d4d4;
   border-radius: 4px;
   padding: 5px;
@@ -7,9 +10,7 @@ $issue_red: #D75757;
   height: 400px;
   .week-wrapper,
   .cell-wrapper {
-    --grid-size: 7;
-    --cell-size: 42px;
-    --cell-gap: 1px;
+    
     position: relative;
     width: 100%;
     height: 100%;
@@ -25,7 +26,7 @@ $issue_red: #D75757;
       border-bottom-right-radius: 2px;
       border-top-right-radius: 2px;
       color: #fff;
-      font-weight: 900;
+      font-weight: 500;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,7 +34,6 @@ $issue_red: #D75757;
     }
     .cell {
       background-color: #fff;
-      border-radius: 2px;
       position: absolute;
       width: var(--cell-size);
       height: var(--cell-size);
@@ -58,7 +58,7 @@ $issue_red: #D75757;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-weight: 900;
+        font-weight: 500;
         font-size: 0.8em;
       }
       &.sun:after {
@@ -82,8 +82,8 @@ $issue_red: #D75757;
   }
   .week-wrapper {
     display: flex;
-    gap: 2px;
-    margin: 2px;
+    gap: var(--cell-gap);
+    margin: var(--cell-gap);
     height: auto;
     font-size: 0.8em;
     .week-cell {
