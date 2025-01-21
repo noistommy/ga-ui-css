@@ -29,7 +29,7 @@
       border-color: var(--input-brd-hover);
     }
     &:focus {
-      border-color: $primary;
+      // border-color: $primary;
       &::placeholder {
         opacity: 1;
       }
@@ -37,7 +37,7 @@
     &::placeholder {
       font-weight: 100;
       // color: #c4c4c4;
-      opacity: 0.5;
+      opacity: 0.8;
     }
     &.align {
       &-left {text-align: left;}
@@ -142,8 +142,8 @@
     }
     &.both {
       input {
-        padding-left: 2.5em;
-        padding-right: 2.5em;
+        padding-left: 2.5em !important;
+        padding-right: 2.5em !important;
       }
       i.icon {
         &:first-child {

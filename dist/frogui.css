@@ -35640,9 +35640,6 @@ h5, .h5 {
 .ga-input input:hover, .ga-input textarea:hover, .ga-input .input:hover {
   border-color: var(--input-brd-hover);
 }
-.ga-input input:focus, .ga-input textarea:focus, .ga-input .input:focus {
-  border-color: #6d9d72;
-}
 .ga-input input:focus::-moz-placeholder, .ga-input textarea:focus::-moz-placeholder, .ga-input .input:focus::-moz-placeholder {
   opacity: 1;
 }
@@ -35651,11 +35648,11 @@ h5, .h5 {
 }
 .ga-input input::-moz-placeholder, .ga-input textarea::-moz-placeholder, .ga-input .input::-moz-placeholder {
   font-weight: 100;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .ga-input input::placeholder, .ga-input textarea::placeholder, .ga-input .input::placeholder {
   font-weight: 100;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .ga-input input.align-left, .ga-input textarea.align-left, .ga-input .input.align-left {
   text-align: left;
@@ -35747,8 +35744,8 @@ h5, .h5 {
   transform: translate(-50%, -50%);
 }
 .ga-input.icon.both input {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
+  padding-left: 2.5em !important;
+  padding-right: 2.5em !important;
 }
 .ga-input.icon.both i.icon:first-child {
   left: 0;
@@ -38132,6 +38129,10 @@ h5, .h5 {
   border-radius: 0.2857142857em;
   display: inline-flex;
 }
+.ga-select-box.open .selected-item.right i.icon,
+.ga-select-box.open select + i.icon i.icon {
+  transform: translate(-5px, -50%) rotate(180deg);
+}
 .ga-select-box.open .select-menu {
   display: inline-block;
   transform: translateY(0);
@@ -38206,9 +38207,13 @@ h5, .h5 {
 .ga-select-box.fluid {
   width: 100%;
 }
+.ga-select-box.fluid .selected-item {
+  width: 100%;
+}
 .ga-select-box select {
   font-size: 1em;
   width: 100%;
+  color: var(--txt);
   background: var(--bgc);
   border: 1px solid var(--brd);
   border-radius: 0.2857142857em;
@@ -38226,6 +38231,11 @@ h5, .h5 {
 .ga-select-box select:hover {
   border-color: #c0c4cc;
 }
+.ga-select-box select + i.icon {
+  top: 50%;
+  transform: translate(-5px, -50%);
+  opacity: 0.5;
+}
 .ga-select-box i.icon {
   position: absolute;
   top: 0;
@@ -38233,7 +38243,7 @@ h5, .h5 {
   padding: 0.7857142857em;
   line-height: 1.5;
 }
-.ga-select-box.compact .select-item,
+.ga-select-box.compact .selected-item input,
 .ga-select-box.compact select {
   padding: 0.3928571429em 0.75em;
 }
@@ -38291,7 +38301,7 @@ h5, .h5 {
   cursor: pointer;
 }
 .ga-list.selection > .item:hover {
-  background-color: #efefef;
+  background-color: var(--hover-suf);
 }
 .ga-list.selection > .item.selected, .ga-list.selection > .item.active {
   position: relative;

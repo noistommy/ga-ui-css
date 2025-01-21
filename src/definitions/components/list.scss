@@ -54,7 +54,7 @@
     > .item {
       cursor: pointer;
       &:hover {
-        background-color: #efefef;
+        background-color: var(--hover-suf);
       }
       &.selected, &.active {
         position: relative;

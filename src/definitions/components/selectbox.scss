@@ -22,6 +22,12 @@
   //  }
   //}
   &.open {
+    .selected-item.right,
+    select + i.icon {
+      i.icon {
+        transform: translate(-5px, -50%) rotate(180deg);
+      }
+    }
     .select-menu {
       display: inline-block;
       transform: translateY(0);
@@ -105,10 +111,14 @@
   }
   &.fluid {
     width: 100%;
+    .selected-item {
+      width: 100%;
+    }
   }
   select {
     font-size: 1em;
     width: 100%;
+    color: var(--txt);
     background: var(--bgc);
     border: 1px solid var(--brd);
     border-radius: $baseInputRadius;
@@ -126,6 +136,11 @@
     &:hover {
       border-color: #c0c4cc;
     }
+    & + i.icon {
+      top: 50%;
+      transform: translate(-5px, -50%);
+      opacity: .5;
+    }
   }
   i.icon {
     position: absolute;
@@ -135,7 +150,7 @@
     line-height: 1.5;
   }
   &.compact {
-    .select-item,
+    .selected-item input,
     select {
       padding: $compactPadding;
     }
