@@ -180,7 +180,8 @@ h5,.h5 {font-size: $h5;}
     .#{$color},
     .ga-#{$color} {
         background-color: nth($value, 1) !important;
-        color: $white !important;
+        // color: $white !important;
+        color: a11y-color($white, nth($value, 1)) !important;
         border-color: nth($value, 2) !important;
         &:hover {
             background-color: nth($value, 2);

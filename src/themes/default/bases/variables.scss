@@ -106,9 +106,9 @@ $gray: #909090;
 $lightGray: lighten($gray, 16.1);
 $darkGray: lighten($black, 20.4);
 
-$darkPrimary: darken(saturate($primary, 23.9), 10.6);
+$darkPrimary: darken(saturate($primary, 0), 10.6);
 $darkSecondary: darken($secondary, 35.7);
-$darkerPrimary: darken(saturate($primary, 28.8), 20.8);
+$darkerPrimary: darken(saturate($primary, 0), 20.8);
 $darkerSecondary: darken($secondary, 58.1);
 
 $lightPrimary: lighten($primary, 35);

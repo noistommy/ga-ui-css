@@ -33729,10 +33729,10 @@ h5, .h5 {
   box-shadow: 0 0 0 1px #6d9d72 inset;
 }
 .primary.dark {
-  background-color: #3c9845;
+  background-color: #557f59;
 }
 .primary.darker {
-  background-color: #297731;
+  background-color: #406044;
 }
 
 .secondary {
@@ -34423,7 +34423,7 @@ h5, .h5 {
 .success,
 .ga-success {
   background-color: #528E64 !important;
-  color: #ffffff !important;
+  color: a11y-color(#ffffff, #528E64) !important;
   border-color: #4d855e !important;
 }
 .success:hover,
@@ -34452,7 +34452,7 @@ h5, .h5 {
 .info,
 .ga-info {
   background-color: #909090 !important;
-  color: #ffffff !important;
+  color: a11y-color(#ffffff, #909090) !important;
   border-color: #777777 !important;
 }
 .info:hover,
@@ -34481,7 +34481,7 @@ h5, .h5 {
 .danger,
 .ga-danger {
   background-color: #D50000 !important;
-  color: #ffffff !important;
+  color: a11y-color(#ffffff, #D50000) !important;
   border-color: #a20000 !important;
 }
 .danger:hover,
@@ -34510,7 +34510,7 @@ h5, .h5 {
 .attention,
 .ga-attention {
   background-color: #EC6E00 !important;
-  color: #ffffff !important;
+  color: a11y-color(#ffffff, #EC6E00) !important;
   border-color: #b95600 !important;
 }
 .attention:hover,
@@ -34539,7 +34539,7 @@ h5, .h5 {
 .importance,
 .ga-importance {
   background-color: #FDC036 !important;
-  color: #ffffff !important;
+  color: a11y-color(#ffffff, #FDC036) !important;
   border-color: #fcb004 !important;
 }
 .importance:hover,
@@ -34866,25 +34866,25 @@ h5, .h5 {
 .ga-button.primary {
   background-color: #6d9d72;
   color: #ffffff;
-  box-shadow: 0 0 0 1px #3c9845 inset;
+  box-shadow: 0 0 0 1px #557f59 inset;
 }
 .ga-button.primary.selected, .ga-button.primary.hover, .ga-button.primary.focus, .ga-button.primary:hover, .ga-button.primary:focus {
-  background-color: #3c9845 !important;
+  background-color: #557f59 !important;
 }
 .ga-button.primary.active {
-  background-color: #3c9845;
+  background-color: #557f59;
 }
 .ga-button.primary.outline {
   background-color: var(----hover-suf) !important;
   color: #6d9d72 !important;
-  box-shadow: 0 0 0 1px #3c9845 inset;
+  box-shadow: 0 0 0 1px #557f59 inset;
 }
 .ga-button.primary.outline.selected, .ga-button.primary.outline:hover {
   background-color: #6d9d72 !important;
   color: #ffffff !important;
 }
 .ga-button.primary.outline.active {
-  color: #3c9845;
+  color: #557f59;
 }
 .ga-button.primary.text {
   background-color: transparent !important;
@@ -34892,10 +34892,10 @@ h5, .h5 {
   box-shadow: none;
 }
 .ga-button.primary.text:hover {
-  color: #3c9845 !important;
+  color: #557f59 !important;
 }
 .ga-button.primary.text.active {
-  color: #3c9845;
+  color: #557f59;
 }
 .ga-button.primary.disabled, .ga-button.primary[disabled], .ga-button.primary:disabled {
   cursor: default;
@@ -35123,7 +35123,7 @@ h5, .h5 {
 
 .ga-button.importance {
   background-color: #FDC036;
-  color: #ffffff;
+  color: #333333;
   box-shadow: 0 0 0 1px #fcb004 inset;
 }
 .ga-button.importance.selected, .ga-button.importance.hover, .ga-button.importance.focus, .ga-button.importance:hover, .ga-button.importance:focus {
@@ -35139,7 +35139,7 @@ h5, .h5 {
 }
 .ga-button.importance.outline.selected, .ga-button.importance.outline:hover {
   background-color: #FDC036 !important;
-  color: #ffffff !important;
+  color: #333333 !important;
 }
 .ga-button.importance.outline.active {
   color: #fcb004;
@@ -35203,7 +35203,7 @@ h5, .h5 {
 
 .ga-button.orange {
   background-color: #EE9033;
-  color: #ffffff;
+  color: #333333;
   box-shadow: 0 0 0 1px #dc7612 inset;
 }
 .ga-button.orange.selected, .ga-button.orange.hover, .ga-button.orange.focus, .ga-button.orange:hover, .ga-button.orange:focus {
@@ -35215,7 +35215,7 @@ h5, .h5 {
   box-shadow: 0 0 0 1px #dc7612 inset;
 }
 .ga-button.orange.outline.selected, .ga-button.orange.outline:hover {
-  color: #ffffff;
+  color: #333333;
   background-color: #EE9033;
 }
 .ga-button.orange.text {
@@ -35240,7 +35240,7 @@ h5, .h5 {
 
 .ga-button.yellow {
   background-color: #F8B825;
-  color: #ffffff;
+  color: #333333;
   box-shadow: 0 0 0 1px #e3a007 inset;
 }
 .ga-button.yellow.selected, .ga-button.yellow.hover, .ga-button.yellow.focus, .ga-button.yellow:hover, .ga-button.yellow:focus {
@@ -35252,7 +35252,7 @@ h5, .h5 {
   box-shadow: 0 0 0 1px #e3a007 inset;
 }
 .ga-button.yellow.outline.selected, .ga-button.yellow.outline:hover {
-  color: #ffffff;
+  color: #333333;
   background-color: #F8B825;
 }
 .ga-button.yellow.text {
@@ -35277,7 +35277,7 @@ h5, .h5 {
 
 .ga-button.lightgreen {
   background-color: #B3BC40;
-  color: #ffffff;
+  color: #333333;
   box-shadow: 0 0 0 1px #8f9633 inset;
 }
 .ga-button.lightgreen.selected, .ga-button.lightgreen.hover, .ga-button.lightgreen.focus, .ga-button.lightgreen:hover, .ga-button.lightgreen:focus {
@@ -35289,7 +35289,7 @@ h5, .h5 {
   box-shadow: 0 0 0 1px #8f9633 inset;
 }
 .ga-button.lightgreen.outline.selected, .ga-button.lightgreen.outline:hover {
-  color: #ffffff;
+  color: #333333;
   background-color: #B3BC40;
 }
 .ga-button.lightgreen.text {
@@ -35351,7 +35351,7 @@ h5, .h5 {
 
 .ga-button.lightblue {
   background-color: #8CC5CE;
-  color: #ffffff;
+  color: #333333;
   box-shadow: 0 0 0 1px #68b3bf inset;
 }
 .ga-button.lightblue.selected, .ga-button.lightblue.hover, .ga-button.lightblue.focus, .ga-button.lightblue:hover, .ga-button.lightblue:focus {
@@ -35363,7 +35363,7 @@ h5, .h5 {
   box-shadow: 0 0 0 1px #68b3bf inset;
 }
 .ga-button.lightblue.outline.selected, .ga-button.lightblue.outline:hover {
-  color: #ffffff;
+  color: #333333;
   background-color: #8CC5CE;
 }
 .ga-button.lightblue.text {
@@ -37644,14 +37644,14 @@ h5, .h5 {
   border-color: #6d9d72;
 }
 .ga-tag.primary:not(.label).hover, .ga-tag.primary:not(.label).focus, .ga-tag.primary:not(.label):hover, .ga-tag.primary:not(.label):focus {
-  border-color: #3c9845;
+  border-color: #557f59;
 }
 .ga-tag.primary.label {
   background-color: #6d9d72;
   color: #ffffff;
 }
 .ga-tag.primary.label.hover, .ga-tag.primary.label.focus, .ga-tag.primary.label:hover, .ga-tag.primary.label:focus {
-  background-color: #3c9845;
+  background-color: #557f59;
 }
 
 .ga-tag.secondary:not(.label) {
@@ -37881,7 +37881,7 @@ h5, .h5 {
 }
 
 .ga-badge.primary {
-  background-color: #3c9845;
+  background-color: #557f59;
   color: #ffffff;
 }
 
