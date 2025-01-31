@@ -34669,7 +34669,7 @@ h5, .h5 {
   cursor: pointer;
   color: var(--txt);
   background-color: var(--suf);
-  padding: 0.7857142857em 1.5em 0.7857142857em;
+  padding: 0.8571428571em 1.2857142857em 0.8571428571em;
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -34701,7 +34701,7 @@ h5, .h5 {
 .ga-button.icon {
   min-width: 1em;
   min-height: 1em;
-  padding: 0.7857142857em;
+  padding: 0.8571428571em;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.06) inset;
 }
 .ga-button.icon i {
@@ -34760,7 +34760,7 @@ h5, .h5 {
   background-color: var(----hover-suf);
 }
 .ga-button.compact {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 .ga-button i.icon {
   height: 0.85em;
@@ -34769,10 +34769,10 @@ h5, .h5 {
   font-size: 1em;
 }
 .ga-button i.icon.left {
-  margin: 0 0.5em 0 0;
+  margin: 0 0.6428571429em 0 0;
 }
 .ga-button i.icon.right {
-  margin: 0 0 0 0.5em;
+  margin: 0 0 0 0.6428571429em;
 }
 .ga-button.badge {
   display: inline-flex;
@@ -34810,7 +34810,7 @@ h5, .h5 {
   padding: 18px 30px;
 }
 .ga-button.mini {
-  padding: 0.7857142857em;
+  padding: 0.8571428571em;
 }
 .ga-button.mini i.icon {
   margin-right: 5px;
@@ -35624,7 +35624,7 @@ h5, .h5 {
 .ga-input input, .ga-input textarea, .ga-input .input {
   vertical-align: baseline;
   font-size: 1em;
-  padding: 0.6785714286em 1em;
+  padding: 0.75em 1.2857142857em;
   line-height: 1.2142857143em;
   font-weight: 400;
   border: 1px solid;
@@ -35784,7 +35784,7 @@ h5, .h5 {
   display: flex;
   align-items: center;
   background-color: var(--brd);
-  padding: 0.7857142857em;
+  padding: 0.8571428571em;
   line-height: 1;
   vertical-align: baseline;
 }
@@ -35840,7 +35840,7 @@ h5, .h5 {
 }
 .ga-input.compact input,
 .ga-input.compact .ga-button {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 
 .ga-input {
@@ -37069,16 +37069,16 @@ h5, .h5 {
   width: 100%;
 }
 .ga-grid2.tabled .ga-input input {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 .ga-grid2.tabled .ga-select-box select {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 .ga-grid2.tabled .ga-select-box i {
-  padding: 0.3928571429empx;
+  padding: 0.4285714286empx;
 }
 .ga-grid2.tabled .ga-button {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 
 @media all and (max-width: 767px) {
@@ -37441,7 +37441,7 @@ h5, .h5 {
   font-family: "Spoqa Han Sans";
   vertical-align: baseline;
   font-size: 1rem;
-  padding: 0.6785714286em 1em;
+  padding: 0.75em 1.2857142857em;
   line-height: 1.2142857143em;
   font-weight: 400;
   border: 1px solid var(--brd);
@@ -37488,7 +37488,7 @@ h5, .h5 {
   color: #aaaaaa;
 }
 .ga-form .field label.title, .ga-form .field .label.title {
-  padding: 0.6785714286em 1em;
+  padding: 0.75em 1.2857142857em;
   margin: 0 !important;
 }
 .ga-form .field[disabled] > input, .ga-form .field[disabled] > textarea, .ga-form .field.disabled > input, .ga-form .field.disabled > textarea {
@@ -38161,7 +38161,7 @@ h5, .h5 {
   min-width: 12em;
 }
 .ga-select-box.spinner .spinner-control {
-  padding: 0.7857142857em;
+  padding: 0.8571428571em;
 }
 .ga-select-box.spinner .spinner-control.left {
   order: -1;
@@ -38217,7 +38217,7 @@ h5, .h5 {
   background: var(--bgc);
   border: 1px solid var(--brd);
   border-radius: 0.2857142857em;
-  padding: 0.6785714286em 1em;
+  padding: 0.75em 1.2857142857em;
   padding-right: 2.25em;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -38240,15 +38240,15 @@ h5, .h5 {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.7857142857em;
+  padding: 0.8571428571em;
   line-height: 1.5;
 }
 .ga-select-box.compact .selected-item input,
 .ga-select-box.compact select {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 .ga-select-box.compact i {
-  padding: 0.3928571429em;
+  padding: 0.4285714286em;
 }
 
 .ga-list {
@@ -38502,7 +38502,7 @@ h5, .h5 {
 .ga-tabs.button .tab-menu .tab-item {
   background-color: var(--suf);
   color: var(--txt);
-  padding: 0.7857142857em 1.5em 0.7857142857em;
+  padding: 0.8571428571em 1.2857142857em 0.8571428571em;
   opacity: 0.5;
 }
 .ga-tabs.button .tab-menu .tab-item:hover {
@@ -38793,7 +38793,7 @@ table.ga-table thead tr th {
   background: #e5e9f2;
   text-align: inherit;
   color: rgba(0, 0, 0, 0.87);
-  padding: 0.6785714286em 1em;
+  padding: 0.75em 1.2857142857em;
   vertical-align: inherit;
   text-transform: none;
   border-bottom: 1px solid #d7dae2;
@@ -38814,7 +38814,7 @@ table.ga-table.structured tr th:last-child, table.ga-table.structured tr td:last
   border-right: none;
 }
 table.ga-table tr td {
-  padding: 0.6785714286em 1em;
+  padding: 0.75em 1.2857142857em;
   text-align: inherit;
   border-top: 1px solid #d7dae2;
   line-height: 1.2142857143em;
@@ -38924,16 +38924,16 @@ table.ga-table thead tr th.col-10 {
   width: 83.3333333333%;
 }
 table.ga-table .ga-input input {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 table.ga-table .ga-select-box select {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 table.ga-table .ga-select-box i {
-  padding: 0.3928571429empx;
+  padding: 0.4285714286empx;
 }
 table.ga-table .ga-button {
-  padding: 0.3928571429em 0.75em;
+  padding: 0.4285714286em 0.6428571429em;
 }
 
 .ga-panel {
