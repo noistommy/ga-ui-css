@@ -1,0 +1,204 @@
+
+.be {
+  &-grid2 {
+    --grid-col-num: #{$gridWhole};
+    --grid-row-num: #{$gridWhole};
+    --grid-gap: #{$gridGutterLarge}px;
+    display: grid;
+    grid-gap: var(--grid-gap);
+    grid-template-columns: repeat(var(--grid-col-num), 1fr);
+    margin-bottom: var(--grid-gap);
+    &.set-rows {
+      grid-template-rows: repeat(var(--grid-row-num), 1fr);
+    }
+    &.inline {
+      display: inline-grid;
+    }
+    &.auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+    }
+    &:last-child {
+      margin: 0;
+    }
+    &.divide-column {
+      grid-template-columns: repeat($gridWhole, 1fr);
+      @for $i from 1 through $gridWhole {
+        &-#{$i} {
+          grid-template-columns: repeat($i, calc($gridWhole / $i) * 1fr);
+        }
+      }
+    }
+    &.row {
+      @for $i from 1 through $gridWhole {
+        &-#{$i} {
+          grid-template-rows: repeat($i, 1fr);
+        }
+      }
+    }
+    &.flow {
+      &-column {
+        grid-auto-flow: column;
+      }
+      &-row {
+        grid-auto-flow: row;
+      }
+    }
+    &.dense {
+      grid-auto-flow: dense;
+    }
+    &.justify {
+      &-start {justify-items: start;}
+      &-center {justify-items: center;}
+      &-end {justify-items: end;}
+      &-strech {justify-items: stretch;}
+    }
+    &.align {
+      &-start {align-items: start;}
+      &-center {align-items: center;}
+      &-end {align-items: end;}
+      &-strech {align-items: stretch;}
+    }
+    > .column {
+      &.col {
+        @for $i from 1 through $gridWhole {
+          &-#{$i} {
+            grid-column: auto / span $i;
+          }
+        }
+      }
+      &.row {
+        @for $i from 1 through $gridWhole {
+          &-#{$i} {
+            grid-row: auto / span $i;
+          }
+        }
+      }
+    }
+    &.tabled {
+      --grid-gap: #{$gridTableGutter}px;
+      background-color: $tableBorderColor;
+      border: 1px solid $tableBorderColor;
+      font-size: $tableFontSize;
+      margin: $margin;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.labeled {
+        margin-top: 0;
+      }
+      > .column {
+        padding: $cellPadding;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &.label {
+          background-color: $headerBackgroundColor;
+          color: $tableBorderColor;
+          font-weight: 900;
+        }
+        &.align-left { justify-content: flex-start; }
+        &.align-center { justify-content: center; }
+        &.align-right { justify-content: flex-end; }
+        &.align-top { align-items: flex-start; }
+        &.align-middle { align-items: center; }
+        &.align-bottom { align-items: flex-end; }
+      }
+      .be-select-box, .be-input {
+        margin: 0;
+        width: 100%;
+      }
+      .be-input input {
+        padding: $compactPadding;
+      }
+      .be-select-box {
+        select {
+          padding: $compactPadding;
+        }
+        i {
+          padding: $compactVerticalPadding+px;
+        }
+      }
+      .be-button {
+        padding: $compactPadding;
+      }
+    }
+  }
+}
+
+
+@media all and (max-width: #{$bp-tablet - 1px}) {
+  .be-grid2 {
+    --grid-gap: #{$gridGutterSmall}px;
+    &.row {
+      @for $i from 1 through $gridWhole {
+        &-xs-#{$i} {
+          grid-template-rows: repeat($i, 1fr);
+        }
+      }
+    }
+    .column {
+      &.col {
+        @for $i from 1 through $gridWhole {
+          &-xs-#{$i} {
+            grid-column: auto / span $i;
+          }
+          &-row-xs-#{$i} {
+            grid-row: auto / span $i;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (min-width: #{$bp-tablet}) and (max-width: #{$bp-laptop - 1px}) {
+  .be-grid2 {
+    --grid-gap: #{$gridGutterSmall}px;
+    &.row {
+      @for $i from 1 through $gridWhole {
+        &-sm-#{$i} {
+          grid-template-rows: repeat($i, 1fr);
+        }
+      }
+    }
+    .column {
+      &.col {
+        @for $i from 1 through $gridWhole {
+          &-sm-#{$i} {
+            grid-column: auto / span $i;
+          }
+          &-row-sm-#{$i} {
+            grid-row: auto / span $i;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (min-width: #{$bp-laptop}) and (max-width: #{$bp-desktop - 1px}) {
+  //@media all and (max-width: #{$bp-desktop - 1px}) {
+  .be-grid2 {
+    &.row {
+      @for $i from 1 through $gridWhole {
+        &-md-#{$i} {
+          grid-template-rows: repeat($i, 1fr);
+        }
+      }
+    }
+    .column {
+      &.col {
+        @for $i from 1 through $gridWhole {
+          &-md-#{$i} {
+            grid-column: auto / span $i;
+          }
+          &-row-md-#{$i} {
+            grid-row: auto / span $i;
+          }
+        }
+      }
+    }
+  }
+}

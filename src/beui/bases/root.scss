@@ -1,0 +1,89 @@
+@use 'sass:map';
+
+:root {
+    --bgc: #{map.get($grays, 'gray-0')};
+    --txt: #{map.get($grays, 'gray-95')};
+    --brd: #{map.get($grays, 'gray-15')};
+    --suf: #{map.get($grays, 'gray-5')};
+    --hover-suf: #{map.get($grays, 'gray-10')};
+
+    --depth-bg: #{map.get($grays, 'gray-0')};
+    --depth-bs: 0 0 16px 2px rgba(0, 0, 0, 0.16);
+
+    --mobile-p: #{map.get($breakpoints, 'xs')};
+    --mobile-l: #{map.get($breakpoints, 'sm')};
+    --tablet: #{map.get($breakpoints, 'md')};
+    --desktop: #{map.get($breakpoints, 'lg')};
+    --desktop-l: #{map.get($breakpoints, 'xl')};
+}
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --bgc: #{map.get($grays, 'gray-95')};
+//         --txt: #{map.get($grays, 'gray-0')};
+//         --brd: #{map.get($grays, 'gray-85')};
+//         --suf: #{map.get($grays, 'gray-90')};
+//         --hover-suf: #{map.get($grays, 'gray-90')};
+
+//         // --depth-bg: #{map.get($grays, 'gray-80')};
+//         --depth-bg: rgba(0, 0, 0, 0,2);
+//         --depth-bs: none;
+//     }
+// }
+
+:root.light-mode {
+    --bgc: #{map.get($grays, 'gray-0')};
+    --txt: #{map.get($grays, 'gray-95')};
+    --brd: #{map.get($grays, 'gray-15')};
+    --suf: #{map.get($grays, 'gray-5')};
+    --hover-suf: #{map.get($grays, 'gray-10')};
+
+    --depth-bg: #{map.get($grays, 'gray-0')};
+    --depth-bs: 0 0 16px 2px rgba(0, 0, 0, 0.16);
+}
+
+:root.dark-mode {
+    --bgc: #{map.get($grays, 'gray-95')};
+    --txt: #{map.get($grays, 'gray-0')};
+    --brd: #{map.get($grays, 'gray-85')};
+    --suf: #{map.get($grays, 'gray-90')};
+    --hover-suf: #{map.get($grays, 'gray-85')};
+
+    // --depth-bg: #{map.get($grays, 'gray-80')};
+    --depth-bg: rgba(0, 0, 0, 0.16);
+    --depth-bs: none;
+}
+
+@function color-contrast($bg, $fg) {
+    $luminance1: luminance($fg) + 0.05;
+    $luminance2: luminance($bg) + 0.05;
+    $ratio: $luminance1 / $luminance2;
+    
+    @if $luminance2 > $luminance1 {
+        $ratio: 1 / $ratio;
+    }
+    
+    $ratio: round($ratio * 100) / 100;
+    
+    @return $ratio;
+}
+
+@function luminance($color) {
+    $red: nth(linear-rgb($color), 1);
+    $green: nth(linear-rgb($color), 2);
+    $blue: nth(linear-rgb($color), 3);
+    
+    @return .2126 * $red + .7152 * $green + .0722 * $blue;
+}
+
+@function linear-rgb($color) {
+    $r: red($color) / 255;
+    $g: green($color) / 255;
+    $b: blue($color) / 255;
+    
+    $r: if($r <= .03928, $r / 12.92, pow(($r + .055) / 1.055, 2.4));
+    $g: if($g <= .03928, $g / 12.92, pow(($g + .055) / 1.055, 2.4));
+    $b: if($b <= .03928, $b / 12.92, pow(($b + .055) / 1.055, 2.4));
+    
+    @return ($r, $g, $b);
+}

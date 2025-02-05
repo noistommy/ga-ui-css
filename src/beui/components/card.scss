@@ -1,0 +1,39 @@
+.be-card {
+  width: 100%;
+  background-color: $cardBackgroundColor;
+  box-shadow: $cardBoxShadow;
+  margin: 20px 0;
+  border-radius: $baseBorderRadius;
+  > .title {
+    // font-family: 'Spoqa Han Sans Bold';
+    font-size: 2em;
+    font-weight: 900;
+    margin-bottom: 20px;
+    padding: $cardVerticalPadding $cardHorizontalPadding 0;
+  }
+  > div, .contents {
+    padding: $cardVerticalPadding $cardHorizontalPadding;
+  }
+
+  &.attached {
+    > .header {
+      // margin-left: $cardHorizontalPadding * -1;
+      // margin-right: $cardHorizontalPadding * -1;
+      // margin-top: $cardVerticalPadding * -1;
+      // margin-bottom: $cardVerticalPadding;
+      // > div {
+      //   padding: ($cardVerticalPadding * 0.5) $cardHorizontalPadding
+      // }
+      
+    }
+    > .footer {
+      // margin-left: $cardHorizontalPadding * -1;
+      // margin-right: $cardHorizontalPadding * -1;
+      // margin-bottom: $cardVerticalPadding * -1;
+      // margin-top: $cardVerticalPadding;
+      // > div {
+      //   padding: ($cardVerticalPadding * 0.5) $cardHorizontalPadding
+      // }
+    }
+  }
+}

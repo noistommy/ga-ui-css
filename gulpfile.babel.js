@@ -55,15 +55,14 @@ const clean = () => {
 
 // scss 빌드
 const build = () => {
-    const baseFile = 'frogui'
+    const baseFile = 'beui'
     gulpUtil.log(baseFile)
     return src([`src/${baseFile}.scss`])
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(dest('./dist', {sourcemaps:false}))
-    .pipe(minifyCSS())
-    .pipe(rename('frogui.css'))
+    .pipe(rename('beui.css'))
     .pipe(minifyCSS())
     .pipe(dest('./example/build'))
 }

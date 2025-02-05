@@ -1,0 +1,113 @@
+.be-pagination {
+  display: flex;
+  outline: 0;
+  &.hide {
+    display: none;
+  }
+  &.circle {
+    .pagination-nav,
+    .pagination-num, {
+      border-radius: 17px;
+    }
+  }
+  .pagination {
+    &-item {
+      font-size: 1rem;
+      border:1px solid;
+      background-color: #fff;
+      border-color: #d5d5d5;
+    }
+    &-page-wrapper {
+      display: flex;
+    }
+    &-nav, &-num {
+      display: inline-block;
+      min-width: 2em;
+      line-height: 1em;
+      text-align: center;
+      font-weight: 500;
+      vertical-align: baseline;
+      margin: 0 4px;
+      padding: 0.5em;
+      user-select: none;
+      color:#909090;
+      transition-duration: .1s;
+      transition: all 250ms ease;
+      &:hover {
+        background-color: #ccc;
+        border-color: #F8F8F8;
+        color:#fff;
+      }
+      &.active {
+        background-color: $primary;
+        border-color: darken($primary, 10);
+        color:#fff;
+        pointer-events: none
+      }
+      &.disabled {
+        pointer-events: none;
+        opacity: .5;
+      }
+    }
+  }
+  &.be-flex,
+  &.align {
+    &-left {justify-content: flex-start;}
+    &-center {justify-content: center;}
+    &-right {justify-content: flex-end;}
+  }
+  &.page {
+    .pagination {
+      &-info {
+        font-size: 14px;
+        background-color: #fff;
+        line-height: 1em;
+        text-align: center;
+        font-weight: 500;
+        padding: 0.5em 1em;
+        user-select: none;
+        color: #909090;
+      }
+
+      &-nav {
+        margin: 0;
+        border-radius: 0;
+        z-index: 10;
+        &:first-child {
+          margin-right: -1px;
+        }
+
+        &:last-child {
+          margin-left: -1px;
+        }
+      }
+    }
+    //&.circle {
+    //  .pagination-nav {
+    //    &:first-child {
+    //      border-bottom-left-radius: 17px;
+    //      border-top-left-radius: 17px;
+    //    }
+    //
+    //    &:last-child {
+    //      border-bottom-right-radius: 17px;
+    //      border-top-right-radius: 17px;
+    //    }
+    //  }
+    //}
+  }
+  &.compact {
+    .pagination {
+      &-page-wrapper {
+        //padding: 6px 8px;
+        //border: 1px solid #d6d6d6;
+      }
+      &-num, &-nav {
+        min-width: 1.75em;
+        line-height: 0.75em;
+        padding: 0.375em;
+        margin: 0 3px;
+      }
+    }
+  }
+}

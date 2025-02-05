@@ -1,0 +1,68 @@
+.be-badge {
+  cursor: default;
+  vertical-align: baseline;
+  display: inline-block;
+  font-size: $badgeFontSize;
+  font-weight: $badgeFontWeight;
+  text-align: center;
+  min-width: $badgeSize;
+  min-height: $badgeSize;
+  line-height: 1em;
+  padding: $badgePadding;
+  border-radius: $badgeBorderRadius;
+  background-color: $hoverButtonBg;
+  /*color: #ffffff;*/
+  /*text-shadow: 0 0 2px #909090;*/
+  position: absolute;
+  z-index: 999;
+  top: $badgeOffset * -1;
+  right: $badgeOffset * -1;
+  &.shadow {
+    box-shadow: $badgeShadow;
+  }
+  &.mark {
+    min-width: 5px;
+    min-height: 5px;
+    padding: 0;
+    top: 1px;
+    right: 1px;
+  }
+  &.align {
+    &-left {
+      left: $badgeOffsetLeft;
+      right: auto;
+    }
+    &-center {
+      left: 100%;
+      right: auto;
+      transform: translate(-50%, 0);
+    }
+    &-right {
+      left: auto;
+      right: $badgeOffset * -1;
+    }
+  }
+}
+
+@each $color, $values in join($brandColors, $stateColors) {
+  $bgColor: #{nth($values, 1)};
+  $hoverColor: #{nth($values, 2)};
+  $textColor: #{nth($values, 3)};
+  .be-badge {
+    &.#{$color} {
+      background-color: $hoverColor;
+      color: $textColor;
+    }
+  }
+}
+
+@each $color, $value in $colors {
+  $hoverColor: darken($value, 10);
+  $textColor: $white;
+  .be-badge {
+    &.#{$color} {
+      background-color: $value;
+      color: $white;
+    }
+  }
+}

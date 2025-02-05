@@ -1,0 +1,284 @@
+@use 'sass:map';
+:root.light-mode {
+  --input-brd-hover: #{map.get($grays, 'gray-20')};
+}
+
+:root.dark-mode {
+  --input-brd-hover: #{map.get($grays, 'gray-80')};
+}
+.be-input {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  input, textarea, .input {
+    vertical-align: baseline;
+    font-size: 1em;
+    padding: $inputPadding;
+    line-height: $inputLineHeight;
+    font-weight: 400;
+    border: 1px solid;
+    border-color: var(--brd);
+    background-color: var(--bgc);
+    color: var(--txt);
+    transition-duration: .2s;
+    border-radius: $baseInputRadius;
+    outline: none;
+    flex: 1 0 auto;
+    max-width: 100%;
+    &:hover {
+      border-color: var(--input-brd-hover);
+    }
+    &:focus {
+      // border-color: $primary;
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+    &::placeholder {
+      font-weight: 100;
+      // color: #c4c4c4;
+      opacity: 0.8;
+    }
+    &.align {
+      &-left {text-align: left;}
+      &-center {text-align: center;}
+      &-right {text-align: right;}
+    }
+  }
+  &[disabled], &.disabled {
+    > input, > textarea {
+      background-color: var(--suf);
+      border-color:var(--brd);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  &.readonly {
+    > input, > textarea {
+      pointer-events: none;
+    }
+  }
+  &.underline > input {
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid;
+    border-color: var(--brd);
+    &:focus {
+      border-color: $primary
+    }
+  }
+  &.transparent {
+    input {
+      background: transparent;
+      border-color: transparent;
+      &:hover {
+        border: 1px dashed var(--input-brd-hover);
+      }
+      &:focus {
+        border: 1px solid $primary;
+      }
+    }
+  }
+  &.edit {
+    input {
+      margin-right: 5px;
+      background: transparent;
+      border-color: transparent;
+      pointer-events: none;
+    }
+    &.editable {
+      input {
+        pointer-events: auto;
+        border: 1px solid $primary;
+      }
+    }
+  }
+  &.fluid {
+    display: flex;
+    margin-bottom: 5px;
+    > input {
+      width: 100%;
+    }
+  }
+  &.unit {
+    input {
+      padding-right: 2.5em !important;
+    }
+    &:after {
+      content: attr(data-unit);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-100%, -50%);
+    }
+  }
+  &.badge {
+    input {
+      padding-right: 3em;
+    }
+    .be-badge {
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &.icon {
+    > i.icon {
+      pointer-events: none;
+      position: absolute;
+      height: 2em;
+      width: 2em;
+      text-align: center;
+      opacity: .5;
+      top: 50%;
+      transform: translateY(-50%);
+      &:before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &.both {
+      input {
+        padding-left: 2.5em !important;
+        padding-right: 2.5em !important;
+      }
+      i.icon {
+        &:first-child {
+          left: 0;
+          transform: translate(5px, -50%);
+        }
+        &:last-child {
+          right: 0;
+          transform: translate(-5px, -50%);
+        }
+      }
+    }
+    &.left {
+      input {padding-left: 2.5em;}
+      i.icon {
+        left: 0;
+        transform: translate(5px, -50%);
+      }
+    }
+    &.right {
+      input {padding-right: 2.5em;}
+      i.icon {
+        right: 0;
+        transform: translate(-5px, -50%);
+      }
+    }
+    &.link {
+      > i.icon {
+        pointer-events: auto;
+        cursor: pointer;
+        &.circle {
+          border-radius: 50%;
+        }
+        &:hover {
+          opacity: 1;
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+  &.labeled {
+    label, .label {
+      display: flex;
+      align-items: center;
+      background-color: var(--brd);
+      padding: $verticalPadding;
+      line-height: 1;
+      vertical-align: baseline;
+      &.outline {
+        background-color: var(--bgc);
+        border: 1px solid var(--brd);
+        opacity: .8;
+      }
+    }
+  }
+  &.button, &.labeled {
+    input, .be-button, label, .label {
+      border-radius: 0;
+    }
+    input {
+      z-index: 10;
+
+    }
+    .be-button {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--brd);
+      //box-shadow: 0 0 2px $borderColor inset;
+    }
+    &.left {
+      input {
+        border-top-right-radius: $baseInputRadius;
+        border-bottom-right-radius: $baseInputRadius;
+      }
+      .be-button, label, .label {
+        margin-right: -1px;
+        border-top-left-radius: $baseInputRadius;
+        border-bottom-left-radius: $baseInputRadius;
+        order: -1;
+      }
+    }
+    &.right {
+      input {
+        border-top-left-radius: $baseInputRadius;
+        border-bottom-left-radius: $baseInputRadius;
+      }
+      .be-button, label, .label {
+        margin-left: -1px;
+        border-top-right-radius: $baseInputRadius;
+        border-bottom-right-radius: $baseInputRadius;
+      }
+    }
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 10em;
+    padding: 6px 10px;
+    resize: none;
+  }
+  &.short textarea {
+    min-height: 4em;
+  }
+  & + .be-input:not(.fluid) {
+    margin-left: 5px;
+  }
+  &.inline {
+    display: inline-flex;
+  }
+  &.compact {
+    input,
+    .be-button {
+      padding: $compactPadding;
+    }
+  }
+}
+
+@each $color, $values in $stateColors {
+  $textColor: #{nth($values, 1)};
+  $hoverColor: #{nth($values, 2)};
+  .be-input {
+    background-color: transparent !important;
+    border: none !important;
+    &.#{$color} {
+      > input, > textarea {
+        color: $textColor;
+        border-color: $textColor;
+        &.hover, &.focus,
+        &:hover, &:focus {
+          border-color: $hoverColor;
+        }
+        &::placeholder {
+          color: $textColor;
+        }
+      }
+    }
+  }
+}

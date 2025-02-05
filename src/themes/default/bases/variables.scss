@@ -77,7 +77,7 @@ $dModeBackground: #333333;
 //
 
 // $primary: #3c79b8;
-$primary: #6d9d72;
+$primary: #EC0047;
 $secondary: #35363a;
 
 $success: #528E64;
@@ -268,7 +268,7 @@ $lineHeightOffset:(( $inputLineHeight - 1em) * 0.5);
 //$inputLineHeight: 17 / 14;
 //$lineHeightOffset:(( $inputLineHeight - 1) * 0.5) * 14;
 
-$inputVerticalOffsetPadding: $verticalInputPadding - $lineHeightOffset;
+$inputVerticalOffsetPadding: calc($verticalInputPadding - $lineHeightOffset - 1px);
 
 //$inputPadding: $inputVerticalOffsetPadding+px $horizontalInputPadding+px;
 $inputPadding: $inputVerticalOffsetPadding $horizontalInputPadding;

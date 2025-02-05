@@ -1,0 +1,337 @@
+@use 'sass:color';
+@use 'sass:map';
+
+$amount: 0.5;
+
+$headerTopMargin: 2em - $lineHeight * 0.5;
+$headerMargin: $headerTopMargin 0 1rem;
+
+body {
+    background-color: var(--bgc);
+    color: var(--txt);
+    font-family: $fontName;
+}
+
+a {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+//Definitions
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5 {
+    font-weight: $headerFontWeight;
+    &.header {
+        margin: $headerMargin;
+        &:first-child { margin-top: ($lineHeight * 0.5) * 1em; }
+    }
+}
+h1,.h1 {font-size: $h1;}
+h2,.h2 {font-size: $h2;}
+h3,.h3 {font-size: $h3;}
+h4,.h4 {font-size: $h4;}
+h5,.h5 {font-size: $h5;}
+
+.tiny {font-size: $tinySize+em !important;}
+.small {font-size: $smallSize+em !important;}
+.medium {font-size: $mediumSize+em !important;}
+.large {font-size: $largeSize+em !important;}
+.huge {font-size: $hugeSize+em !important}
+.massive {font-size: $massiveSize+em !important;}
+
+.light {font-weight: $light !important;}
+.regular {font-weight: $regular !important;}
+.bold {font-weight: $bold !important;}
+.bolder {font-weight: $bolder !important;}
+
+.spacing {
+    &-wider {letter-spacing:$widerSpacing}
+    &-wide {letter-spacing:$wideSpacing}
+    &-normal {letter-spacing:normal}
+    &-narrow {letter-spacing:$narrowSpacing}
+    &-narrower {letter-spacing:$narrowerSpacing}
+}
+
+
+.primary {
+    background-color: $primary;
+    color: $primaryText;
+    box-shadow: 0 0 0 1px $primary inset;
+    &.dark {
+        background-color:$darkPrimary;
+    }
+    &.darker {
+        background-color:$darkerPrimary;
+    }
+}
+.secondary {
+    color: $secondaryText;
+    background-color: $secondary;
+    &.dark {
+        background-color: $darkSecondary;
+    }
+    &.darker {
+        background-color: $darkerSecondary;
+    }
+}
+.surface {
+    &1 {background-color: $surface1;}
+    &2 {background-color: $surface2;}
+    &3 {background-color: $surface3;}
+}
+.background {
+    background-color: $background;
+    border: 1px solid $gray;
+}
+.black {
+    background-color: $black;
+    &-text {
+        color: $black;
+    }
+}
+.white {
+    background-color: $white;
+    border: 1px solid $gray;
+    &-text {
+        color: $white;
+    }
+}
+.transparent {
+    background-color: transparent;
+}
+.gray {
+    background-color: $gray;
+    &.light {
+        background-color: $lightGray;
+    }
+    &.dark {
+        background-color: $darkGray;
+    }
+}
+
+//grayscale
+.gray {
+    &-0 {background-color: map.get($grays, 'gray-0') !important;}
+    &-5 {background-color: map.get($grays, 'gray-5') !important;}
+    &-10 {background-color: map.get($grays, 'gray-10') !important;}
+    &-15 {background-color: map.get($grays, 'gray-15') !important;}
+    &-20 {background-color: map.get($grays, 'gray-20') !important;}
+    &-30 {background-color: map.get($grays, 'gray-30') !important;}
+    &-40 {background-color: map.get($grays, 'gray-40') !important;}
+    &-50 {background-color: map.get($grays, 'gray-50') !important; color: #ffffff !important;}
+    &-60 {background-color: map.get($grays, 'gray-60') !important; color: #ffffff !important;}
+    &-70 {background-color: map.get($grays, 'gray-70') !important; color: #ffffff !important;}
+    &-80 {background-color: map.get($grays, 'gray-80') !important; color: #ffffff !important;}
+    &-85 {background-color: map.get($grays, 'gray-85') !important; color: #ffffff !important;}
+    &-90 {background-color: map.get($grays, 'gray-90') !important; color: #ffffff !important;}
+    &-95 {background-color: map.get($grays, 'gray-95') !important; color: #ffffff !important;}
+    &-100 {background-color: map.get($grays, 'gray-100') !important; color: #ffffff !important;}
+}
+
+@each $color, $value in $colors {
+    .be-#{$color} {
+        background-color: $value !important;
+        color: $white !important;
+        border-color: darken($value, 10) !important;
+        &:hover {
+            background-color: darken($value, 10);
+        }
+        &-text {
+            color: $value !important;
+        }
+        &-bg {
+            background-color: $value !important;
+        }
+        &-border {
+            border-color: $value !important;
+        }
+    }
+    .be-#{$color}-light {
+        background-color: lighten($value, 35) !important;
+        color: $value !important;
+        border-color: darken($value, 10) !important;
+    }
+}
+@each $color, $value in $colors2 {
+    .be-#{$color}-2 {
+        background-color: $value !important;
+        color: $white !important;
+        border-color: darken($value, 10) !important;
+        &:hover {
+            background-color: darken($value, 10);
+        }
+        &-text {
+            color: $value !important;
+        }
+        &-bg {
+            background-color: $value !important;
+        }
+        &-border {
+            border-color: $value !important;
+        }
+    }
+}
+
+@each $color, $value in $stateColors {
+    .#{$color},
+    .be-#{$color} {
+        background-color: nth($value, 1) !important;
+        // color: $white !important;
+        color: a11y-color($white, nth($value, 1)) !important;
+        border-color: nth($value, 2) !important;
+        &:hover {
+            background-color: nth($value, 2);
+        }
+        &-text {
+            color: nth($value, 1) !important;
+        }
+        &-bg {
+            background-color: nth($value, 1) !important;
+        }
+        &-border {
+            border-color: nth($value, 2) !important;
+        }
+    }
+    .be-#{$color}-light {
+        background-color: lighten(nth($value, 1), 35) !important;
+        color: nth($value, 1) !important;
+        border-color: nth($value, 2) !important;
+    }
+}
+
+//.success{background-color:$greenColor;}
+//.danger{background-color: $danger;}
+//.attention{background-color:$attention;}
+//.importance{background-color:$importance;}
+//.info{background-color:$secondary;}
+
+ * {
+     // ----- FireFox -----
+     // scrollbar-color: <막대 색상> <트랙 색상>
+     // scrollbar-width: thin | none | auto
+     scrollbar-color: $thumbBackground $trackBackground;
+     scrollbar-width: thin;
+
+     // ----- Internet Explorer -----
+     // scrollbar-face-color: <막대 색상>
+     // scrollbar-track-color: <트랙 색상>
+     // scrollbar-arrow-color: <양 끝 화살표 색상>
+     scrollbar-face-color: $thumbBackground;
+     scrollbar-track-color: $trackBackground;
+     scrollbar-arrow-color: #f1f1f1;
+     // ----- Webkit(Chrome, Edge, Safari) -----
+     &::-webkit-scrollbar{
+         // 스크롤바의 크기를 정의합니다.
+         // (width - 세로 스크롤 두께) (height - 가로 스크롤 두께)
+         width: $customScrollbarWidth+px;
+         height: $customScrollbarHeight+px;
+     }
+     &::-webkit-scrollbar-thumb{
+         // 스크롤바의 막대 색상을 정의합니다.
+         background-color: var(--bgc);
+         border-radius: $thumbBorderRadius+px;
+         border:$thumbBorderWidth+px solid var(--bgc);
+     }
+     &:hover::-webkit-scrollbar-thumb {
+         background-color: $thumbBackground;
+     }
+     &::-webkit-scrollbar-track{
+         // 스크롤바의 트랙 색상을 정의합니다.
+         background-color: $trackBackground;
+     }
+ //     &::-webkit-scrollbar-button{
+ //         // 스크롤바의 버튼 색상을 정의합니다.
+ //     }
+ }
+
+ //.dark-mode {
+ //    //* {
+ //    //    color: $dModeBaseFontColor!important;
+ //    //}
+ //    body {
+ //        color: $dModeBaseFontColor;
+ //        background-color: $dModeBackground;
+ //    }
+ //    section {
+ //        background-color: rgba(255, 255, 255, 0.1);
+ //    }
+ //}
+ //
+ .container {
+    @if map.get($breakpoints, 'xs') {
+        /* Mobile - Portrait */
+        @media (max-width: map.get($breakpoints, 'xs')) {
+            max-width: map.get($breakpoints, 'xs');
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    @if map.get($breakpoints, 'sm') {
+        /* Mobile - Landscape */
+        @media (min-width: map.get($breakpoints, 'xs')) and (max-width: map.get($breakpoints, 'sm')) {
+            max-width: map.get($breakpoints, 'sm');
+        }
+    }
+    @if map.get($breakpoints, 'md') {
+        /* Tablet */
+        @media (min-width: map.get($breakpoints, 'sm')) and (max-width: map.get($breakpoints, 'md')) {
+            max-width: map.get($breakpoints, 'md');
+        }
+    }
+    @if map.get($breakpoints, 'lg') {
+        /* Desktop */
+        @media (min-width: map.get($breakpoints, 'md')) and (max-width: map.get($breakpoints, 'lg')) {
+            max-width: map.get($breakpoints, 'lg');
+        }
+    }
+    @if map.get($breakpoints, 'xl') {
+        /* Desktop - Large */
+        @media (min-width: map.get($breakpoints, 'xl')) {
+            max-width: map.get($breakpoints, 'xl');
+        }
+    }
+    &.center {margin: 0 auto}
+    
+ }
+@media (prefers-color-scheme: light) {
+    .page-wrapper {
+        position: relative;
+        &:after {
+            content: 'light';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 9999;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .page-wrapper {
+        position: relative;
+        &:after {
+            content: 'Dark mode';
+            position: fixed;
+            top: 5px;
+            left: 50%;
+            z-index: 9999;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-radius: 2em;
+            opacity: 0;
+        }
+    }
+}
+
+// grayscale
+
+

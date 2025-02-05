@@ -1,0 +1,62 @@
+.be-panel {
+  border: $panelBorder;
+  transition: height 250ms ease;
+  margin: $margin;
+  .panel-header {
+    background-color: $panelBackgroundColor;
+    display: flex;
+    //justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $panelVerticalPadding relativePx(12);;
+    .title {
+      min-width: 14em;
+      font-weight: 700;
+    }
+    .panel-toggle-btn {
+      margin-left: 5px;
+      font-size: $tinySize+em;
+      i {
+        transition: transform 150ms ease;
+      }
+    }
+  }
+  .panel-content {
+    .content-wrapper {
+      border-top: $panelBorder;
+      padding: $panelPadding;
+      .content {
+        &-head {
+          background-color: #e5e9f2;
+          padding: 10px;
+          margin-bottom: $panelVerticalPadding;
+        }
+        &-body {
+
+        }
+        &-foot {
+          margin-top: $panelVerticalPadding;
+        }
+      }
+    }
+  }
+  &.collapse {
+    .panel-content {
+      .content-wrapper {
+        display: none;
+      }
+    }
+    &.open {
+      .panel-content {
+        .content-wrapper {
+          display: inline-block;
+        }
+      }
+      .panel-toggle-btn {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
