@@ -36,15 +36,15 @@
     &:after {
       content: '';
       position: absolute;
-      top: 4px;
+      top: 5px;
       left: 5px;
       border: 2px solid var(--suf);
       border-left: 0;
       border-top: 0;
       width: 6px;
-      height: 10px;
+      height: 8px;
       transition: transform 100ms ease;
-      transform: rotate(0deg) scale(0);
+      transform: translateY(-50%) rotate(0deg) scale(0);
     }
   }
   &.radio {
@@ -57,9 +57,10 @@
       &:after {
         background-color: var(--suf);
         border-radius: 50%;
-        width: 6px;
-        height: 6px;
-        top: 5px;
+        border: 0;
+        width: 8px;
+        height: 8px;
+        top: 3px;
         left: 5px;
         transform: scale(0);
       }
@@ -72,8 +73,14 @@
         border-color: $primary;
       }
       &:after {
-        top: 50%;
         transform: translateY(-50%) rotate(45deg) scale(1);
+      }
+    }
+    &.radio {
+      label, .label {
+        &:after {
+          transform: scale(1);
+        }
       }
     }
   }

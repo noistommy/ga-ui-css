@@ -3,24 +3,24 @@
   font-size: 1em;
   border-radius: $baseBorderRadius;
   display: inline-flex;
-  //.selected-item {
-  //  position: relative;
-  //  display: flex;
-  //
-  //  padding: $inputPadding;
-  //  vertical-align: baseline;
-  //  flex-grow: 1;
-  //  .item-icon {
-  //    margin-right: 10px;
-  //  }
-  //  .select-icon {
-  //    position: absolute;
-  //    top: 0;
-  //    right: 0;
-  //    padding: $verticalInputPadding;
-  //    color: #D4D4D4;
-  //  }
-  //}
+  // .selected-item {
+  //   position: relative;
+  //   display: flex;
+    
+  //   padding: $inputPadding;
+  //   vertical-align: baseline;
+  //   flex-grow: 1;
+  //   .item-icon {
+  //     margin-right: 10px;
+  //   }
+  //   .select-icon {
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     padding: $verticalInputPadding;
+  //     color: #D4D4D4;
+  // }
+  // }
   &.open {
     .selected-item.right,
     select + i.icon {
@@ -29,22 +29,22 @@
       }
     }
     .select-menu {
-      display: inline-block;
+      visibility: visible;
       transform: translateY(0);
       opacity: 1;
     }
   }
   .select-menu {
-    display: none;
+    visibility: hidden;
     position: absolute;
     background-color: var(--bgc);
     z-index: 999;
     border: 1px solid var(--brd);
     border-radius: $baseInputRadius;
-    transition: all 250ms ease;
-    transition-delay: 250ms;
+    transition: all 500ms ease;
+    // transition-delay: 250ms;
     transform: translateY(-10px);
-    opacity: 1;
+    opacity: 0;
     //.option-item.selected {
     //  background-color: #eff4fc;
     //}
